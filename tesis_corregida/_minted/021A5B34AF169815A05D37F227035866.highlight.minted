@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+daofind imagen.fits output=estrellas.coo \PYGZbs{}
+    fwhmpsf=FWHM \PYGZbs{}
+    sigma=SIGMA \PYGZbs{}
+    threshold=3.5 \PYGZbs{}
+    verify\PYGZhy{}
+\end{MintedVerbatim}

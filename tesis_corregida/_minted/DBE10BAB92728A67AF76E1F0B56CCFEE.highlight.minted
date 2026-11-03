@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+imhead M41.fits[0] long+
+imhead M41.fits[1] long+
+imhead M41.fits[2] long+
+\end{MintedVerbatim}

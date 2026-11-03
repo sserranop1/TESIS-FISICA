@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+phot imagen.fits \PYGZbs{}
+    coords=estrellas.coo \PYGZbs{}
+    output=estrellas.mag \PYGZbs{}
+    interac\PYGZhy{} \PYGZbs{}
+    verify\PYGZhy{}
+\end{MintedVerbatim}

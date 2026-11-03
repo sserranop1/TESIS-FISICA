@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+noao
+imred
+ccdred
+
+imhead m92011.fits long+
+
+epar ccdproc
+ccdproc m92011.fits
+\end{MintedVerbatim}

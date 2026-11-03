@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+display m92011.fits 1
+
+tvmark 1 \PYGZbs{}
+coords=m92011.coo \PYGZbs{}
+mark=circle \PYGZbs{}
+radii=5 \PYGZbs{}
+color=204 \PYGZbs{}
+number+
+\end{MintedVerbatim}

@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+display m92011.fits 1
+imexamine m92011.fits
+\end{MintedVerbatim}

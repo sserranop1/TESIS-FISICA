@@ -1,0 +1,14 @@
+{
+  "chip": "chip5",
+  "catalogo": "V_chip5_quality.dat",
+  "imagen": "SexA_V_chip5.fits",
+  "error_maximo_porcentual": 10.0,
+  "estrellas_con_fotometria_valida": 2197,
+  "estrellas_aprobadas": 1770,
+  "estrellas_rechazadas_por_error": 427,
+  "error_relativo_mediano_aprobadas_pct": 3.960446359949758,
+  "vecino_mas_cercano_mediano_pix": 10.728275501841285,
+  "tabla": "V_chip5_analisis_porcentual.csv",
+  "imagen_estrellas": "V_chip5_estrellas_aprobadas.png",
+  "histograma_vecinos": "V_chip5_histograma_vecinos.png"
+}

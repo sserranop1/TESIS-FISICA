@@ -1,0 +1,27 @@
+\babel@toc {spanish}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Imagen compuesta de Sextans A obtenida con Suprime-Cam en el telescopio Subaru. La composición combina observaciones en los filtros $V$, $R$ e $I$, asociados a los canales azul, verde y rojo, respectivamente. La imagen muestra poblaciones estelares jóvenes de color azul, poblaciones más evolucionadas de tonos amarillos y rojos, y regiones asociadas a gas ionizado por estrellas masivas jóvenes \citep {subaru2004sextansa}. }}{19}{figure.caption.10}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Imagen cruda correspondiente a \texttt {m92010.fits}. }}{28}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Imagen \texttt {m92010.fits} después del proceso de reducción. }}{29}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Canal azul del archivo M41.}}{30}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Canal rojo del archivo M41.}}{30}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Canal verde del archivo M41.}}{31}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Análisis utilizado para estudiar la variación del número de detecciones en función del umbral de detección. $y = 598.16 + \frac {147655.86}{1 + e^{2.554(x-1.967)}}$ }}{32}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Estrellas detectadas automáticamente en \texttt {m92011.fits} utilizando \texttt {daofind} con un umbral de detección de 3.5. }}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Estrellas detectadas automáticamente en M41 utilizando \texttt {daofind} y verificadas visualmente mediante \texttt {tvmark}. }}{34}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Magnitud instrumental frente a error fotométrico para \texttt {m92010.fits}. }}{35}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Magnitud instrumental frente a error fotométrico para M41. }}{35}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Diagrama color--magnitud instrumental inicial de M92. El eje horizontal corresponde al color $B-V$ y el eje vertical a la magnitud instrumental $V$. }}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Fuentes rechazadas por presentar un vecino dentro del radio de $3\times FWHM$. }}{37}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Fuentes aceptadas después de aplicar el criterio de vecinos más cercanos. }}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Fracción de píxeles atípicos altos encontrados en los anillos de cielo. }}{39}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Estrellas rechazadas debido a indicios de contaminación dentro del anillo utilizado para determinar el fondo local. }}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Estrellas aceptadas después de aplicar el filtro de contaminación del anillo de cielo. }}{41}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Diagrama color--magnitud de M92 después de aplicar los diferentes criterios de filtrado fotométrico. }}{42}{figure.caption.29}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Distribución de los valores de los píxeles contenidos dentro de los anillos de cielo de las estrellas de \texttt {m92011.fits}. La figura se presenta en orientación horizontal para permitir la visualización completa de las fuentes analizadas.}}{52}{figure.caption.32}%
+\addvspace {10\p@ }

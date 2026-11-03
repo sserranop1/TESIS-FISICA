@@ -1,0 +1,204 @@
+\documentclass[9pt]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+
+\geometry{margin=2.5cm}
+
+\title{Desarrollo de un software para fotometría de apertura con selección adaptativa del anillo de cielo}
+
+\author{FISI-3989 - OPCIÓN DE GRADO – PROYECTO DE INVESTIGACIÓN\\
+Santiago Serrano Perico\\
+Código: \textit{202313958}\\[0.4cm]
+Dr. Alejandro García\\
+Director
+}
+
+\date{mayo 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+La fotometría astronómica es una herramienta fundamental para el estudio cuantitativo de imágenes del cielo, ya que permite medir el flujo de luz proveniente de fuentes como estrellas, cúmulos, galaxias u otros objetos astronómicos. En particular, la fotometría de apertura consiste en sumar la señal registrada dentro de una región circular centrada en la fuente y corregir esta medición restando la contribución del fondo de cielo a partir de una región cercana. Este procedimiento es ampliamente utilizado en imágenes CCD debido a su relativa simplicidad, eficiencia computacional y utilidad en estudios de brillo estelar, curvas de luz y variabilidad astronómica. \textbf{De acuerdo con Howell \cite{howell2006handbook}, la correcta reducción y medición de imágenes CCD requiere considerar cuidadosamente fuentes de ruido, calibración instrumental, estimación del fondo y selección adecuada de aperturas fotométricas.} Asimismo, \textbf{Da Costa \cite{dacosta1992basic} presenta fundamentos de las técnicas básicas de fotometría CCD; Stetson \cite{stetson1987daophot} desarrolla una referencia importante para la fotometría en campos estelares densos mediante DAOPHOT; y Davis \cite{davis1994iraf} documenta el uso del paquete IRAF/DAOPHOT para la reducción y medición fotométrica.} Estos trabajos han establecido bases importantes para el tratamiento de observaciones CCD y la medición precisa \textbf{del} brillo de fuentes estelares.
+
+En una medición típica de fotometría de apertura se definen tres regiones principales: una apertura circular que contiene la señal de la estrella, un radio interno para el anillo de cielo y un radio externo que delimita la zona usada para estimar el fondo local. La señal neta de la fuente depende de qué tan bien se logre separar la contribución real de la estrella respecto al brillo del cielo y de otros efectos presentes en la imagen. Por esta razón, la elección de los radios no es un detalle menor: si la apertura es demasiado pequeña, se puede perder parte del flujo de la fuente; si es demasiado grande, se puede introducir ruido adicional o contaminación por estrellas cercanas. De manera similar, si el anillo de cielo se ubica muy cerca de la fuente, puede incluir parte de las alas de su perfil radial; pero si se ubica demasiado lejos, puede dejar de representar adecuadamente el fondo local alrededor de la estrella.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.9]
+    % estrella central
+    \fill (0,0) circle (0.08);
+    \draw[thick] (0,0) circle (0.8);
+    \draw[dashed, thick] (0,0) circle (1.35);
+    \draw[dashed, thick] (0,0) circle (2.05);
+
+    % estrellas vecinas
+    \fill (1.75,0.45) circle (0.06);
+    \fill (-1.45,1.10) circle (0.05);
+    \fill (2.45,-0.75) circle (0.05);
+
+    % etiquetas
+    \draw[->] (0.15,0.15) -- (0.6,0.6);
+    \node[right] at (0.65,0.6) {\textbf{Apertura de la fuente}};
+
+    \draw[->] (-1.35,0) -- (-0.82,0);
+    \node[left] at (-1.35,0) {\textbf{Radio de apertura}};
+
+    \draw[->] (2.8,0) -- (2.05,0);
+    \node[right] at (2.8,0) {\textbf{Radio externo del cielo}};
+
+    \draw[->] (2.4,1.2) -- (1.35,0.1);
+    \node[right] at (2.4,1.2) {\textbf{Radio interno del cielo}};
+
+    \draw[->] (2.9,-0.75) -- (2.45,-0.75);
+    \node[right] at (2.9,-0.75) {\textbf{Fuente cercana / contaminación}};
+
+    \node at (0,-2.45) {\textbf{Anillo de cielo: región usada para estimar el fondo local}};
+\end{tikzpicture}
+\caption{\textbf{Esquema de la fotometría de apertura. La señal de la fuente se mide dentro de la apertura circular, mientras que el fondo de cielo se estima en el anillo delimitado por un radio interno y un radio externo. La presencia de fuentes cercanas puede contaminar la estimación del fondo, por lo que la selección de estos radios es un aspecto crítico del método.}}
+\label{fig:apertura_anillo}
+\end{figure}
+
+Una dificultad importante aparece cuando se trabaja con campos estelares de densidad variable. En estos casos, la distribución de estrellas no es uniforme en toda la imagen: algunas regiones pueden estar relativamente aisladas, mientras que otras pueden presentar alta concentración de fuentes, estrellas parcialmente superpuestas, gradientes de fondo o contaminación por objetos cercanos. Bajo estas condiciones, utilizar un mismo anillo de cielo con radios interno y externo fijos para todas las estrellas no siempre resulta adecuado, ya que esto supone que las fuentes vecinas se encuentran a distancias similares y que el fondo de cielo se comporta de forma homogénea en todo el campo. En la práctica, esta suposición puede generar errores sistemáticos en la estimación del fondo y, en consecuencia, afectar la precisión de las magnitudes calculadas.
+
+\textbf{Actualmente existen herramientas ampliamente utilizadas para realizar fotometría astronómica, como IRAF/DAOPHOT, Astropy y Photutils. En particular, Photutils permite definir aperturas circulares y anillos de cielo mediante clases como \texttt{CircularAperture} y \texttt{CircularAnnulus}; sin embargo, en muchos flujos de trabajo la elección de los radios de apertura y del anillo de cielo sigue dependiendo de parámetros definidos por el usuario o de criterios fijos para toda la imagen. Por ello, el aporte central de este proyecto no consiste únicamente en realizar fotometría de apertura, sino en desarrollar e integrar un criterio adaptativo que seleccione el anillo de cielo de acuerdo con las condiciones locales de cada fuente y de su entorno estelar.}
+
+Por esta razón, surge la necesidad de desarrollar herramientas computacionales que permitan realizar fotometría de apertura de manera más flexible y adaptada a las características locales de cada imagen. En este trabajo se propone diseñar un software para realizar fotometría de apertura e implementar un algoritmo capaz de modificar automáticamente los radios interno y externo del anillo de cielo de acuerdo con propiedades de la imagen, como el nivel de fondo, el ruido, la dispersión de la señal y la presencia de estrellas cercanas. Esta aproximación busca aportar una mejora frente al uso de parámetros fijos, permitiendo que la estimación del cielo sea más representativa en campos estelares con diferentes niveles de densidad y complejidad. Además, el desarrollo en Python permitirá apoyarse en herramientas astronómicas modernas como \texttt{Astropy} y \texttt{Photutils}, ampliamente utilizadas para el análisis y procesamiento de datos astronómicos \cite{astropy2013, astropy2022, bradley2024photutils}.
+
+\section{Objetivo General}
+
+Desarrollar un software para realizar fotometría de apertura en imágenes astronómicas implementando un algoritmo adaptativo que modifique el anillo de cielo de acuerdo con las características locales de cada campo estelar.
+
+\section{Objetivos Específicos}
+
+\begin{itemize}
+    \item Diseñar e implementar un software en Python que permita cargar imágenes astronómicas, visualizar fuentes, realizar fotometría de apertura y exportar los resultados obtenidos.
+
+    \item Desarrollar un algoritmo adaptativo que determine los radios interno y externo del anillo de cielo considerando propiedades locales de la imagen, como el fondo, el ruido, la dispersión de la señal y la presencia de estrellas cercanas, para su uso en el software.
+
+    \item Comparar los resultados fotométricos obtenidos mediante anillos de cielo fijos y anillos adaptativos, con el fin de evaluar si el método propuesto mejora la estimación del brillo de las fuentes.
+
+    \item \textbf{Validar el software con imágenes astronómicas en formato FITS provenientes de fuentes académicas o repositorios públicos, con el propósito de evaluar el comportamiento del algoritmo en campos con diferentes niveles de densidad estelar y condiciones de fondo.}
+\end{itemize}
+
+\section{Metodología}
+
+Para el desarrollo de esta tesis se trabajará en dos componentes principales: el diseño de un software para realizar fotometría de apertura y la implementación de un algoritmo adaptativo de selección del anillo de cielo, capaz de modificar sus parámetros de acuerdo con las características de cada campo estelar.
+
+En primer lugar, se realizará una revisión teórica de los fundamentos de la fotometría CCD, la fotometría de apertura y la estimación del fondo de cielo. Se estudiarán conceptos como apertura fotométrica, anillo de cielo, señal de la fuente, ruido de fondo, relación señal-ruido, saturación, dispersión del fondo y variaciones debidas a las condiciones observacionales. Esta revisión permitirá definir los criterios físicos y computacionales que debe tener en cuenta el algoritmo.
+
+Posteriormente, se diseñará la arquitectura general del software. Este programa deberá permitir la carga de imágenes astronómicas, la selección o detección de fuentes, la visualización de la imagen, la ejecución de fotometría de apertura y la exportación de los resultados en un formato adecuado para su análisis posterior. El desarrollo se realizará principalmente en Python, utilizando librerías astronómicas y científicas como \texttt{Astropy}, \texttt{Photutils}, \texttt{NumPy}, \texttt{Pandas} y \texttt{Matplotlib}, ya que son de uso frecuente en el análisis de datos astronómicos.
+
+El segundo componente consistirá en la construcción de un algoritmo que determine automáticamente un anillo de cielo adecuado para cada imagen o fuente. Para ello, el algoritmo analizará propiedades de la imagen como el nivel medio del fondo, la desviación estándar del cielo, la presencia de ruido, la dispersión de la luz alrededor de la fuente, el posible solapamiento con estrellas cercanas y la calidad general de la imagen. Con base en estas características, el algoritmo modificará el anillo interno y externo del anillo de cielo, buscando mejorar la estimación del fondo y reducir errores sistemáticos en la medición del brillo.
+
+\textbf{Las imágenes que se utilizarán para las pruebas se obtendrán de tres fuentes previstas: primero, imágenes astronómicas reales en formato FITS suministradas por el director del proyecto o por actividades académicas de reducción fotométrica; segundo, imágenes astronómicas públicas disponibles en repositorios de datos, como SDSS \cite{abdurrouf2022sdss}, MAST o archivos de observatorios; y tercero, imágenes simuladas generadas durante el proyecto para controlar variables como nivel de fondo, ruido, separación entre fuentes y densidad estelar. Esta combinación permitirá evaluar el algoritmo tanto en condiciones controladas como en imágenes reales.}
+
+Una vez implementado el software, se realizarán pruebas con imágenes astronómicas reales \textbf{y simuladas}. Estas pruebas permitirán comparar los resultados obtenidos con anillos fijos frente a los resultados obtenidos mediante el algoritmo adaptativo. Se evaluará la precisión de las mediciones fotométricas, la estabilidad de los resultados, la reducción del ruido y la consistencia de las magnitudes calculadas. \textbf{La comparación se realizará usando métricas como la dispersión de las magnitudes medidas, la relación señal-ruido, la variación del fondo estimado y la diferencia entre los flujos obtenidos con anillos fijos y adaptativos.} En caso de contar con imágenes de una misma estrella tomadas en diferentes tiempos, también se podrán generar curvas de luz para analizar la utilidad del método en estudios de variabilidad estelar.
+
+Finalmente, se documentará el funcionamiento del software, las decisiones tomadas durante el desarrollo del algoritmo, las pruebas realizadas y los resultados obtenidos. Esta documentación permitirá evaluar si el uso de un anillo de cielo adaptativo mejora el proceso de fotometría de apertura en comparación con métodos de parámetros fijos.
+
+\section{Consideraciones Éticas}
+
+Acorde con los principios de la Universidad de los Andes y del buen ejercicio científico, este proyecto se desarrollará bajo criterios de integridad académica, transparencia y reconocimiento adecuado de las fuentes utilizadas. El proyecto no involucra experimentación con seres humanos, animales, información personal sensible ni intervención sobre comunidades, ya que se basa en el procesamiento computacional de imágenes astronómicas. Por esta razón, no se considera necesario someterlo a evaluación por parte de un Comité de Ética. En caso de utilizar imágenes provenientes de bases de datos públicas, observatorios, profesores o grupos de investigación, se dará el crédito correspondiente. Asimismo, se citarán adecuadamente los artículos, manuales, librerías, algoritmos y herramientas computacionales empleadas. Finalmente, los resultados serán presentados de manera reproducible, diferenciando claramente los desarrollos propios de aquellos métodos o herramientas previamente existentes.
+
+\section*{Cronograma}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Tareas $\backslash$ Semanas & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\
+\hline
+Reunión semanal de avances con el director de tesis & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X \\
+\hline
+Escritura progresiva del documento y correcciones & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X & X \\
+\hline
+Revisión bibliográfica sobre fotometría CCD, apertura y fondo de cielo & X & X & X & X & & & & & & & & & & & & \\
+\hline
+Definición de requerimientos funcionales del software & & X & X & X & & & & & & & & & & & & \\
+\hline
+Diseño de la estructura general del programa & & & X & X & X & & & & & & & & & & & \\
+\hline
+Implementación de carga, lectura y visualización de imágenes & & & & X & X & X & & & & & & & & & & \\
+\hline
+Implementación de fotometría de apertura con parámetros fijos & & & & & X & X & X & & & & & & & & & \\
+\hline
+Presentación del 30\% & & & & & & & & X & & & & & & & & \\
+\hline
+Desarrollo del algoritmo adaptativo para el anillo de cielo & & & & & & X & X & X & X & X & & & & & & \\
+\hline
+Pruebas del software con imágenes astronómicas reales o simuladas & & & & & & & & X & X & X & X & X & & & & \\
+\hline
+Comparación entre anillos fijos y adaptativos & & & & & & & & & X & X & X & X & X & & & \\
+\hline
+Análisis de resultados, limitaciones y ajustes del algoritmo & & & & & & & & & & X & X & X & X & X & & \\
+\hline
+Preparación del documento final y presentación oral & & & & & & & & & & & & X & X & X & X & X \\
+\hline
+\end{tabular}}
+\end{center}
+
+\section{Personas Conocedoras del Tema}
+
+\begin{itemize}
+    \item Beatriz Eugenia Sabogal Martínez.
+
+    \item Benjamín Oostra Vannoppen.
+
+    \item Juan Carlos Sanabria Arenas.
+\end{itemize}
+
+\begin{thebibliography}{9}
+
+\bibitem{howell2006handbook}
+Howell, S. B. (2006). \textit{Handbook of CCD Astronomy}. Cambridge University Press.
+
+\bibitem{dacosta1992basic}
+Da Costa, G. S. (1992). Basic photometry techniques. En S. B. Howell (Ed.), \textit{Astronomical CCD Observing and Reduction Techniques}, Astronomical Society of the Pacific Conference Series, 23, 90.
+
+\bibitem{stetson1987daophot}
+Stetson, P. B. (1987). DAOPHOT: A computer program for crowded-field stellar photometry. \textit{Publications of the Astronomical Society of the Pacific}, 99, 191--222.
+
+\bibitem{davis1994iraf}
+Davis, L. E. (1994). \textit{A Reference Guide to the IRAF/DAOPHOT Package}. National Optical Astronomy Observatories.
+
+\bibitem{astropy2013}
+Astropy Collaboration, Robitaille, T. P., Tollerud, E. J., Greenfield, P., et al. (2013). Astropy: A community Python package for astronomy. \textit{Astronomy \& Astrophysics}, 558, A33.
+
+\bibitem{bradley2024photutils}
+Bradley, L., Sipőcz, B., Robitaille, T., Tollerud, E., Vinícius, Z., Deil, C., et al. (2024). \textit{Photutils: Photometry tools}. Astropy Project.
+
+\bibitem{astropy2022}
+Astropy Collaboration, Price-Whelan, A. M., Lim, P. L., Earl, N., Starkman, N., Bradley, L., et al. (2022). The Astropy Project: Sustaining and Growing a Community-oriented Open-source Project and the Latest Major Release (v5.0) of the Core Package. \textit{The Astrophysical Journal}, 935(2), 167.
+
+\bibitem{abdurrouf2022sdss}
+Abdurro'uf, Accetta, K., Aerts, C., et al. (2022). The Seventeenth Data Release of the Sloan Digital Sky Surveys: Complete Release of MaNGA, MaStar and APOGEE-2 Data. \textit{The Astrophysical Journal Supplement Series}, 259(2), 35.
+
+\end{thebibliography}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{minipage}{0.45\textwidth}
+\centering
+\rule{7cm}{0.4pt}\\
+Santiago Serrano Perico\\
+Código: \textit{202313958}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\rule{7cm}{0.4pt}\\
+Dr. Alejandro García\\
+Director
+\end{minipage}
+
+\end{document}

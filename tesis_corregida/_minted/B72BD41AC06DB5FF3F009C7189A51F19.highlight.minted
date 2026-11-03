@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+imhead m92010.fits long+
+imhead m92011.fits long+
+imhead m92014.fits long+
+imhead m92015.fits long+
+\end{MintedVerbatim}

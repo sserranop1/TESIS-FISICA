@@ -1,0 +1,238 @@
+GUION DE PRESENTACIÓN – SEMINARIO DE ASTRONOMÍA
+Desarrollo de un software para fotometría de apertura con selección adaptativa del anillo de cielo
+Santiago Serrano Perico · Duración objetivo: 20 minutos
+
+DIAPOSITIVA 1 | 0:00–0:20
+Buenas tardes. Mi nombre es Santiago Serrano Perico y hoy les voy a presentar el avance de mi tesis, titulada “Desarrollo de un software para fotometría de apertura con selección adaptativa del anillo de cielo”. El trabajo se desarrolla en el Departamento de Física de la Universidad de los Andes y está orientado al procesamiento y análisis fotométrico de imágenes astronómicas CCD.
+
+DIAPOSITIVA 2 | 0:20–0:40
+En estos veinte minutos quiero mostrar cuatro cosas: cuál es el problema que estoy abordando, cuáles son los fundamentos físicos que necesito, cómo estoy construyendo el flujo de trabajo con IRAF y Python, y cuáles son los resultados parciales que ya tengo. Al final voy a mostrar qué falta para convertir este flujo en una herramienta más automatizada.
+
+DIAPOSITIVA 3 | 0:40–0:55
+La idea general se puede resumir en esta cadena: parto de una imagen CCD, la reduzco, detecto las fuentes, hago fotometría, aplico criterios de calidad y finalmente construyo un diagrama color–magnitud. Lo importante es que cada etapa afecta la calidad de la siguiente.
+
+DIAPOSITIVA 4 | 0:55–1:00
+Con esto entro al primer bloque: contexto y problema.
+
+DIAPOSITIVA 5 | 1:00–1:25
+La motivación es que la fotometría convierte una imagen en una medición cuantitativa de brillo. En un cúmulo estelar, esas magnitudes permiten construir diagramas color–magnitud. Pero medir una estrella no consiste simplemente en sumar píxeles: la imagen contiene ruido, señal instrumental, fondo de cielo y posibles fuentes cercanas.
+
+DIAPOSITIVA 6 | 1:25–1:50
+El problema práctico de la tesis es precisamente controlar esas fuentes de error. Estoy usando IRAF como plataforma de referencia y Python para los análisis complementarios. El objetivo final es avanzar hacia un software propio que pueda escoger parámetros de manera más informada, especialmente la región usada para estimar el cielo.
+
+DIAPOSITIVA 7 | 1:50–2:10
+La pregunta de investigación es cómo implementar un flujo de trabajo que permita reducir imágenes CCD, identificar fuentes y obtener magnitudes instrumentales confiables mediante fotometría de apertura. M92 y M41 funcionan como los casos de prueba del desarrollo.
+
+DIAPOSITIVA 8 | 2:10–2:35
+Los objetivos específicos son tres: primero, realizar la reducción CCD; segundo, determinar parámetros adecuados para detección y fotometría, como FWHM, apertura, fondo y umbral; y tercero, depurar la muestra usando criterios de calidad relacionados con vecinos cercanos y contaminación del anillo de cielo.
+
+DIAPOSITIVA 9 | 2:35–2:50
+Hasta este momento ya tengo un flujo funcional con M92 y M41, combinando IRAF y Python, y ya puedo producir un CMD instrumental con una muestra filtrada. Todavía falta la calibración fotométrica y una validación más profunda.
+
+DIAPOSITIVA 10 | 2:50–2:55
+Ahora paso muy brevemente a los conceptos físicos que justifican el procedimiento.
+
+DIAPOSITIVA 11 | 2:55–3:15
+Un CCD convierte fotones en carga eléctrica. Esa carga se lee y termina almacenada como valores digitales en una imagen FITS. Sin embargo, el valor de cada píxel no corresponde solamente a la estrella; también contiene fondo, señal electrónica y ruido.
+
+DIAPOSITIVA 12 | 3:15–3:30
+Por eso una imagen cruda puede pensarse como la suma de la señal de la estrella, el cielo, el bias, la corriente oscura y el ruido. Esta expresión conceptual explica por qué la reducción debe hacerse antes de medir magnitudes.
+
+DIAPOSITIVA 13 | 3:30–3:45
+El bias es un nivel electrónico introducido por el sistema de lectura. Si no se corrige, desplaza artificialmente las cuentas de la imagen y afecta las comparaciones fotométricas.
+
+DIAPOSITIVA 14 | 3:45–4:00
+El overscan permite seguir variaciones del nivel electrónico en cada exposición. Como esa región no fue expuesta a la luz, sirve para estimar cambios del nivel base del detector antes de recortar la imagen.
+
+DIAPOSITIVA 15 | 4:00–4:15
+El flat field corrige diferencias de sensibilidad entre píxeles y efectos espaciales como viñeteo o polvo. La idea es que una misma cantidad de luz produzca una respuesta comparable en distintas regiones del detector.
+
+DIAPOSITIVA 16 | 4:15–4:30
+En forma simplificada, la imagen corregida se obtiene restando las contribuciones instrumentales y dividiendo por el flat normalizado. Esta ecuación resume la lógica de la reducción que después implemento con IRAF.
+
+DIAPOSITIVA 17 | 4:30–4:45
+Además de las correcciones sistemáticas, toda medición tiene ruido. Las principales contribuciones son el ruido de Poisson de la estrella y del cielo, el ruido de lectura y otras fuentes instrumentales. Por eso siempre es necesario acompañar una magnitud con una incertidumbre.
+
+DIAPOSITIVA 18 | 4:45–5:05
+La relación señal–ruido resume la calidad de la medición. Esta expresión también muestra por qué una apertura más grande no siempre es mejor: se captura más señal de la estrella, pero al mismo tiempo se agregan más píxeles de cielo y más ruido.
+
+DIAPOSITIVA 19 | 5:05–5:20
+Una estrella puntual no aparece en un solo píxel. La atmósfera, la óptica, el seguimiento y el detector distribuyen su luz en una PSF. Esa extensión espacial es fundamental para definir el tamaño de la apertura.
+
+DIAPOSITIVA 20 | 5:20–5:35
+Para caracterizar ese tamaño uso el FWHM. Si el perfil es aproximadamente gaussiano, el FWHM está relacionado con sigma por esta expresión. En la práctica lo medí con imexamine y usé la mediana de varias estrellas.
+
+DIAPOSITIVA 21 | 5:35–5:55
+La fotometría de apertura integra las cuentas dentro de un círculo centrado en la estrella. El fondo local se estima en un anillo alrededor. La precisión depende entonces tanto del círculo central como de que el anillo represente realmente cielo y no esté contaminado.
+
+DIAPOSITIVA 22 | 5:55–6:10
+El flujo neto se obtiene restando a las cuentas de la apertura la contribución estimada del cielo. Esta parte es clave para mi tesis: si otra estrella cae dentro del anillo, el cielo se sobreestima y la magnitud resultante queda sesgada.
+
+DIAPOSITIVA 23 | 6:10–6:25
+Con el flujo neto obtengo una magnitud instrumental. La llamo instrumental porque todavía depende del detector, el filtro, la atmósfera y el sistema de observación; no es aún una magnitud estándar.
+
+DIAPOSITIVA 24 | 6:25–6:40
+Con las magnitudes en dos filtros puedo construir un CMD. En este trabajo uso B menos V en el eje horizontal y V en el vertical, invertido por la convención astronómica de magnitudes.
+
+DIAPOSITIVA 25 | 6:40–6:45
+Con ese contexto paso a los datos y la metodología.
+
+DIAPOSITIVA 26 | 6:45–7:00
+El conjunto principal está formado por imágenes de M92. Las imágenes m92011 y m92015 son especialmente importantes porque las uso para el CMD. M41 se usa como un segundo caso para comprobar que el flujo funciona sobre datos con una estructura distinta.
+
+DIAPOSITIVA 27 | 7:00–7:15
+IRAF se usó para inspección, visualización, medición de perfiles, detección y fotometría. Python se usó para analizar las salidas, construir gráficas, calcular vecinos, ajustar modelos y estudiar estadísticamente los anillos de cielo.
+
+DIAPOSITIVA 28 | 7:15–7:30
+Este es el flujo operativo: se inspecciona el FITS, se reduce con ccdproc, se mide el FWHM, se detecta con daofind, se hace fotometría con phot y luego se extraen las columnas necesarias con txdump para analizarlas en Python.
+
+DIAPOSITIVA 29 | 7:30–7:50
+En M92 la reducción incluyó inspección del encabezado, overscan, recorte, bias y flat field. Esta etapa es indispensable porque toda la fotometría posterior supone que la imagen ya está corregida de los principales efectos instrumentales.
+
+DIAPOSITIVA 30 | 7:50–8:00
+Aquí muestro un ejemplo de la imagen después de la reducción. No me voy a detener en detalles visuales; lo importante es que esta es la imagen que entra a las etapas de detección y fotometría.
+
+DIAPOSITIVA 31 | 8:00–8:20
+Antes de automatizar la detección inspeccioné manualmente estrellas brillantes, no saturadas y relativamente aisladas con imexamine. De esas estrellas obtuve el FWHM y también caractericé regiones representativas del fondo.
+
+DIAPOSITIVA 32 | 8:20–8:40
+Con esas mediciones calculé la mediana del FWHM para cada imagen. La apertura se definió como tres veces esa mediana. Por ejemplo, en m92011 el FWHM fue 3.355 píxeles y la apertura correspondiente fue 10.065 píxeles.
+
+DIAPOSITIVA 33 | 8:40–8:55
+Para daofind también estudié el umbral de detección. Un valor demasiado bajo produce muchas detecciones espurias y uno demasiado alto elimina estrellas débiles. El valor que adopté para este avance fue 3.5.
+
+DIAPOSITIVA 34 | 8:55–9:10
+Para visualizar cómo cambia el número de detecciones con el umbral ajusté esta función logística. La idea del modelo es resumir la caída del número de fuentes detectadas cuando aumenta el threshold.
+
+DIAPOSITIVA 35 | 9:10–9:20
+Esta gráfica muestra los datos y el ajuste. El objetivo no fue elegir el punto con más detecciones, sino identificar una zona de compromiso y después verificar visualmente las fuentes.
+
+DIAPOSITIVA 36 | 9:20–9:35
+M41 era un archivo multiextensión, así que separé sus tres canales en imágenes independientes. Esto me permitió aplicar el mismo esquema de detección y fotometría en un conjunto distinto a M92.
+
+DIAPOSITIVA 37 | 9:35–9:55
+Para el CMD de M92 asocié m92011 al filtro V y m92015 al filtro B. Después de extraer MAG y MERR, emparejé las fuentes y calculé el color instrumental B menos V. El eje V se muestra invertido.
+
+DIAPOSITIVA 38 | 9:55–10:15
+El primer filtro de calidad fue geométrico. Para cada estrella calculé su vecino más cercano. En m92011 usé como límite tres veces el FWHM, es decir 10.065 píxeles. Si había otra fuente dentro de ese radio, la estrella se consideró potencialmente contaminada.
+
+DIAPOSITIVA 39 | 10:15–10:35
+El segundo filtro analiza el anillo de cielo. Utilicé un radio interno de 15 píxeles y un ancho de 10, por lo que estudié la región entre 15 y 25 píxeles. Una fracción alta de valores atípicos puede indicar que hay otra estrella aportando señal al supuesto fondo.
+
+DIAPOSITIVA 40 | 10:35–10:40
+Con esto paso a los resultados parciales.
+
+DIAPOSITIVA 41 | 10:40–10:50
+Primero, esta es una de las imágenes crudas de M92 antes de completar la reducción.
+
+DIAPOSITIVA 42 | 10:50–11:00
+Y aquí está la imagen después del procesamiento. La comparación sirve principalmente para documentar que el flujo de reducción se ejecutó antes de la fotometría.
+
+DIAPOSITIVA 43 | 11:00–11:08
+En M41, este es el canal azul extraído del archivo multiextensión.
+
+DIAPOSITIVA 44 | 11:08–11:16
+Este corresponde al canal rojo.
+
+DIAPOSITIVA 45 | 11:16–11:24
+Y este al canal verde. Los muestro rápidamente para evidenciar la separación de extensiones y la preparación de los datos.
+
+DIAPOSITIVA 46 | 11:24–11:40
+Aquí se observan las detecciones automáticas sobre m92011. Las coordenadas producidas por daofind se superpusieron con tvmark para revisar que coincidieran con fuentes estelares reales.
+
+DIAPOSITIVA 47 | 11:40–11:55
+El mismo procedimiento se aplicó a M41. Esto muestra que la lógica de detección puede trasladarse a otro conjunto de imágenes.
+
+DIAPOSITIVA 48 | 11:55–12:10
+Esta gráfica muestra magnitud instrumental frente a error para M92.
+
+DIAPOSITIVA 49 | 12:10–12:20
+Y aquí está el mismo diagnóstico para M41.
+
+DIAPOSITIVA 50 | 12:20–12:40
+En ambos casos la tendencia cualitativa es la esperada: las fuentes más débiles, es decir de magnitud instrumental mayor, tienden a tener errores más grandes. Esto es consistente con una disminución de la relación señal–ruido.
+
+DIAPOSITIVA 51 | 12:40–12:55
+Este es el CMD instrumental inicial de M92 antes de aplicar los filtros de calidad. Quiero insistir en que todavía es instrumental; no debo interpretarlo como un CMD calibrado.
+
+DIAPOSITIVA 52 | 12:55–13:15
+Al aplicar el criterio de vecinos cercanos se rechazaron 14 fuentes en la muestra analizada. El criterio no busca eliminar estrellas por apariencia, sino identificar casos donde la fotometría puede estar mezclando flujo de dos fuentes.
+
+DIAPOSITIVA 53 | 13:15–13:25
+Aquí muestro las fuentes rechazadas por tener un vecino dentro de tres veces el FWHM.
+
+DIAPOSITIVA 54 | 13:25–13:35
+Y aquí las que superaron ese primer criterio. Estas imágenes son importantes porque permiten verificar visualmente que el filtro tiene una interpretación geométrica clara.
+
+DIAPOSITIVA 55 | 13:35–13:55
+El segundo filtro encontró 28 fuentes cuyos anillos de cielo mostraban indicios de contaminación. Es una situación diferente: la apertura puede estar relativamente limpia, pero el fondo usado para corregirla puede no estarlo.
+
+DIAPOSITIVA 56 | 13:55–14:10
+Esta gráfica resume la fracción de píxeles atípicos altos en los anillos. Los valores elevados son una señal de alerta de que el anillo no está representando solamente cielo.
+
+DIAPOSITIVA 57 | 14:10–14:20
+Aquí están las fuentes rechazadas por el criterio del anillo.
+
+DIAPOSITIVA 58 | 14:20–14:30
+Y aquí las fuentes aceptadas después de este segundo filtro.
+
+DIAPOSITIVA 59 | 14:30–14:45
+Finalmente, este CMD muestra la información de los filtros sobre el diagrama color–magnitud. La ventaja es que puedo ver qué puntos están potencialmente afectados y cuáles constituyen una muestra más limpia.
+
+DIAPOSITIVA 60 | 14:45–15:05
+La lectura principal es que el filtrado cambia la muestra que entra al análisis, pero no de manera arbitraria: cada rechazo tiene una justificación geométrica o estadística. Todavía falta calibrar las magnitudes para hacer una interpretación física rigurosa.
+
+DIAPOSITIVA 61 | 15:05–15:10
+En la última parte quiero discutir qué significan estos resultados y hacia dónde va la tesis.
+
+DIAPOSITIVA 62 | 15:10–15:30
+Usar tres veces el FWHM tiene la ventaja de vincular la apertura y el criterio de proximidad con el tamaño real de las fuentes en cada imagen. Es un criterio reproducible y dependiente de las condiciones observacionales.
+
+DIAPOSITIVA 63 | 15:30–15:50
+Revisar el anillo de cielo es igual de importante. Una estrella puede parecer aislada en la apertura, pero si otra fuente cae dentro del anillo, el fondo queda sobreestimado y el flujo neto de la estrella principal se subestima.
+
+DIAPOSITIVA 64 | 15:50–16:10
+La principal limitación actual es que las magnitudes son instrumentales. Además, en un cúmulo denso como M92, la fotometría de apertura tiene límites cuando las PSF se superponen. Por eso todavía no presento una interpretación astrofísica definitiva del CMD.
+
+DIAPOSITIVA 65 | 16:10–16:25
+Como extensión del trabajo aparece Sextans A, una galaxia enana irregular donde las fuentes resueltas son más débiles y el problema de contaminación y calibración es aún más exigente. La idea es que este objeto funcione como una prueba futura del alcance del método.
+
+DIAPOSITIVA 66 | 16:25–16:40
+El objetivo final es transformar este flujo, que hoy combina IRAF y Python, en un software propio. La entrada sería una imagen FITS y el sistema debería automatizar detección, estimación de FWHM, apertura, selección del anillo y control de calidad.
+
+DIAPOSITIVA 67 | 16:40–17:00
+El software puede organizarse en tres módulos: preprocesamiento, medición y validación. El tercer módulo es especialmente importante porque incorpora los criterios desarrollados en esta etapa, en lugar de entregar magnitudes sin revisar su contexto local.
+
+DIAPOSITIVA 68 | 17:00–17:20
+La validación pendiente incluye estudiar sensibilidad a los parámetros, comparar con datos de referencia, cuantificar incertidumbres y comprobar reproducibilidad. Esto será necesario para justificar que la automatización no degrade la calidad del resultado.
+
+DIAPOSITIVA 69 | 17:20–17:40
+También falta la calibración fotométrica. Para pasar de magnitudes instrumentales a un sistema estándar debo incluir punto cero, extinción atmosférica, masa de aire y posiblemente términos de color. Solo después de esto el CMD podrá compararse con modelos o catálogos.
+
+DIAPOSITIVA 70 | 17:40–18:00
+Otra comparación importante será con fotometría de PSF. En campos densos puede separar fuentes que la fotometría de apertura debe rechazar. Comparar ambos métodos permitiría cuantificar dónde funciona bien el enfoque actual y dónde deja de ser suficiente.
+
+DIAPOSITIVA 71 | 18:00–18:20
+La contribución del avance es haber construido un flujo reproducible que integra IRAF y Python, y añadir dos controles de calidad concretos: vecinos cercanos y contaminación del anillo de cielo. El producto científico actual es un CMD instrumental con una muestra mejor caracterizada.
+
+DIAPOSITIVA 72 | 18:20–18:45
+Como conclusiones parciales: ya puedo partir de imágenes CCD y llegar a magnitudes instrumentales, errores y un CMD; la selección del FWHM y del threshold se incorporó de manera explícita; y los dos filtros permiten identificar mediciones potencialmente afectadas antes de interpretar el diagrama.
+
+DIAPOSITIVA 73 | 18:45–19:10
+La siguiente etapa es consolidar el software, automatizar la selección del anillo de cielo, realizar pruebas de sensibilidad, calibrar las magnitudes y comparar con referencias externas. La meta es pasar de un flujo validado manualmente a una herramienta más general y reproducible.
+
+DIAPOSITIVA 74 | 19:10–19:35
+El mensaje final que quiero dejar es que una fotometría confiable no depende solamente de detectar estrellas. También depende de controlar qué se mide, dónde se mide y qué tan contaminada está cada medición. Ese control de calidad es el núcleo que quiero desarrollar en la tesis.
+
+DIAPOSITIVA 75 | Respaldo
+Esta diapositiva no la presentaría durante los veinte minutos. La dejaría únicamente para responder preguntas sobre qué tareas de IRAF se utilizaron.
+
+DIAPOSITIVA 76 | Respaldo
+Esta también es de respaldo. Si preguntan por números concretos, aquí puedes recordar: threshold 3.5, FWHM de m92011 igual a 3.355 píxeles, 3FWHM igual a 10.065 píxeles y anillo de 15 a 25 píxeles.
+
+DIAPOSITIVA 77 | Respaldo
+Esta diapositiva funciona como resumen de emergencia. Si te piden sintetizar el trabajo en treinta segundos, puedes leerla casi literalmente.
+
+DIAPOSITIVA 78 | 19:35–20:00
+Muchas gracias por su atención. Quedo atento a sus preguntas y comentarios.
+

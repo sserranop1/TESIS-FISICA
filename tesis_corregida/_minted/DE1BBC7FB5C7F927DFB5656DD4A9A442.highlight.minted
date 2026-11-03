@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+imcopy M41.fits[0] M41\PYGZus{}blue.fits
+imcopy M41.fits[1] M41\PYGZus{}red.fits
+imcopy M41.fits[2] M41\PYGZus{}green.fits
+\end{MintedVerbatim}

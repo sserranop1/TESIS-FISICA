@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+daofind m92011.fits \PYGZbs{}
+    output=m92011.coo \PYGZbs{}
+    fwhmpsf=3.355 \PYGZbs{}
+    sigma=SIGMA \PYGZbs{}
+    threshold=3.5 \PYGZbs{}
+    verify\PYGZhy{}
+\end{MintedVerbatim}

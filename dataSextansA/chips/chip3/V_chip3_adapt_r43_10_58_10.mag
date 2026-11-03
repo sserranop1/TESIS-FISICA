@@ -1,0 +1,120 @@
+#K IRAF       = CommunityIRAFV2.18.2    version    %-23s     
+#K USER       =                         name       %-23s     
+#K HOST       = MacBook-Air-de-Santiago computer   %-23s     
+#K DATE       = 2026-10-26              yyyy-mm-dd %-23s     
+#K TIME       = 11:33:18                hh:mm:ss   %-23s     
+#K PACKAGE    = apphot                  name       %-23s     
+#K TASK       = phot                    name       %-23s     
+#
+#K SCALE      = 1.                      units      %-23.7g   
+#K FWHMPSF    = 4.62                    scaleunit  %-23.7g   
+#K EMISSION   = yes                     switch     %-23b     
+#K DATAMIN    = INDEF                   counts     %-23.7g   
+#K DATAMAX    = 39000.                  counts     %-23.7g   
+#K EXPOSURE   = ""                      keyword    %-23s     
+#K AIRMASS    = ""                      keyword    %-23s     
+#K FILTER     = ""                      keyword    %-23s     
+#K OBSTIME    = ""                      keyword    %-23s     
+#
+#K NOISE      = poisson                 model      %-23s     
+#K SIGMA      = 3.17                    counts     %-23.7g   
+#K GAIN       = ""                      keyword    %-23s     
+#K EPADU      = 2.75                    e-/adu     %-23.7g   
+#K CCDREAD    = ""                      keyword    %-23s     
+#K READNOISE  = 6.4125                  e-         %-23.7g   
+#
+#K CALGORITHM = none                    algorithm  %-23s     
+#K CBOXWIDTH  = 5.                      scaleunit  %-23.7g   
+#K CTHRESHOLD = 0.                      sigma      %-23.7g   
+#K MINSNRATIO = 1.                      number     %-23.7g   
+#K CMAXITER   = 10                      number     %-23d     
+#K MAXSHIFT   = 1.                      scaleunit  %-23.7g   
+#K CLEAN      = no                      switch     %-23b     
+#K RCLEAN     = 1.                      scaleunit  %-23.7g   
+#K RCLIP      = 2.                      scaleunit  %-23.7g   
+#K KCLEAN     = 3.                      sigma      %-23.7g   
+#
+#K SALGORITHM = mode                    algorithm  %-23s     
+#K ANNULUS    = 43.1                    scaleunit  %-23.7g   
+#K DANNULUS   = 15.                     scaleunit  %-23.7g   
+#K SKYVALUE   = 0.                      counts     %-23.7g   
+#K KHIST      = 3.                      sigma      %-23.7g   
+#K BINSIZE    = 0.1                     sigma      %-23.7g   
+#K SMOOTH     = no                      switch     %-23b     
+#K SMAXITER   = 10                      number     %-23d     
+#K SLOCLIP    = 0.                      percent    %-23.7g   
+#K SHICLIP    = 0.                      percent    %-23.7g   
+#K SNREJECT   = 50                      number     %-23d     
+#K SLOREJECT  = 3.                      sigma      %-23.7g   
+#K SHIREJECT  = 3.                      sigma      %-23.7g   
+#K RGROW      = 0.                      scaleunit  %-23.7g   
+#
+#K WEIGHTING  = constant                model      %-23s     
+#K APERTURES  = 13.86                   scaleunit  %-23s     
+#K ZMAG       = 25.                     zeropoint  %-23.7g   
+#
+#N IMAGE               XINIT     YINIT     ID    COORDS                 LID    \
+#U imagename           pixels    pixels    ##    filename               ##     \
+#F %-23s               %-10.3f   %-10.3f   %-6d  %-23s                  %-6d    
+#
+#N XCENTER    YCENTER    XSHIFT  YSHIFT  XERR    YERR            CIER CERROR   \
+#U pixels     pixels     pixels  pixels  pixels  pixels          ##   cerrors  \
+#F %-14.3f    %-11.3f    %-8.3f  %-8.3f  %-8.3f  %-15.3f         %-5d %-9s      
+#
+#N MSKY           STDEV          SSKEW          NSKY   NSREJ     SIER SERROR   \
+#U counts         counts         counts         npix   npix      ##   serrors  \
+#F %-18.7g        %-15.7g        %-15.7g        %-7d   %-9d      %-5d %-9s      
+#
+#N ITIME          XAIRMASS       IFILTER                OTIME                  \
+#U timeunit       number         name                   timeunit               \
+#F %-18.7g        %-15.7g        %-23s                  %-23s                   
+#
+#N RAPERT   SUM           AREA       FLUX          MAG    MERR   PIER PERROR   \
+#U scale    counts        pixels     counts        mag    mag    ##   perrors  \
+#F %-12.2f  %-14.7g       %-11.7g    %-14.7g       %-7.3f %-6.3f %-5d %-9s      
+#
+SexA_V_chip3.fits      848.111   95.080    1     V_chip3_adapt_r43_10_581      \
+   848.111    95.080     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.157049      3.496434       1.229579       4677   86       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    646.7925      603.6085   1948.806      16.776 0.053 0    NoError    
+SexA_V_chip3.fits      1598.797  179.649   2     V_chip3_adapt_r43_10_582      \
+   1598.797   179.649    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.086678      3.345998       1.085754       4739   23       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    280598.1      603.737    281857.9      11.375 0.001 0    NoError    
+SexA_V_chip3.fits      1572.033  193.689   3     V_chip3_adapt_r43_10_583      \
+   1572.033   193.689    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.842748      3.516554       1.65162        4745   27       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    159556.7      603.8946   160669.5      11.985 0.002 0    NoError    
+SexA_V_chip3.fits      3228.523  198.747   4     V_chip3_adapt_r43_10_584      \
+   3228.523   198.747    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.792384      3.352424       1.36399        4688   69       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    265386.4      603.659    266468.4      11.436 0.001 0    NoError    
+SexA_V_chip3.fits      235.884   326.938   5     V_chip3_adapt_r43_10_585      \
+   235.884    326.938    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.843417      4.870137       1.99592        4716   51       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    576.5866      603.6162   1689.303      16.931 0.083 0    NoError    
+SexA_V_chip3.fits      834.742   428.279   6     V_chip3_adapt_r43_10_586      \
+   834.742    428.279    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.560536      3.135761       1.329839       4706   67       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    -721.8926     603.7439   824.0154      17.710 0.110 0    NoError    
+SexA_V_chip3.fits      1371.482  913.885   7     V_chip3_adapt_r43_10_587      \
+   1371.482   913.885    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.431781      3.121165       1.293747       4723   41       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    20903.04      603.7794   22371.3       14.126 0.006 0    NoError    
+SexA_V_chip3.fits      2133.394  1321.657  8     V_chip3_adapt_r43_10_588      \
+   2133.394   1321.657   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.218491      3.176102       1.478612       4704   69       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    1518.642      603.6395   2857.811      16.360 0.034 0    NoError    
+SexA_V_chip3.fits      2136.240  1774.524  9     V_chip3_adapt_r43_10_589      \
+   2136.240   1774.524   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.344809      3.200317       1.286895       4738   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   13.86    5810.495      603.6544   6622.294      15.447 0.016 0    NoError    

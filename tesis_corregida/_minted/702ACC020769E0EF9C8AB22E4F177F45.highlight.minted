@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+txdump m92011.mag \PYGZbs{}
+XCENTER,YCENTER,MAG,MERR \PYGZbs{}
+yes \PYGZgt{} m92011\PYGZus{}final.dat
+\end{MintedVerbatim}

@@ -1,0 +1,79 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Marco teórico}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Detectores CCD}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Eficiencia cuántica}{8}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Ganancia del detector}{8}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Linealidad y saturación}{9}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Componentes de una imagen CCD}{9}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}Nivel de polarización (\textit {bias})}{9}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.7}Región de sobrelectura (\textit {overscan})}{10}{subsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.1.8}Recorte de la imagen}{10}{subsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.1.9}Corriente oscura}{11}{subsection.1.1.9}%
+\contentsline {subsection}{\numberline {1.1.10}Corrección de campo plano (\textit {flat field})}{11}{subsection.1.1.10}%
+\contentsline {subsection}{\numberline {1.1.11}Fuentes de ruido en imágenes CCD}{12}{subsection.1.1.11}%
+\contentsline {subsubsection}{Ruido de Poisson}{12}{section*.6}%
+\contentsline {subsubsection}{Ruido de lectura}{12}{section*.7}%
+\contentsline {subsection}{\numberline {1.1.12}Relación señal--ruido}{13}{subsection.1.1.12}%
+\contentsline {subsection}{\numberline {1.1.13}Formación de la imagen de una estrella}{13}{subsection.1.1.13}%
+\contentsline {subsection}{\numberline {1.1.14}Turbulencia atmosférica (\textit {seeing})}{13}{subsection.1.1.14}%
+\contentsline {subsection}{\numberline {1.1.15}Ancho a media altura (FWHM)}{14}{subsection.1.1.15}%
+\contentsline {subsection}{\numberline {1.1.16}Fotometría astronómica}{14}{subsection.1.1.16}%
+\contentsline {subsection}{\numberline {1.1.17}Fotometría de apertura}{14}{subsection.1.1.17}%
+\contentsline {subsection}{\numberline {1.1.18}Selección del radio de apertura}{15}{subsection.1.1.18}%
+\contentsline {subsection}{\numberline {1.1.19}Estimación del fondo de cielo}{15}{subsection.1.1.19}%
+\contentsline {subsection}{\numberline {1.1.20}Contaminación por estrellas cercanas}{15}{subsection.1.1.20}%
+\contentsline {subsection}{\numberline {1.1.21}Criterio de vecinos más cercanos}{16}{subsection.1.1.21}%
+\contentsline {subsection}{\numberline {1.1.22}Magnitud instrumental}{16}{subsection.1.1.22}%
+\contentsline {subsection}{\numberline {1.1.23}Error fotométrico}{16}{subsection.1.1.23}%
+\contentsline {subsection}{\numberline {1.1.24}Filtros fotométricos}{17}{subsection.1.1.24}%
+\contentsline {subsection}{\numberline {1.1.25}Índice de color}{17}{subsection.1.1.25}%
+\contentsline {subsection}{\numberline {1.1.26}Diagrama color--magnitud}{17}{subsection.1.1.26}%
+\contentsline {subsection}{\numberline {1.1.27}Cúmulos estelares}{18}{subsection.1.1.27}%
+\contentsline {subsubsection}{M92}{18}{section*.8}%
+\contentsline {subsubsection}{M41}{18}{section*.9}%
+\contentsline {subsection}{\numberline {1.1.28}Galaxia enana irregular Sextans A}{18}{subsection.1.1.28}%
+\contentsline {subsection}{\numberline {1.1.29}IRAF}{21}{subsection.1.1.29}%
+\contentsline {subsection}{\numberline {1.1.30}Detección automática mediante \texttt {daofind}}{21}{subsection.1.1.30}%
+\contentsline {section}{\numberline {1.2}Estructura del documento}{21}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Pregunta de investigación}{22}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objetivos}{22}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{22}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Objetivos específicos}{22}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Metodología}{23}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Datos utilizados}{23}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Entorno computacional}{23}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Reducción CCD de M92}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Identificación manual de estrellas}{24}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Determinación del FWHM}{24}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Selección de apertura y umbral de detección}{24}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Procesamiento de M41}{25}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Detección automática de estrellas}{25}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Fotometría de apertura}{26}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Construcción del CMD de M92}{26}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Filtro de vecinos más cercanos}{26}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Análisis de contaminación del anillo de cielo}{27}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Resultados y discusión}{28}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Reducción CCD de M92}{28}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Separación de canales de M41}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Selección del umbral de detección}{31}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Detección automática en M92}{32}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Detección automática en M41}{33}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Relación entre magnitud y error fotométrico}{34}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Diagrama color--magnitud inicial de M92}{35}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Filtrado mediante vecinos más cercanos}{36}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Contaminación del anillo de cielo}{38}{section.3.9}%
+\contentsline {section}{\numberline {3.10}CMD después del proceso de filtrado}{41}{section.3.10}%
+\contentsline {section}{\numberline {3.11}Discusión general}{42}{section.3.11}%
+\contentsline {chapter}{\numberline {4}Conclusiones}{45}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Trabajo futuro}{46}{section.4.1}%
+\contentsline {chapter}{Appendices}{}{section*.31}
+\contentsline {chapter}{\numberline {A}Comandos principales utilizados en IRAF}{49}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Reducción}{49}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Inspección de estrellas}{49}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Detección automática}{49}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Marcado de coordenadas}{50}{section.Alph1.4}%
+\contentsline {section}{\numberline {A.5}Fotometría}{50}{section.Alph1.5}%
+\contentsline {section}{\numberline {A.6}Extracción de resultados}{50}{section.Alph1.6}%
+\contentsline {chapter}{\numberline {B}Distribución de los anillos de cielo}{51}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Material complementario}{53}{appendix.Alph3}%

@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+phot m92011.fits \PYGZbs{}
+    coords=m92011.coo \PYGZbs{}
+    output=m92011.mag \PYGZbs{}
+    interac\PYGZhy{} \PYGZbs{}
+    verify\PYGZhy{}
+\end{MintedVerbatim}

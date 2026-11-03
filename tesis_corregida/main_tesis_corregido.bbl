@@ -1,0 +1,16 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Dohm-Palmer {et~al.}(2002)Dohm-Palmer, Skillman, Mateo, Saha, Dolphin, Tolstoy, Gallagher, \& Cole}]{dohmpalmer2002}
+Dohm-Palmer, R.~C., Skillman, E.~D., Mateo, M., {et~al.} 2002, \href{http://dx.doi.org/10.1086/324635}{\color{magenta}The Astronomical Journal}, 123, 813
+
+\bibitem[{Flores {et~al.}(2026)Flores, Fantino, Battaglia, \& Aparicio}]{flores2026}
+Flores, R., Fantino, E., Battaglia, G., \& Aparicio, A. 2026, \href{http://dx.doi.org/10.1093/mnras/stag635}{\color{magenta}Monthly Notices of the Royal Astronomical Society}, 550, stag635
+
+\bibitem[{Howell(2006)}]{howell2006}
+Howell, S.~B. 2006, Handbook of CCD Astronomy, 2nd edn. (Cambridge: Cambridge University Press)
+
+\bibitem[{{Subaru Telescope}(2004)}]{subaru2004sextansa}
+{Subaru Telescope}. 2004, A Treasure Chest of Stars -- Dwarf Irregular Galaxy Sextans A, \url{https://subarutelescope.org/old/Pressrelease/2004/02/23/index.html}, press release, 23 de febrero de 2004
+
+\end{thebibliography}

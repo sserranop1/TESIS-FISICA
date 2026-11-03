@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+txdump estrellas.mag \PYGZbs{}
+    XCENTER,YCENTER,MAG,MERR \PYGZbs{}
+    yes \PYGZgt{} estrellas.dat
+\end{MintedVerbatim}
