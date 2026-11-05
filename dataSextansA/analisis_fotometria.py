@@ -11,6 +11,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from pathlib import Path
 
 import matplotlib
@@ -54,6 +55,29 @@ def image_data(path: Path) -> np.ndarray:
     raise ValueError(f"No se encontro imagen 2D en {path}")
 
 
+def read_chip_fwhm(chipdir: Path, prefix: str) -> tuple[float, str]:
+    """Lee el FWHM por chip del catálogo DAOFIND; usa PHOT como respaldo."""
+    candidates = [
+        chipdir / f"{prefix}_final.coo",
+        chipdir / f"{prefix}_fixed.mag",
+    ]
+    pattern = re.compile(r"FWHMPSF\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][+-]?\d+)?)")
+    for path in candidates:
+        if not path.exists():
+            continue
+        with path.open(errors="replace") as stream:
+            for line in stream:
+                match = pattern.search(line)
+                if match:
+                    fwhm = float(match.group(1))
+                    if math.isfinite(fwhm) and fwhm > 0:
+                        return fwhm, path.name
+    raise ValueError(
+        f"No se encontro un FWHMPSF valido en {candidates[0].name} "
+        f"ni en {candidates[1].name}"
+    )
+
+
 def nearest_distances(rows: list[dict[str, float]], indexes: list[int]) -> dict[int, float]:
     if len(indexes) < 2:
         return {idx: float("nan") for idx in indexes}
@@ -70,16 +94,24 @@ def make_chip_outputs(chipdir: Path, max_error: float) -> dict:
     if not catalog.exists() or not fits_path.exists():
         return {"chip": tag, "estado": "omitido: falta quality.dat o imagen FITS"}
 
+    try:
+        fwhm_px, fwhm_source = read_chip_fwhm(chipdir, prefix)
+    except ValueError as exc:
+        return {"chip": tag, "estado": f"omitido: {exc}"}
+
     rows = read_quality(catalog)
     valid_idx = [i for i, row in enumerate(rows) if row["measured"]]
     approved_idx = [i for i in valid_idx if rows[i]["error_percent"] <= max_error]
     distances = nearest_distances(rows, approved_idx)
     for idx, row in enumerate(rows):
         row["vecino_mas_cercano_px"] = distances.get(idx, float("nan"))
+        row["vecino_mas_cercano_fwhm"] = row["vecino_mas_cercano_px"] / fwhm_px
+        row["fwhm_px"] = fwhm_px
         row["aprobada"] = idx in approved_idx
 
     csv_path = chipdir / f"{prefix}_analisis_porcentual.csv"
-    columns = ["x", "y", "flux", "mag", "merr", "error_percent", "vecino_mas_cercano_px", "aprobada"]
+    columns = ["x", "y", "flux", "mag", "merr", "error_percent",
+               "fwhm_px", "vecino_mas_cercano_px", "vecino_mas_cercano_fwhm", "aprobada"]
     with csv_path.open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=columns)
         writer.writeheader()
@@ -93,7 +125,7 @@ def make_chip_outputs(chipdir: Path, max_error: float) -> dict:
               norm=norm, interpolation="nearest")
     if approved_idx:
         xy = np.array([[rows[i]["x"], rows[i]["y"]] for i in approved_idx])
-        ax.scatter(xy[:, 0], xy[:, 1], s=30, facecolors="none", edgecolors="#00ff55",
+        ax.scatter(xy[:, 0], xy[:, 1], s=4, facecolors="none", edgecolors="#440045",
                    linewidths=0.9, label=f"Aprobadas ({len(approved_idx)})")
         ax.legend(loc="upper right", facecolor="black", labelcolor="white", framealpha=0.7)
     ax.set(title=f"{tag}: fotometría aprobada (error relativo ≤ {max_error:g}%)",
@@ -101,18 +133,21 @@ def make_chip_outputs(chipdir: Path, max_error: float) -> dict:
     fig.savefig(chipdir / f"{prefix}_estrellas_aprobadas.png", dpi=160)
     plt.close(fig)
 
-    nn = np.array([distances[i] for i in approved_idx if math.isfinite(distances[i])])
+    nn_px = np.array([distances[i] for i in approved_idx if math.isfinite(distances[i])])
+    nn_fwhm = nn_px / fwhm_px
     fig, ax = plt.subplots(figsize=(8, 5), constrained_layout=True)
-    if nn.size:
-        ax.hist(nn, bins="auto", color="steelblue", edgecolor="white")
-        ax.axvline(float(np.median(nn)), color="darkorange", linestyle="--",
-                   label=f"Mediana: {np.median(nn):.2f} pix")
+    if nn_fwhm.size:
+        max_edge = max(1, math.ceil(float(np.max(nn_fwhm))))
+        bin_edges = np.arange(0.0, max_edge + 0.5, 0.5)
+        ax.hist(nn_fwhm, bins=bin_edges, color="steelblue", edgecolor="white")
+        ax.axvline(float(np.median(nn_fwhm)), color="darkorange", linestyle="--",
+                   label=f"Mediana: {np.median(nn_fwhm):.2f} FWHM")
         ax.legend()
     else:
         ax.text(0.5, 0.5, "No hay suficientes estrellas aprobadas para distancias",
                 ha="center", va="center", transform=ax.transAxes)
-    ax.set(title=f"{tag}: distancia al vecino aprobado más cercano",
-           xlabel="Distancia al vecino más cercano [pixeles]", ylabel="Número de estrellas")
+    ax.set(title=f"{tag}: vecino más cercano (FWHM = {fwhm_px:.2f} pix)",
+           xlabel="Distancia al vecino más cercano [FWHM]", ylabel="Número de estrellas")
     fig.savefig(chipdir / f"{prefix}_histograma_vecinos.png", dpi=160)
     plt.close(fig)
 
@@ -120,12 +155,15 @@ def make_chip_outputs(chipdir: Path, max_error: float) -> dict:
         "chip": tag,
         "catalogo": catalog.name,
         "imagen": fits_path.name,
+        "fwhm_pixeles": fwhm_px,
+        "fuente_fwhm": fwhm_source,
         "error_maximo_porcentual": max_error,
         "estrellas_con_fotometria_valida": len(valid_idx),
         "estrellas_aprobadas": len(approved_idx),
         "estrellas_rechazadas_por_error": len(valid_idx) - len(approved_idx),
         "error_relativo_mediano_aprobadas_pct": float(np.median([rows[i]["error_percent"] for i in approved_idx])) if approved_idx else None,
-        "vecino_mas_cercano_mediano_pix": float(np.median(nn)) if nn.size else None,
+        "vecino_mas_cercano_mediano_pix": float(np.median(nn_px)) if nn_px.size else None,
+        "vecino_mas_cercano_mediano_fwhm": float(np.median(nn_fwhm)) if nn_fwhm.size else None,
         "tabla": csv_path.name,
         "imagen_estrellas": f"{prefix}_estrellas_aprobadas.png",
         "histograma_vecinos": f"{prefix}_histograma_vecinos.png",
