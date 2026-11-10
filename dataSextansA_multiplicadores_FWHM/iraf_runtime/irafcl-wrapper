@@ -1,0 +1,4 @@
+#!/bin/sh
+export HOME="/Users/santiagoserranoperico/Desktop/Universidad/tesis/dataSextansA_multiplicadores_FWHM/iraf_home"
+export iraf="/Users/santiagoserranoperico/Desktop/Universidad/tesis/dataSextansA_multiplicadores_FWHM/iraf_runtime/iraf_root/"
+exec /opt/homebrew/Cellar/iraf/2.18.2/libexec/unix/hlib/irafcl.sh "$@"

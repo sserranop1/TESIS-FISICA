@@ -1,0 +1,165 @@
+#K IRAF       = CommunityIRAFV2.18.2    version    %-23s     
+#K USER       =                         name       %-23s     
+#K HOST       = MacBook-Air-de-Santiago computer   %-23s     
+#K DATE       = 2026-11-10              yyyy-mm-dd %-23s     
+#K TIME       = 17:28:00                hh:mm:ss   %-23s     
+#K PACKAGE    = apphot                  name       %-23s     
+#K TASK       = phot                    name       %-23s     
+#
+#K SCALE      = 1.                      units      %-23.7g   
+#K FWHMPSF    = 4.42                    scaleunit  %-23.7g   
+#K EMISSION   = yes                     switch     %-23b     
+#K DATAMIN    = INDEF                   counts     %-23.7g   
+#K DATAMAX    = 39000.                  counts     %-23.7g   
+#K EXPOSURE   = ""                      keyword    %-23s     
+#K AIRMASS    = ""                      keyword    %-23s     
+#K FILTER     = ""                      keyword    %-23s     
+#K OBSTIME    = ""                      keyword    %-23s     
+#
+#K NOISE      = poisson                 model      %-23s     
+#K SIGMA      = 3.34                    counts     %-23.7g   
+#K GAIN       = ""                      keyword    %-23s     
+#K EPADU      = 2.75                    e-/adu     %-23.7g   
+#K CCDREAD    = ""                      keyword    %-23s     
+#K READNOISE  = 6.4125                  e-         %-23.7g   
+#
+#K CALGORITHM = none                    algorithm  %-23s     
+#K CBOXWIDTH  = 5.                      scaleunit  %-23.7g   
+#K CTHRESHOLD = 0.                      sigma      %-23.7g   
+#K MINSNRATIO = 1.                      number     %-23.7g   
+#K CMAXITER   = 10                      number     %-23d     
+#K MAXSHIFT   = 1.                      scaleunit  %-23.7g   
+#K CLEAN      = no                      switch     %-23b     
+#K RCLEAN     = 1.                      scaleunit  %-23.7g   
+#K RCLIP      = 2.                      scaleunit  %-23.7g   
+#K KCLEAN     = 3.                      sigma      %-23.7g   
+#
+#K SALGORITHM = mode                    algorithm  %-23s     
+#K ANNULUS    = 37.1                    scaleunit  %-23.7g   
+#K DANNULUS   = 15.                     scaleunit  %-23.7g   
+#K SKYVALUE   = 0.                      counts     %-23.7g   
+#K KHIST      = 3.                      sigma      %-23.7g   
+#K BINSIZE    = 0.1                     sigma      %-23.7g   
+#K SMOOTH     = no                      switch     %-23b     
+#K SMAXITER   = 10                      number     %-23d     
+#K SLOCLIP    = 0.                      percent    %-23.7g   
+#K SHICLIP    = 0.                      percent    %-23.7g   
+#K SNREJECT   = 50                      number     %-23d     
+#K SLOREJECT  = 3.                      sigma      %-23.7g   
+#K SHIREJECT  = 3.                      sigma      %-23.7g   
+#K RGROW      = 0.                      scaleunit  %-23.7g   
+#
+#K WEIGHTING  = constant                model      %-23s     
+#K APERTURES  = 4.42                    scaleunit  %-23s     
+#K ZMAG       = 25.                     zeropoint  %-23.7g   
+#
+#N IMAGE               XINIT     YINIT     ID    COORDS                 LID    \
+#U imagename           pixels    pixels    ##    filename               ##     \
+#F %-23s               %-10.3f   %-10.3f   %-6d  %-23s                  %-6d    
+#
+#N XCENTER    YCENTER    XSHIFT  YSHIFT  XERR    YERR            CIER CERROR   \
+#U pixels     pixels     pixels  pixels  pixels  pixels          ##   cerrors  \
+#F %-14.3f    %-11.3f    %-8.3f  %-8.3f  %-8.3f  %-15.3f         %-5d %-9s      
+#
+#N MSKY           STDEV          SSKEW          NSKY   NSREJ     SIER SERROR   \
+#U counts         counts         counts         npix   npix      ##   serrors  \
+#F %-18.7g        %-15.7g        %-15.7g        %-7d   %-9d      %-5d %-9s      
+#
+#N ITIME          XAIRMASS       IFILTER                OTIME                  \
+#U timeunit       number         name                   timeunit               \
+#F %-18.7g        %-15.7g        %-23s                  %-23s                   
+#
+#N RAPERT   SUM           AREA       FLUX          MAG    MERR   PIER PERROR   \
+#U scale    counts        pixels     counts        mag    mag    ##   perrors  \
+#F %-12.2f  %-14.7g       %-11.7g    %-14.7g       %-7.3f %-6.3f %-5d %-9s      
+#
+SexA_V_chip7.fits      771.840   157.337   1     V_chip7_adapt_r37_10_521      \
+   771.840    157.337    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.821711      3.259062       1.690395       4133   69       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3777.261      61.74486   3889.743      16.025 0.013 0    NoError    
+SexA_V_chip7.fits      3978.471  227.617   2     V_chip7_adapt_r37_10_522      \
+   3978.471   227.617    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.236521      3.501541       1.794595       4148   52       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     275.461       61.58008   351.6061      18.635 0.092 0    NoError    
+SexA_V_chip7.fits      1517.677  496.530   3     V_chip7_adapt_r37_10_523      \
+   1517.677   496.530    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.135091      3.227549       1.380811       4156   46       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1587.263      61.54483   1718.667      16.912 0.023 0    NoError    
+SexA_V_chip7.fits      1815.794  701.665   4     V_chip7_adapt_r37_10_524      \
+   1815.794   701.665    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.762835      3.327683       1.045981       4125   74       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1203.687      61.66409   1312.39       17.205 0.028 0    NoError    
+SexA_V_chip7.fits      2949.014  864.630   5     V_chip7_adapt_r37_10_525      \
+   2949.014   864.630    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.700371      3.259753       1.313915       4161   44       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1389.554      61.89128   1494.792      17.064 0.025 0    NoError    
+SexA_V_chip7.fits      1345.598  1059.988  6     V_chip7_adapt_r37_10_526      \
+   1345.598   1059.988   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.768382      3.370875       1.508806       4138   71       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     17573.64      61.89465   17683.1       14.381 0.005 0    NoError    
+SexA_V_chip7.fits      3262.301  1060.742  7     V_chip7_adapt_r37_10_527      \
+   3262.301   1060.742   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.615634      3.230014       1.371059       4177   30       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2736.222      61.60431   2835.752      16.368 0.016 0    NoError    
+SexA_V_chip7.fits      3697.885  1580.116  8     V_chip7_adapt_r37_10_528      \
+   3697.885   1580.116   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.721702      3.195511       1.117787       4164   36       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     6476.768      61.47361   6582.607      15.454 0.009 0    NoError    
+SexA_V_chip7.fits      3724.381  1591.790  9     V_chip7_adapt_r37_10_529      \
+   3724.381   1591.790   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.719567      3.22195        -0.6666902     4174   33       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2092.405      61.61058   2198.348      16.645 0.019 0    NoError    
+SexA_V_chip7.fits      3697.358  1614.093  10    V_chip7_adapt_r37_10_5210     \
+   3697.358   1614.093   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.436444      3.375449       1.331346       4138   64       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     978.9851      61.82759   1067.797      17.429 0.034 0    NoError    
+SexA_V_chip7.fits      2496.098  1715.935  11    V_chip7_adapt_r37_10_5211     \
+   2496.098   1715.935   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.020658      4.045232       -0.8187003     4153   52       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1127.101      61.39586   1251.161      17.257 0.033 0    NoError    
+SexA_V_chip7.fits      2801.477  1770.136  12    V_chip7_adapt_r37_10_5212     \
+   2801.477   1770.136   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.980003      4.369351       1.789492       4150   57       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     929.5085      61.73976   1051.753      17.445 0.041 0    NoError    
+SexA_V_chip7.fits      3948.682  1782.471  13    V_chip7_adapt_r37_10_5213     \
+   3948.682   1782.471   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.689669      4.383244       1.867299       4149   54       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     732.426       61.54462   836.416       17.694 0.050 0    NoError    
+SexA_V_chip7.fits      672.040   1829.851  14    V_chip7_adapt_r37_10_5214     \
+   672.040    1829.851   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.41373       4.985764       1.049848       4173   29       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1923.961      61.4309    2072.239      16.709 0.025 0    NoError    
+SexA_V_chip7.fits      4045.360  1861.638  15    V_chip7_adapt_r37_10_5215     \
+   4045.360   1861.638   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.249318      5.521728       2.054656       4166   37       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     70562.84      61.47585   70639.65      12.877 0.003 0    NoError    
+SexA_V_chip7.fits      1856.199  1872.771  16    V_chip7_adapt_r37_10_5216     \
+   1856.199   1872.771   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.927054      5.670133       0.6972997      4168   35       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4209.209      61.69206   4328.093      15.909 0.015 0    NoError    
+SexA_V_chip7.fits      3492.521  1882.938  17    V_chip7_adapt_r37_10_5217     \
+   3492.521   1882.938   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.947647      5.401139       -1.553282      4180   35       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     612.6371      61.80545   733.0123      17.837 0.068 0    NoError    
+SexA_V_chip7.fits      1850.307  1906.833  18    V_chip7_adapt_r37_10_5218     \
+   1850.307   1906.833   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.651471      6.60019        -1.96218       4151   53       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1616.618      61.75783   1718.609      16.912 0.037 0    NoError    

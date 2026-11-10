@@ -47,6 +47,15 @@ N_ANILLOS_DEFAULT = 5
 VALOR_INVALIDO_DEFAULT = 50000.0
 
 
+def geometria_fotometrica(fwhm, ap_fwhm_multiplier=3.0):
+    """Calcula apertura y anillo de cielo sin que se solapen."""
+    r_ap = float(ap_fwhm_multiplier) * float(fwhm)
+    # Mantiene el anillo habitual en 5 FWHM, pero lo aleja una FWHM
+    # cuando una apertura personalizada alcanza o supera ese radio.
+    r_sky_in = max(5.0, float(ap_fwhm_multiplier) + 1.0) * float(fwhm)
+    return r_ap, r_sky_in, r_sky_in + ANCHO_SKY_DEFAULT
+
+
 # === FUNCIONES DEL NOTEBOOK, CELDA 110 ===
 def resumir_fwhm(valores, mostrar=True):
     """
@@ -709,6 +718,7 @@ def generar_script_phot_adaptativo(
     fwhm,
     sigma_sky,
     base=BASE,
+    ap_fwhm_multiplier=3.0,
 ):
     rutas = rutas_chip(chip, filtro, base)
     carpeta = rutas["carpeta"]
@@ -721,7 +731,7 @@ def generar_script_phot_adaptativo(
     rdnoise = hdr.get("RDNOISE", 6.4125)
     saturate = hdr.get("SATURATE", 39000)
 
-    r_ap = 3 * fwhm
+    r_ap, _, _ = geometria_fotometrica(fwhm, ap_fwhm_multiplier)
 
     lineas = [
         f'datapars.fwhmpsf = {fwhm:.6f}',
@@ -941,6 +951,7 @@ def preparar_phot_fijo(
     filtro,
     fwhm,
     base=BASE,
+    ap_fwhm_multiplier=3.0,
 ):
     rutas = rutas_chip(chip, filtro, base)
     carpeta = rutas["carpeta"]
@@ -954,9 +965,9 @@ def preparar_phot_fijo(
         catalogo,
     )
 
-    r_ap = 3.0 * fwhm
-    r_sky_in = 5.0 * fwhm
-    r_sky_out = r_sky_in + ANCHO_SKY_DEFAULT
+    r_ap, r_sky_in, r_sky_out = geometria_fotometrica(
+        fwhm, ap_fwhm_multiplier
+    )
 
     catalogo_ap, rechazado_ap = filtrar_distancia(
         catalogo_geo,
@@ -1012,6 +1023,7 @@ def generar_script_phot_fijo(
     fwhm,
     sigma_sky,
     base=BASE,
+    ap_fwhm_multiplier=3.0,
 ):
     rutas = rutas_chip(chip, filtro, base)
     carpeta = rutas["carpeta"]
@@ -1023,8 +1035,9 @@ def generar_script_phot_fijo(
     rdnoise = hdr.get("RDNOISE", 6.4125)
     saturate = hdr.get("SATURATE", 39000)
 
-    r_ap = 3.0 * fwhm
-    r_sky_in = 5.0 * fwhm
+    r_ap, r_sky_in, _ = geometria_fotometrica(
+        fwhm, ap_fwhm_multiplier
+    )
 
     coords = carpeta / f"{prefijo}_phot_ready.xy"
     mag = carpeta / f"{prefijo}_fixed.mag"
@@ -1080,6 +1093,7 @@ def analizar_post_phot(
     sigma_sky,
     base=BASE,
     merr_max=MERR_MAX_DEFAULT,
+    ap_fwhm_multiplier=3.0,
 ):
     rutas = rutas_chip(chip, filtro, base)
     carpeta = rutas["carpeta"]
@@ -1101,8 +1115,9 @@ def analizar_post_phot(
         merr_max=merr_max,
     )
 
-    r_ap = 3.0 * fwhm
-    r_sky_in = 5.0 * fwhm
+    r_ap, r_sky_in, _ = geometria_fotometrica(
+        fwhm, ap_fwhm_multiplier
+    )
 
     aisladas, rechazadas_vecino = filtrar_vecinos(
         calidad,
@@ -1180,6 +1195,7 @@ def analizar_post_phot(
         fwhm,
         sigma_sky,
         base=base,
+        ap_fwhm_multiplier=ap_fwhm_multiplier,
     )
 
     n_limpias = len(cielo_limpio)
@@ -1191,6 +1207,9 @@ def analizar_post_phot(
         "chip": chip,
         "filtro": filtro,
         "fwhm": fwhm,
+        "ap_fwhm_multiplier": float(ap_fwhm_multiplier),
+        "r_ap": r_ap,
+        "r_sky_in": r_sky_in,
         "sigma_sky": sigma_sky,
         "N_phot_total": len(df_fixed),
         "N_phot_validas": len(validas),
@@ -1809,7 +1828,11 @@ def _prepare(r,args):
     stars.to_csv(s_csv,index=False,float_format='%.6f');sky.to_csv(sky_csv,index=False,float_format='%.6f')
     pic=dst/f'{pref}_auto_control.png'
     _save_plot(im,stars,sky,pic,f'{pref} | FWHM={fwhm:.2f} pix | σ cielo={sigma:.2f} ADU')
-    info=dict(fwhm=fwhm,sigma_sky=sigma,sigma_inicial=sig0,n_estrellas=len(stars),
+    r_ap,r_sky_in,r_sky_out=geometria_fotometrica(fwhm,args.ap_fwhm_multiplier)
+    info=dict(fwhm=fwhm,sigma_sky=sigma,sigma_inicial=sig0,
+              ap_fwhm_multiplier=args.ap_fwhm_multiplier,
+              r_ap=r_ap,r_sky_in=r_sky_in,r_sky_out=r_sky_out,
+              n_estrellas=len(stars),
               n_cajas=len(sky),n_estrellas_fwhm_tukey=int(stars.aceptada_fwhm.sum()),
               n_cajas_tukey=int(sky.aceptada_tukey.sum()),
               stars_csv=str(s_csv),sky_csv=str(sky_csv),grafica=str(pic),
@@ -1933,8 +1956,11 @@ def _final(r,args):
 def _fixed(r,args):
     p=_params(r);_need(r['carpeta']/f'{r["prefijo"]}_final.coo')
     # Conserva exactamente los criterios y archivos del notebook.
-    geo=preparar_phot_fijo(args.chip,args.filtro,p['fwhm'],base=args.base)
-    script,dat=generar_script_phot_fijo(args.chip,args.filtro,p['fwhm'],p['sigma_sky'],base=args.base)
+    geo=preparar_phot_fijo(args.chip,args.filtro,p['fwhm'],base=args.base,
+                           ap_fwhm_multiplier=args.ap_fwhm_multiplier)
+    script,dat=generar_script_phot_fijo(
+        args.chip,args.filtro,p['fwhm'],p['sigma_sky'],base=args.base,
+        ap_fwhm_multiplier=args.ap_fwhm_multiplier)
     # No duplicar encabezado si ya existía en la función original.
     content=script.read_text()
     if not content.startswith('noao\n'):content='noao\ndigiphot\ndaophot\n\n'+content
@@ -1950,7 +1976,9 @@ def _fixed(r,args):
 
 def _adaptive(r,args):
     p=_params(r);_need(r['carpeta']/f'{r["prefijo"]}_fixed.dat')
-    info=analizar_post_phot(args.chip,args.filtro,p['fwhm'],p['sigma_sky'],base=args.base)
+    info=analizar_post_phot(
+        args.chip,args.filtro,p['fwhm'],p['sigma_sky'],base=args.base,
+        ap_fwhm_multiplier=args.ap_fwhm_multiplier)
     script=info['script_adapt'];content=script.read_text()
     if not content.startswith('noao\n'):content='noao\ndigiphot\ndaophot\n\n'+content
     script.write_text(content.rstrip()+'\n')
@@ -1973,12 +2001,14 @@ def _compare(r,args):
     groups=r['carpeta']/f'{r["prefijo"]}_grupos_adaptativos.csv';_need(groups)
     g=pd.read_csv(groups)
     _need(*[r['carpeta']/f'{r["prefijo"]}_adapt_{row["tag"]}.dat' for _,row in g.iterrows()])
-    compdata=comparar_fijo_adaptativo(args.chip,args.filtro,5*p['fwhm'],base=args.base)
+    _,r_sky_in,_=geometria_fotometrica(p['fwhm'],args.ap_fwhm_multiplier)
+    compdata=comparar_fijo_adaptativo(
+        args.chip,args.filtro,r_sky_in,base=args.base)
     comp=compdata['comparacion'];control=compdata['control'];moved=compdata['movidas'];fout=compdata['fout']
     if len(comp)!=g['n'].sum():raise RuntimeError('Falta alguna asociación en comparación final.')
     if len(comp) and comp['dist_match'].max()>0.001:
         raise RuntimeError('Asociación espacial no exacta: revisar coordenadas de PHOT.')
-    if len(control)!=g.loc[np.isclose(g.r_in,5*p['fwhm']),'n'].sum():
+    if len(control)!=g.loc[np.isclose(g.r_in,r_sky_in),'n'].sum():
         raise RuntimeError('Grupo control de tamaño incorrecto.')
     if control.empty:
         raise RuntimeError('No hay estrellas de control para validar PHOT adaptativo.')
@@ -2026,12 +2056,16 @@ def main():
     parser.add_argument('--mode',choices=['auto','manual'],default='auto')
     parser.add_argument('--iraf-exe',default='irafcl',help='irafcl, ecl o cl en macOS')
     parser.add_argument('--seed-fwhm',type=float,default=4.5,help='FWHM inicial aproximado; no reemplaza ajuste')
+    parser.add_argument('--ap-fwhm-multiplier',type=float,default=3.0,
+                        help='Radio de apertura PHOT como múltiplo del FWHM (por defecto: 3)')
     parser.add_argument('--seed-sigma',type=float,default=None,help='Opción de respaldo para sigma provisional')
     parser.add_argument('--seed',type=int,default=2026)
     parser.add_argument('--force',action='store_true',help='Reprocesar salidas IRAF existentes, guardando copia .bak')
     parser.add_argument('--timeout',type=int,default=3600,help='Tiempo máximo de cada ejecución IRAF')
     args=parser.parse_args();args.base=args.base.expanduser().resolve()
     if args.seed_fwhm<=0:parser.error('El FWHM inicial debe ser positivo.')
+    if args.ap_fwhm_multiplier<=0:
+        parser.error('El múltiplo de FWHM de la apertura debe ser positivo.')
     if args.seed_sigma is not None and args.seed_sigma<=0:
         parser.error('El sigma inicial debe ser positivo.')
     if args.timeout<=0:parser.error('El timeout debe ser positivo.')

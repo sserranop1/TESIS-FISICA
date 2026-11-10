@@ -1,0 +1,1920 @@
+#K IRAF       = CommunityIRAFV2.18.2    version    %-23s     
+#K USER       =                         name       %-23s     
+#K HOST       = MacBook-Air-de-Santiago computer   %-23s     
+#K DATE       = 2026-11-10              yyyy-mm-dd %-23s     
+#K TIME       = 17:28:00                hh:mm:ss   %-23s     
+#K PACKAGE    = apphot                  name       %-23s     
+#K TASK       = phot                    name       %-23s     
+#
+#K SCALE      = 1.                      units      %-23.7g   
+#K FWHMPSF    = 4.42                    scaleunit  %-23.7g   
+#K EMISSION   = yes                     switch     %-23b     
+#K DATAMIN    = INDEF                   counts     %-23.7g   
+#K DATAMAX    = 39000.                  counts     %-23.7g   
+#K EXPOSURE   = ""                      keyword    %-23s     
+#K AIRMASS    = ""                      keyword    %-23s     
+#K FILTER     = ""                      keyword    %-23s     
+#K OBSTIME    = ""                      keyword    %-23s     
+#
+#K NOISE      = poisson                 model      %-23s     
+#K SIGMA      = 3.34                    counts     %-23.7g   
+#K GAIN       = ""                      keyword    %-23s     
+#K EPADU      = 2.75                    e-/adu     %-23.7g   
+#K CCDREAD    = ""                      keyword    %-23s     
+#K READNOISE  = 6.4125                  e-         %-23.7g   
+#
+#K CALGORITHM = none                    algorithm  %-23s     
+#K CBOXWIDTH  = 5.                      scaleunit  %-23.7g   
+#K CTHRESHOLD = 0.                      sigma      %-23.7g   
+#K MINSNRATIO = 1.                      number     %-23.7g   
+#K CMAXITER   = 10                      number     %-23d     
+#K MAXSHIFT   = 1.                      scaleunit  %-23.7g   
+#K CLEAN      = no                      switch     %-23b     
+#K RCLEAN     = 1.                      scaleunit  %-23.7g   
+#K RCLIP      = 2.                      scaleunit  %-23.7g   
+#K KCLEAN     = 3.                      sigma      %-23.7g   
+#
+#K SALGORITHM = mode                    algorithm  %-23s     
+#K ANNULUS    = 22.1                    scaleunit  %-23.7g   
+#K DANNULUS   = 15.                     scaleunit  %-23.7g   
+#K SKYVALUE   = 0.                      counts     %-23.7g   
+#K KHIST      = 3.                      sigma      %-23.7g   
+#K BINSIZE    = 0.1                     sigma      %-23.7g   
+#K SMOOTH     = no                      switch     %-23b     
+#K SMAXITER   = 10                      number     %-23d     
+#K SLOCLIP    = 0.                      percent    %-23.7g   
+#K SHICLIP    = 0.                      percent    %-23.7g   
+#K SNREJECT   = 50                      number     %-23d     
+#K SLOREJECT  = 3.                      sigma      %-23.7g   
+#K SHIREJECT  = 3.                      sigma      %-23.7g   
+#K RGROW      = 0.                      scaleunit  %-23.7g   
+#
+#K WEIGHTING  = constant                model      %-23s     
+#K APERTURES  = 4.42                    scaleunit  %-23s     
+#K ZMAG       = 25.                     zeropoint  %-23.7g   
+#
+#N IMAGE               XINIT     YINIT     ID    COORDS                 LID    \
+#U imagename           pixels    pixels    ##    filename               ##     \
+#F %-23s               %-10.3f   %-10.3f   %-6d  %-23s                  %-6d    
+#
+#N XCENTER    YCENTER    XSHIFT  YSHIFT  XERR    YERR            CIER CERROR   \
+#U pixels     pixels     pixels  pixels  pixels  pixels          ##   cerrors  \
+#F %-14.3f    %-11.3f    %-8.3f  %-8.3f  %-8.3f  %-15.3f         %-5d %-9s      
+#
+#N MSKY           STDEV          SSKEW          NSKY   NSREJ     SIER SERROR   \
+#U counts         counts         counts         npix   npix      ##   serrors  \
+#F %-18.7g        %-15.7g        %-15.7g        %-7d   %-9d      %-5d %-9s      
+#
+#N ITIME          XAIRMASS       IFILTER                OTIME                  \
+#U timeunit       number         name                   timeunit               \
+#F %-18.7g        %-15.7g        %-23s                  %-23s                   
+#
+#N RAPERT   SUM           AREA       FLUX          MAG    MERR   PIER PERROR   \
+#U scale    counts        pixels     counts        mag    mag    ##   perrors  \
+#F %-12.2f  %-14.7g       %-11.7g    %-14.7g       %-7.3f %-6.3f %-5d %-9s      
+#
+SexA_V_chip7.fits      303.090   42.548    1     V_chip7_adapt_r22_10_371      \
+   303.090    42.548     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.129055      4.0894         1.262298       2774   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     318.8582      61.7893    450.411       18.366 0.084 0    NoError    
+SexA_V_chip7.fits      679.584   51.522    2     V_chip7_adapt_r22_10_372      \
+   679.584    51.522     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.933286      3.327076       0.8141905      2773   23       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5969.84       61.55032   6088.834      15.539 0.010 0    NoError    
+SexA_V_chip7.fits      562.285   52.668    3     V_chip7_adapt_r22_10_373      \
+   562.285    52.668     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.981277      3.370695       -0.4625095     2778   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1194.857      61.53414   1316.773      17.201 0.028 0    NoError    
+SexA_V_chip7.fits      1306.945  63.658    4     V_chip7_adapt_r22_10_374      \
+   1306.945   63.658     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.879937      3.338149       -1.288762      2773   22       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1292.194      61.84296   1408.455      17.128 0.027 0    NoError    
+SexA_V_chip7.fits      2328.166  73.156    5     V_chip7_adapt_r22_10_375      \
+   2328.166   73.156     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.019649      3.349404       -0.8743557     2777   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     63.28437      61.5835    187.6614      19.317 0.161 0    NoError    
+SexA_V_chip7.fits      2692.108  79.111    6     V_chip7_adapt_r22_10_376      \
+   2692.108   79.111     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.090416      3.362745       -0.7585871     2783   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4991.565      61.46052   5120.043      15.727 0.011 0    NoError    
+SexA_V_chip7.fits      2412.010  80.990    7     V_chip7_adapt_r22_10_377      \
+   2412.010   80.990     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.496693      3.459746       0.6099213      2758   22       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     205988.5      61.34722   206080.3      11.715 0.001 0    NoError    
+SexA_V_chip7.fits      1340.107  83.392    8     V_chip7_adapt_r22_10_378      \
+   1340.107   83.392     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.089453      3.351336       -1.33974       2757   30       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     543.964       61.81935   673.1326      17.930 0.050 0    NoError    
+SexA_V_chip7.fits      2192.769  96.362    9     V_chip7_adapt_r22_10_379      \
+   2192.769   96.362     0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.746909      3.51561        1.421256       2765   24       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3876.212      61.59052   3983.805      15.999 0.013 0    NoError    
+SexA_V_chip7.fits      2182.467  103.169   10    V_chip7_adapt_r22_10_3710     \
+   2182.467   103.169    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.853533      3.552038       1.551819       2745   44       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     432.092       61.69783   546.451       18.156 0.063 0    NoError    
+SexA_V_chip7.fits      1996.676  104.569   11    V_chip7_adapt_r22_10_3711     \
+   1996.676   104.569    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.019282      3.496876       1.630563       2757   31       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2238.404      61.5278    2362.646      16.567 0.019 0    NoError    
+SexA_V_chip7.fits      3063.441  119.222   12    V_chip7_adapt_r22_10_3712     \
+   3063.441   119.222    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.230953      3.371846       0.7715542      2779   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     667.1039      61.59037   804.509       17.736 0.043 0    NoError    
+SexA_V_chip7.fits      3596.012  121.897   13    V_chip7_adapt_r22_10_3713     \
+   3596.012   121.897    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.366812      3.317687       0.7356991      2773   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     120201.3      61.34156   120285.1      12.299 0.002 0    NoError    
+SexA_V_chip7.fits      1407.688  125.426   14    V_chip7_adapt_r22_10_3714     \
+   1407.688   125.426    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.587499      3.17662        -1.527577      2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     78065.16      61.51846   78162.82      12.767 0.002 0    NoError    
+SexA_V_chip7.fits      1295.154  129.746   15    V_chip7_adapt_r22_10_3715     \
+   1295.154   129.746    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.148349      3.10962        -0.7223207     2780   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     21832.58      61.72716   21965.19      14.146 0.005 0    NoError    
+SexA_V_chip7.fits      475.222   139.374   16    V_chip7_adapt_r22_10_3716     \
+   475.222    139.374    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.932203      3.20829        -0.7257509     2778   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3055.084      61.59542   3174.099      16.246 0.015 0    NoError    
+SexA_V_chip7.fits      384.903   143.184   17    V_chip7_adapt_r22_10_3717     \
+   384.903    143.184    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.115231      3.608356       1.368231       2786   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     59251.65      61.54523   59381.83      13.066 0.003 0    NoError    
+SexA_V_chip7.fits      2063.275  150.827   18    V_chip7_adapt_r22_10_3718     \
+   2063.275   150.827    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.141912      3.149126       -0.5712062     2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     209.0492      61.75242   341.3175      18.667 0.087 0    NoError    
+SexA_V_chip7.fits      2228.494  161.343   19    V_chip7_adapt_r22_10_3719     \
+   2228.494   161.343    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.449998      3.139366       1.317296       2776   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     331.525       61.56366   482.3559      18.292 0.063 0    NoError    
+SexA_V_chip7.fits      2138.074  164.629   20    V_chip7_adapt_r22_10_3720     \
+   2138.074   164.629    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.105162      3.032657       -0.8140506     2784   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3426.468      61.8528    3556.678      16.122 0.013 0    NoError    
+SexA_V_chip7.fits      1097.854  174.101   21    V_chip7_adapt_r22_10_3721     \
+   1097.854   174.101    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.244386      3.114419       1.056387       2772   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3636.836      61.4891    3774.841      16.058 0.013 0    NoError    
+SexA_V_chip7.fits      1844.930  181.313   22    V_chip7_adapt_r22_10_3722     \
+   1844.930   181.313    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.913809      3.05031        -1.100045      2782   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     49838.65      61.79244   49956.91      13.254 0.003 0    NoError    
+SexA_V_chip7.fits      2900.470  190.128   23    V_chip7_adapt_r22_10_3723     \
+   2900.470   190.128    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.113586      3.117787       0.9559573      2783   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     33.96986      61.74849   164.4806      19.460 0.171 0    NoError    
+SexA_V_chip7.fits      1013.070  207.861   24    V_chip7_adapt_r22_10_3724     \
+   1013.070   207.861    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.119324      3.193313       0.8511028      2776   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     536.8115      61.44533   667.0341      17.940 0.048 0    NoError    
+SexA_V_chip7.fits      597.117   208.681   25    V_chip7_adapt_r22_10_3725     \
+   597.117    208.681    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.207547      3.071622       -0.509529      2782   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     737.8815      61.77565   874.2542      17.646 0.038 0    NoError    
+SexA_V_chip7.fits      4010.207  221.022   26    V_chip7_adapt_r22_10_3726     \
+   4010.207   221.022    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -0.9121363     3.318078       1.49497        2768   26       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2642.84       61.58141   2699.01       16.422 0.016 0    NoError    
+SexA_V_chip7.fits      2217.190  225.144   27    V_chip7_adapt_r22_10_3727     \
+   2217.190   225.144    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.42374       3.089578       0.9795955      2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     445.3902      61.59491   594.6802      18.064 0.052 0    NoError    
+SexA_V_chip7.fits      239.661   228.427   28    V_chip7_adapt_r22_10_3728     \
+   239.661    228.427    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.010541      4.623336       -1.540197      2783   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7192.297      61.53119   7316.007      15.339 0.009 0    NoError    
+SexA_V_chip7.fits      3434.320  230.576   29    V_chip7_adapt_r22_10_3729     \
+   3434.320   230.576    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.812521      3.158615       1.02278        2771   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1150.306      61.52036   1261.813      17.248 0.028 0    NoError    
+SexA_V_chip7.fits      1718.731  237.571   30    V_chip7_adapt_r22_10_3730     \
+   1718.731   237.571    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.062429      3.182226       1.176345       2773   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     634.1686      61.52879   761.0674      17.796 0.043 0    NoError    
+SexA_V_chip7.fits      2099.643  247.049   31    V_chip7_adapt_r22_10_3731     \
+   2099.643   247.049    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.143946      3.094271       0.8941492      2787   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     14973.89      61.85953   15106.51      14.552 0.006 0    NoError    
+SexA_V_chip7.fits      1841.748  253.398   32    V_chip7_adapt_r22_10_3732     \
+   1841.748   253.398    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.086459      3.037469       0.9537297      2782   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     66.37496      61.53187   194.7587      19.276 0.142 0    NoError    
+SexA_V_chip7.fits      90.755    255.567   33    V_chip7_adapt_r22_10_3733     \
+   90.755     255.567    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.947858      7.44112        2.381691       2784   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     539.0004      61.55998   658.9105      17.953 0.101 0    NoError    
+SexA_V_chip7.fits      1036.378  257.121   34    V_chip7_adapt_r22_10_3734     \
+   1036.378   257.121    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.135118      3.289738       1.057593       2775   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1678.227      61.79473   1810.166      16.856 0.022 0    NoError    
+SexA_V_chip7.fits      3606.201  259.959   35    V_chip7_adapt_r22_10_3735     \
+   3606.201   259.959    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.041054      3.137745       1.058109       2780   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     806.1857      61.55551   931.8239      17.577 0.036 0    NoError    
+SexA_V_chip7.fits      3618.358  261.849   36    V_chip7_adapt_r22_10_3736     \
+   3618.358   261.849    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.829238      3.133784       1.076995       2773   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1681.446      61.73965   1794.383      16.865 0.022 0    NoError    
+SexA_V_chip7.fits      3138.471  264.952   37    V_chip7_adapt_r22_10_3737     \
+   3138.471   264.952    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.271562      3.089452       -0.7561936     2773   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1682.266      61.83165   1822.72       16.848 0.021 0    NoError    
+SexA_V_chip7.fits      2222.195  266.692   38    V_chip7_adapt_r22_10_3738     \
+   2222.195   266.692    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.297921      3.008239       0.9006513      2781   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     274.0087      61.70846   415.8099      18.453 0.070 0    NoError    
+SexA_V_chip7.fits      3452.918  276.091   39    V_chip7_adapt_r22_10_3739     \
+   3452.918   276.091    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.830203      3.135649       -0.7049569     2777   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     10816.75      61.40879   10929.14      14.904 0.007 0    NoError    
+SexA_V_chip7.fits      3965.531  277.186   40    V_chip7_adapt_r22_10_3740     \
+   3965.531   277.186    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.44024       3.449364       0.7896913      2776   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     414.7125      61.67012   503.5323      18.245 0.066 0    NoError    
+SexA_V_chip7.fits      1602.066  282.015   41    V_chip7_adapt_r22_10_3741     \
+   1602.066   282.015    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.66087       3.131808       1.175076       2743   41       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     10959.64      61.341     11061.52      14.890 0.007 0    NoError    
+SexA_V_chip7.fits      4070.792  288.168   42    V_chip7_adapt_r22_10_3742     \
+   4070.792   288.168    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.582172      3.40094        1.237683       2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     365.9821      61.649     463.5214      18.335 0.070 0    NoError    
+SexA_V_chip7.fits      139.656   293.648   43    V_chip7_adapt_r22_10_3743     \
+   139.656    293.648    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.248053      6.126449       -1.730315      2772   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     170.8318      61.48231   309.0473      18.775 0.175 0    NoError    
+SexA_V_chip7.fits      3970.635  296.131   44    V_chip7_adapt_r22_10_3744     \
+   3970.635   296.131    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.470117      3.466018       -0.4997683     2778   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     809.677       61.78485   900.5079      17.614 0.040 0    NoError    
+SexA_V_chip7.fits      195.494   298.665   45    V_chip7_adapt_r22_10_3745     \
+   195.494    298.665    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.585907      5.274502       0.8565271      2771   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     276.541       61.55647   374.1638      18.567 0.126 0    NoError    
+SexA_V_chip7.fits      291.522   305.286   46    V_chip7_adapt_r22_10_3746     \
+   291.522    305.286    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.188928      4.225373       -1.441098      2778   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7298.299      61.5615    7433.052      15.322 0.009 0    NoError    
+SexA_V_chip7.fits      3595.795  310.897   47    V_chip7_adapt_r22_10_3747     \
+   3595.795   310.897    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.788202      3.172985       0.5017723      2776   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     17293.83      61.58359   17403.96      14.398 0.005 0    NoError    
+SexA_V_chip7.fits      1359.600  314.637   48    V_chip7_adapt_r22_10_3748     \
+   1359.600   314.637    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.2454        3.225737       1.172176       2761   27       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     48.86994      61.5133    186.9919      19.320 0.156 0    NoError    
+SexA_V_chip7.fits      3778.896  315.473   49    V_chip7_adapt_r22_10_3749     \
+   3778.896   315.473    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.87025       3.171628       1.084719       2780   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     619.4786      61.76377   734.9923      17.834 0.044 0    NoError    
+SexA_V_chip7.fits      2611.985  319.724   50    V_chip7_adapt_r22_10_3750     \
+   2611.985   319.724    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.375285      3.18388        0.5740288      2791   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1065.265      61.73062   1211.893      17.291 0.029 0    NoError    
+SexA_V_chip7.fits      657.798   319.355   51    V_chip7_adapt_r22_10_3751     \
+   657.798    319.355    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.115451      3.209555       -0.5251946     2781   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     406.8557      61.65233   537.2781      18.175 0.059 0    NoError    
+SexA_V_chip7.fits      218.367   327.859   52    V_chip7_adapt_r22_10_3752     \
+   218.367    327.859    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.169095      4.861106       -1.852892      2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     772.0181      61.75982   905.981       17.607 0.051 0    NoError    
+SexA_V_chip7.fits      2825.668  345.119   53    V_chip7_adapt_r22_10_3753     \
+   2825.668   345.119    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.157702      3.172042       0.4230812      2783   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     333.4785      61.78609   466.7945      18.327 0.066 0    NoError    
+SexA_V_chip7.fits      3418.792  349.464   54    V_chip7_adapt_r22_10_3754     \
+   3418.792   349.464    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.002616      3.092929       -1.016077      2782   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1613.172      61.62429   1736.581      16.901 0.022 0    NoError    
+SexA_V_chip7.fits      275.478   355.474   55    V_chip7_adapt_r22_10_3755     \
+   275.478    355.474    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.228118      4.1998         -1.127247      2791   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     124.9877      61.50448   262.0269      18.954 0.144 0    NoError    
+SexA_V_chip7.fits      1678.711  358.067   56    V_chip7_adapt_r22_10_3756     \
+   1678.711   358.067    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.268236      3.03941        1.336274       2783   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     898.6315      61.74869   1038.692      17.459 0.032 0    NoError    
+SexA_V_chip7.fits      2908.709  370.644   57    V_chip7_adapt_r22_10_3757     \
+   2908.709   370.644    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.199282      3.112827       0.2243409      2777   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     479.2281      61.49572   614.4745      18.029 0.051 0    NoError    
+SexA_V_chip7.fits      395.898   383.581   58    V_chip7_adapt_r22_10_3758     \
+   395.898    383.581    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.974543      3.623945       1.166908       2761   27       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1455.973      61.81451   1578.029      17.005 0.026 0    NoError    
+SexA_V_chip7.fits      3543.649  383.320   59    V_chip7_adapt_r22_10_3759     \
+   3543.649   383.320    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.970547      3.171724       1.234754       2776   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1649.472      61.48912   1770.639      16.880 0.022 0    NoError    
+SexA_V_chip7.fits      1048.812  384.577   60    V_chip7_adapt_r22_10_3760     \
+   1048.812   384.577    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.089711      3.137784       -0.8663056     2782   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     474.9719      61.62017   603.7402      18.048 0.052 0    NoError    
+SexA_V_chip7.fits      2913.398  384.029   61    V_chip7_adapt_r22_10_3761     \
+   2913.398   384.029    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.407857      3.222563       1.250818       2788   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     12.02909      61.89427   161.0617      19.483 0.180 0    NoError    
+SexA_V_chip7.fits      3805.382  388.801   62    V_chip7_adapt_r22_10_3762     \
+   3805.382   388.801    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.582857      3.150599       -1.050315      2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     584.531       61.62981   682.0822      17.915 0.047 0    NoError    
+SexA_V_chip7.fits      315.295   396.536   63    V_chip7_adapt_r22_10_3763     \
+   315.295    396.536    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.046374      4.0729         -1.158055      2772   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1513.609      61.54693   1639.557      16.963 0.027 0    NoError    
+SexA_V_chip7.fits      311.911   406.147   64    V_chip7_adapt_r22_10_3764     \
+   311.911    406.147    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.121206      4.073157       -1.381522      2775   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2219.377      61.47633   2349.781      16.572 0.020 0    NoError    
+SexA_V_chip7.fits      1779.597  407.797   65    V_chip7_adapt_r22_10_3765     \
+   1779.597   407.797    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.935139      3.137046       -0.8512115     2772   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     275.5468      61.60257   394.7563      18.509 0.076 0    NoError    
+SexA_V_chip7.fits      1622.314  418.994   66    V_chip7_adapt_r22_10_3766     \
+   1622.314   418.994    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.001732      3.150621       0.4635057      2789   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2152.838      61.80165   2276.548      16.607 0.018 0    NoError    
+SexA_V_chip7.fits      2004.026  430.758   67    V_chip7_adapt_r22_10_3767     \
+   2004.026   430.758    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.903834      3.299487       1.261737       2760   32       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     167.7103      61.66257   285.1056      18.862 0.107 0    NoError    
+SexA_V_chip7.fits      1154.234  438.811   68    V_chip7_adapt_r22_10_3768     \
+   1154.234   438.811    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.21376       3.097042       -1.048814      2780   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     468.917       61.69462   605.4941      18.045 0.052 0    NoError    
+SexA_V_chip7.fits      830.399   438.649   69    V_chip7_adapt_r22_10_3769     \
+   830.399    438.649    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.148209      3.171501       -1.131732      2777   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2282.091      61.50131   2414.209      16.543 0.017 0    NoError    
+SexA_V_chip7.fits      2038.364  442.876   70    V_chip7_adapt_r22_10_3770     \
+   2038.364   442.876    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.222192      3.219985       1.378475       2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     653.0604      61.79312   790.3765      17.755 0.042 0    NoError    
+SexA_V_chip7.fits      2993.580  448.185   71    V_chip7_adapt_r22_10_3771     \
+   2993.580   448.185    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.12527       3.09591        0.2827556      2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     8155.179      61.62608   8286.151      15.204 0.008 0    NoError    
+SexA_V_chip7.fits      2760.153  453.286   72    V_chip7_adapt_r22_10_3772     \
+   2760.153   453.286    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.975242      3.068218       -1.100276      2782   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7571.148      61.76222   7693.144      15.285 0.008 0    NoError    
+SexA_V_chip7.fits      630.691   456.156   73    V_chip7_adapt_r22_10_3773     \
+   630.691    456.156    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.229617      3.255249       0.8203202      2766   23       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     247.4638      61.76744   385.1816      18.536 0.080 0    NoError    
+SexA_V_chip7.fits      2128.022  457.722   74    V_chip7_adapt_r22_10_3774     \
+   2128.022   457.722    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.978032      3.215544       1.337399       2782   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     491.4262      61.73409   613.5382      18.030 0.052 0    NoError    
+SexA_V_chip7.fits      3828.122  456.633   75    V_chip7_adapt_r22_10_3775     \
+   3828.122   456.633    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.713939      3.239781       1.151919       2761   28       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3925.302      61.79516   4031.216      15.986 0.012 0    NoError    
+SexA_V_chip7.fits      1292.291  469.448   76    V_chip7_adapt_r22_10_3776     \
+   1292.291   469.448    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.148448      3.091752       0.9229001      2776   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1209.263      61.53222   1341.462      17.181 0.027 0    NoError    
+SexA_V_chip7.fits      993.108   478.674   77    V_chip7_adapt_r22_10_3777     \
+   993.108    478.674    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.035531      3.124968       -1.119953      2786   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     401.2914      61.79023   527.0674      18.195 0.059 0    NoError    
+SexA_V_chip7.fits      523.215   490.924   78    V_chip7_adapt_r22_10_3778     \
+   523.215    490.924    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.20769       3.118849       -0.434215      2782   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     393.9458      61.60021   529.9399      18.189 0.058 0    NoError    
+SexA_V_chip7.fits      623.557   499.206   79    V_chip7_adapt_r22_10_3779     \
+   623.557    499.206    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.015189      3.195474       0.795984       2771   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     26064.59      61.60848   26188.74      13.955 0.004 0    NoError    
+SexA_V_chip7.fits      329.206   500.339   80    V_chip7_adapt_r22_10_3780     \
+   329.206    500.339    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.34041       3.945918       1.065408       2776   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3265.759      61.66048   3410.07       16.168 0.015 0    NoError    
+SexA_V_chip7.fits      3692.389  499.650   81    V_chip7_adapt_r22_10_3781     \
+   3692.389   499.650    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.668964      3.138992       0.5556493      2785   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1193.448      61.49158   1296.075      17.218 0.028 0    NoError    
+SexA_V_chip7.fits      898.430   504.800   82    V_chip7_adapt_r22_10_3782     \
+   898.430    504.800    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.994723      3.172731       -0.6488625     2780   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     8811.708      61.60711   8934.597      15.122 0.008 0    NoError    
+SexA_V_chip7.fits      2373.027  516.050   83    V_chip7_adapt_r22_10_3783     \
+   2373.027   516.050    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.269537      3.115846       1.038323       2778   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1530.101      61.34292   1669.321      16.944 0.023 0    NoError    
+SexA_V_chip7.fits      1874.808  523.783   84    V_chip7_adapt_r22_10_3784     \
+   1874.808   523.783    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.629965      3.101656       -0.5472032     2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     182278.2      61.67677   182378.7      11.848 0.002 0    NoError    
+SexA_V_chip7.fits      4078.875  543.795   85    V_chip7_adapt_r22_10_3785     \
+   4078.875   543.795    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.549353      3.324989       -0.9603352     2772   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     43488.23      61.59274   43583.66      13.402 0.003 0    NoError    
+SexA_V_chip7.fits      2965.893  544.865   86    V_chip7_adapt_r22_10_3786     \
+   2965.893   544.865    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.111102      3.057529       0.9304135      2783   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     941.8892      61.48474   1071.69       17.425 0.032 0    NoError    
+SexA_V_chip7.fits      3049.440  546.548   87    V_chip7_adapt_r22_10_3787     \
+   3049.440   546.548    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.883882      3.203161       1.071424       2794   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     77690.95      61.54061   77806.89      12.772 0.002 0    NoError    
+SexA_V_chip7.fits      969.597   549.947   88    V_chip7_adapt_r22_10_3788     \
+   969.597    549.947    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.280489      3.048579       1.158321       2783   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3616.547      61.88984   3757.687      16.063 0.013 0    NoError    
+SexA_V_chip7.fits      3121.182  552.190   89    V_chip7_adapt_r22_10_3789     \
+   3121.182   552.190    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.176286      3.124419       0.3512928      2779   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1126.496      61.64672   1260.657      17.249 0.028 0    NoError    
+SexA_V_chip7.fits      2309.158  558.695   90    V_chip7_adapt_r22_10_3790     \
+   2309.158   558.695    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.087         3.159698       0.7751206      2776   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     520.9749      61.76672   649.8821      17.968 0.049 0    NoError    
+SexA_V_chip7.fits      1397.972  562.926   91    V_chip7_adapt_r22_10_3791     \
+   1397.972   562.926    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.793053      3.233179       1.002736       2770   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     158.1527      61.33864   268.1362      18.929 0.111 0    NoError    
+SexA_V_chip7.fits      206.571   567.986   92    V_chip7_adapt_r22_10_3792     \
+   206.571    567.986    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.398634      4.980432       -1.647768      2780   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     8938.644      61.8876    9087.09       15.104 0.008 0    NoError    
+SexA_V_chip7.fits      2414.250  582.945   93    V_chip7_adapt_r22_10_3793     \
+   2414.250   582.945    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.058956      3.126088       -0.767914      2781   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     287.7646      61.67513   414.7509      18.456 0.072 0    NoError    
+SexA_V_chip7.fits      2477.822  583.533   94    V_chip7_adapt_r22_10_3794     \
+   2477.822   583.533    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.01766       3.15469        -0.9760585     2781   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     236.7957      61.68262   361.2502      18.605 0.083 0    NoError    
+SexA_V_chip7.fits      1656.780  588.721   95    V_chip7_adapt_r22_10_3795     \
+   1656.780   588.721    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.043428      3.15861        0.9948886      2784   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1015.407      61.68568   1141.458      17.356 0.031 0    NoError    
+SexA_V_chip7.fits      2861.696  590.314   96    V_chip7_adapt_r22_10_3796     \
+   2861.696   590.314    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.083762      3.070235       1.010513       2763   21       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     495.1144      61.55831   623.3873      18.013 0.050 0    NoError    
+SexA_V_chip7.fits      2463.637  595.721   97    V_chip7_adapt_r22_10_3797     \
+   2463.637   595.721    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.067847      3.174428       -1.157259      2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     461.9413      61.50125   589.1165      18.074 0.054 0    NoError    
+SexA_V_chip7.fits      3727.830  604.073   98    V_chip7_adapt_r22_10_3798     \
+   3727.830   604.073    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.893783      3.209142       1.030054       2773   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     278.1347      61.48945   394.5824      18.510 0.077 0    NoError    
+SexA_V_chip7.fits      1713.389  627.225   99    V_chip7_adapt_r22_10_3799     \
+   1713.389   627.225    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.173322      3.031321       -0.6047107     2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1272.197      61.57434   1406.018      17.130 0.025 0    NoError    
+SexA_V_chip7.fits      3511.507  629.655   100   V_chip7_adapt_r22_10_37100    \
+   3511.507   629.655    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.00055       3.104996       -1.055843      2786   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     775.1075      61.56538   898.2722      17.616 0.037 0    NoError    
+SexA_V_chip7.fits      2355.216  636.381   101   V_chip7_adapt_r22_10_37101    \
+   2355.216   636.381    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.322758      3.194025       1.161801       2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     123.0876      61.59924   266.1677      18.937 0.111 0    NoError    
+SexA_V_chip7.fits      1885.390  637.044   102   V_chip7_adapt_r22_10_37102    \
+   1885.390   637.044    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.05868       3.13516        0.867303       2778   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7281.102      61.88768   7408.509      15.326 0.008 0    NoError    
+SexA_V_chip7.fits      1521.707  639.006   103   V_chip7_adapt_r22_10_37103    \
+   1521.707   639.006    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.144786      3.169226       0.6887368      2795   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3216.526      61.7631    3348.995      16.188 0.014 0    NoError    
+SexA_V_chip7.fits      3630.983  638.812   104   V_chip7_adapt_r22_10_37104    \
+   3630.983   638.812    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.694011      3.262994       1.102716       2781   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     239.6785      61.50635   343.871       18.659 0.089 0    NoError    
+SexA_V_chip7.fits      135.278   641.417   105   V_chip7_adapt_r22_10_37105    \
+   135.278    641.417    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.428585      6.36766        -2.479488      2781   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     180.4236      61.51      329.8058      18.704 0.170 0    NoError    
+SexA_V_chip7.fits      474.261   657.664   106   V_chip7_adapt_r22_10_37106    \
+   474.261    657.664    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.221853      3.169424       0.8593394      2774   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1129.799      61.55592   1266.567      17.243 0.028 0    NoError    
+SexA_V_chip7.fits      254.460   660.996   107   V_chip7_adapt_r22_10_37107    \
+   254.460    660.996    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.403591      4.398717       -0.3505976     2767   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2728.64       61.87683   2877.366      16.353 0.018 0    NoError    
+SexA_V_chip7.fits      3731.007  664.921   108   V_chip7_adapt_r22_10_37108    \
+   3731.007   664.921    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.78011       3.121878       -0.9378437     2785   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     771.146       61.33859   880.3354      17.638 0.038 0    NoError    
+SexA_V_chip7.fits      788.091   666.922   109   V_chip7_adapt_r22_10_37109    \
+   788.091    666.922    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.234466      3.112439       -0.7166065     2772   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     764.3747      61.40383   901.5795      17.612 0.037 0    NoError    
+SexA_V_chip7.fits      4009.016  676.889   110   V_chip7_adapt_r22_10_37110    \
+   4009.016   676.889    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.602531      3.133058       0.698768       2773   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     771.3484      61.34786   869.6603      17.652 0.038 0    NoError    
+SexA_V_chip7.fits      3029.580  681.057   111   V_chip7_adapt_r22_10_37111    \
+   3029.580   681.057    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.959627      3.107553       -0.2427058     2779   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     461.3349      61.87878   582.5942      18.087 0.053 0    NoError    
+SexA_V_chip7.fits      3480.774  681.850   112   V_chip7_adapt_r22_10_37112    \
+   3480.774   681.850    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.819818      3.140609       -1.40741       2778   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     835.9463      61.65253   948.1427      17.558 0.036 0    NoError    
+SexA_V_chip7.fits      1185.861  699.142   113   V_chip7_adapt_r22_10_37113    \
+   1185.861   699.142    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.191362      3.165036       -0.4546919     2790   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     639.6574      61.52586   774.4829      17.777 0.042 0    NoError    
+SexA_V_chip7.fits      3819.714  700.648   114   V_chip7_adapt_r22_10_37114    \
+   3819.714   700.648    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.812787      3.135366       0.4254536      2777   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1111.01       61.50494   1222.505      17.282 0.029 0    NoError    
+SexA_V_chip7.fits      3082.803  726.728   115   V_chip7_adapt_r22_10_37115    \
+   3082.803   726.728    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.614241      3.220693       0.5977536      2774   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1395.635      61.7334    1495.288      17.063 0.025 0    NoError    
+SexA_V_chip7.fits      2549.641  734.451   116   V_chip7_adapt_r22_10_37116    \
+   2549.641   734.451    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.938619      3.197754       1.024115       2773   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     72.91147      61.57305   192.2782      19.290 0.151 0    NoError    
+SexA_V_chip7.fits      1569.046  742.804   117   V_chip7_adapt_r22_10_37117    \
+   1569.046   742.804    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.071149      3.158426       -0.9864472     2786   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     957.4702      61.53883   1084.926      17.411 0.032 0    NoError    
+SexA_V_chip7.fits      1953.854  752.182   118   V_chip7_adapt_r22_10_37118    \
+   1953.854   752.182    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.400225      3.19534        1.128787       2776   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     494.9948      61.58984   642.8243      17.980 0.050 0    NoError    
+SexA_V_chip7.fits      2858.790  753.082   119   V_chip7_adapt_r22_10_37119    \
+   2858.790   753.082    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.048852      3.198154       -0.8677515     2779   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     603.1401      61.58923   729.3273      17.843 0.045 0    NoError    
+SexA_V_chip7.fits      1873.070  754.824   120   V_chip7_adapt_r22_10_37120    \
+   1873.070   754.824    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.945819      3.221205       1.147575       2782   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     86.46152      61.50323   206.1357      19.215 0.142 0    NoError    
+SexA_V_chip7.fits      3167.632  761.174   121   V_chip7_adapt_r22_10_37121    \
+   3167.632   761.174    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.999968      3.069914       0.7133644      2775   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     834.2614      61.68972   957.6388      17.547 0.035 0    NoError    
+SexA_V_chip7.fits      296.584   769.760   122   V_chip7_adapt_r22_10_37122    \
+   296.584    769.760    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.358436      4.246885       -1.179102      2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     159.1587      61.55518   304.3326      18.792 0.126 0    NoError    
+SexA_V_chip7.fits      2023.037  778.289   123   V_chip7_adapt_r22_10_37123    \
+   2023.037   778.289    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.797236      3.315684       0.8920947      2771   26       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7528.5        61.75361   7639.486      15.292 0.008 0    NoError    
+SexA_V_chip7.fits      1367.049  779.098   124   V_chip7_adapt_r22_10_37124    \
+   1367.049   779.098    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.143213      3.174321       -0.250337      2777   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     23656.55      61.37602   23788.09      14.059 0.004 0    NoError    
+SexA_V_chip7.fits      2341.276  784.335   125   V_chip7_adapt_r22_10_37125    \
+   2341.276   784.335    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.67453       3.238257       -1.076875      2772   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     6165.63       61.53697   6268.675      15.507 0.009 0    NoError    
+SexA_V_chip7.fits      1558.504  785.868   126   V_chip7_adapt_r22_10_37126    \
+   1558.504   785.868    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.940924      3.221357       1.284706       2773   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     503.51        61.74528   623.3529      18.013 0.052 0    NoError    
+SexA_V_chip7.fits      699.531   787.583   127   V_chip7_adapt_r22_10_37127    \
+   699.531    787.583    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.155597      3.100509       -1.092949      2785   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1090.029      61.54849   1222.702      17.282 0.029 0    NoError    
+SexA_V_chip7.fits      2386.652  790.733   128   V_chip7_adapt_r22_10_37128    \
+   2386.652   790.733    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.062633      3.595762       1.461684       2759   28       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1342.49       61.53236   1407.877      17.129 0.028 0    NoError    
+SexA_V_chip7.fits      3596.181  804.059   129   V_chip7_adapt_r22_10_37129    \
+   3596.181   804.059    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.967961      3.049806       0.8447753      2777   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1696.56       61.50726   1817.604      16.851 0.021 0    NoError    
+SexA_V_chip7.fits      3966.972  804.427   130   V_chip7_adapt_r22_10_37130    \
+   3966.972   804.427    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.562943      3.325717       -1.21027       2775   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1625.404      61.88718   1722.13       16.910 0.023 0    NoError    
+SexA_V_chip7.fits      2930.288  808.967   131   V_chip7_adapt_r22_10_37131    \
+   2930.288   808.967    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.863511      3.152931       1.184436       2775   22       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     949.9273      61.75231   1065.004      17.432 0.032 0    NoError    
+SexA_V_chip7.fits      1087.450  812.485   132   V_chip7_adapt_r22_10_37132    \
+   1087.450   812.485    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.244883      3.183589       0.8394762      2798   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     312.1381      61.5144    450.2307      18.366 0.068 0    NoError    
+SexA_V_chip7.fits      3365.055  814.813   133   V_chip7_adapt_r22_10_37133    \
+   3365.055   814.813    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.841865      3.108847       1.150082       2785   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4881.844      61.5198    4995.155      15.754 0.011 0    NoError    
+SexA_V_chip7.fits      2159.655  824.300   134   V_chip7_adapt_r22_10_37134    \
+   2159.655   824.300    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.809597      3.282161       1.50308        2752   35       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     610.3784      61.50135   721.6711      17.854 0.046 0    NoError    
+SexA_V_chip7.fits      4043.339  834.849   135   V_chip7_adapt_r22_10_37135    \
+   4043.339   834.849    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.507224      3.318521       -1.576896      2778   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     849.0372      61.75816   942.1206      17.565 0.037 0    NoError    
+SexA_V_chip7.fits      378.267   843.519   136   V_chip7_adapt_r22_10_37136    \
+   378.267    843.519    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.111191      3.518012       -1.284566      2775   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     9021.011      61.57479   9151.008      15.096 0.008 0    NoError    
+SexA_V_chip7.fits      3789.141  858.536   137   V_chip7_adapt_r22_10_37137    \
+   3789.141   858.536    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.760898      3.007472       0.8793507      2772   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     14179.18      61.73236   14287.88      14.613 0.006 0    NoError    
+SexA_V_chip7.fits      144.342   859.012   138   V_chip7_adapt_r22_10_37138    \
+   144.342    859.012    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.3823        6.124211       -0.6804461     2785   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     137.8491      61.85068   285.196       18.862 0.189 0    NoError    
+SexA_V_chip7.fits      2538.891  862.940   139   V_chip7_adapt_r22_10_37139    \
+   2538.891   862.940    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.907583      3.191666       -0.618346      2775   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1172.118      61.40182   1289.247      17.224 0.028 0    NoError    
+SexA_V_chip7.fits      3430.292  866.544   140   V_chip7_adapt_r22_10_37140    \
+   3430.292   866.544    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.891504      3.042328       1.075194       2775   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     243.3127      61.54012   359.7161      18.610 0.081 0    NoError    
+SexA_V_chip7.fits      896.171   867.940   141   V_chip7_adapt_r22_10_37141    \
+   896.171    867.940    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.12955       3.188355       1.275926       2775   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     228.1661      61.48197   359.095       18.612 0.084 0    NoError    
+SexA_V_chip7.fits      2147.014  867.565   142   V_chip7_adapt_r22_10_37142    \
+   2147.014   867.565    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.728155      3.229897       0.9524755      2747   41       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     491.5372      61.88571   598.4853      18.057 0.054 0    NoError    
+SexA_V_chip7.fits      2139.686  870.949   143   V_chip7_adapt_r22_10_37143    \
+   2139.686   870.949    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.863535      3.159803       -1.333803      2785   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     785.3841      61.7977    900.5463      17.614 0.037 0    NoError    
+SexA_V_chip7.fits      1145.515  877.378   144   V_chip7_adapt_r22_10_37144    \
+   1145.515   877.378    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.163747      3.053087       -0.5285668     2775   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     271.1775      61.58716   404.4365      18.483 0.073 0    NoError    
+SexA_V_chip7.fits      635.081   886.967   145   V_chip7_adapt_r22_10_37145    \
+   635.081    886.967    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.405757      3.255619       0.82793        2771   20       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3033.549      61.34124   3181.121      16.244 0.015 0    NoError    
+SexA_V_chip7.fits      303.746   894.727   146   V_chip7_adapt_r22_10_37146    \
+   303.746    894.727    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.367633      4.139411       -1.01765       2774   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4795.024      61.64365   4940.973      15.765 0.012 0    NoError    
+SexA_V_chip7.fits      1782.001  906.458   147   V_chip7_adapt_r22_10_37147    \
+   1782.001   906.458    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.861346      3.16079        -0.1634922     2776   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     646.8685      61.87767   762.0443      17.795 0.043 0    NoError    
+SexA_V_chip7.fits      798.279   911.357   148   V_chip7_adapt_r22_10_37148    \
+   798.279    911.357    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.158288      3.130702       -0.9374395     2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     23424.5       61.50655   23557.25      14.070 0.004 0    NoError    
+SexA_V_chip7.fits      3665.721  929.483   149   V_chip7_adapt_r22_10_37149    \
+   3665.721   929.483    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.814725      3.120281       -1.003011      2781   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     94.16042      61.56764   205.8887      19.216 0.138 0    NoError    
+SexA_V_chip7.fits      3126.289  931.342   150   V_chip7_adapt_r22_10_37150    \
+   3126.289   931.342    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.934856      3.051759       1.057017       2778   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5386.82       61.51354   5505.84       15.648 0.010 0    NoError    
+SexA_V_chip7.fits      386.213   945.050   151   V_chip7_adapt_r22_10_37151    \
+   386.213    945.050    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.537697      3.472558       0.5203273      2781   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     184.043       61.5895    340.3385      18.670 0.095 0    NoError    
+SexA_V_chip7.fits      1777.900  954.024   152   V_chip7_adapt_r22_10_37152    \
+   1777.900   954.024    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.688688      3.323567       0.982629       2770   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     45826.52      61.34674   45930.12      13.345 0.003 0    NoError    
+SexA_V_chip7.fits      844.163   961.940   153   V_chip7_adapt_r22_10_37153    \
+   844.163    961.940    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.257936      3.15393        0.7025244      2780   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     320459.       61.46812   320536.3      11.235 0.001 0    NoError    
+SexA_V_chip7.fits      3793.610  964.163   154   V_chip7_adapt_r22_10_37154    \
+   3793.610   964.163    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.453351      3.288912       1.073017       2762   29       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     11442.54      61.69157   11532.2       14.845 0.007 0    NoError    
+SexA_V_chip7.fits      1844.408  969.146   155   V_chip7_adapt_r22_10_37155    \
+   1844.408   969.146    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.73191       3.407922       1.365756       2782   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     509.1235      61.72374   616.0234      18.026 0.055 0    NoError    
+SexA_V_chip7.fits      3779.652  973.293   156   V_chip7_adapt_r22_10_37156    \
+   3779.652   973.293    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.49342       3.158987       0.3650351      2778   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2431.574      61.50168   2523.422      16.495 0.017 0    NoError    
+SexA_V_chip7.fits      2957.641  973.699   157   V_chip7_adapt_r22_10_37157    \
+   2957.641   973.699    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.03788       3.167526       1.002          2781   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     254.6924      61.48744   379.9965      18.551 0.079 0    NoError    
+SexA_V_chip7.fits      1666.230  975.609   158   V_chip7_adapt_r22_10_37158    \
+   1666.230   975.609    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.225245      3.30143        1.676197       2772   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     134459.2      61.56659   134534.6      12.178 0.002 0    NoError    
+SexA_V_chip7.fits      1660.742  979.128   159   V_chip7_adapt_r22_10_37159    \
+   1660.742   979.128    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.12959       3.309867       1.090507       2782   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     180874.5      61.70805   180944.2      11.856 0.002 0    NoError    
+SexA_V_chip7.fits      2770.489  985.823   160   V_chip7_adapt_r22_10_37160    \
+   2770.489   985.823    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.863151      3.162116       -1.057643      2782   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     185.8659      61.68894   300.8017      18.804 0.098 0    NoError    
+SexA_V_chip7.fits      1910.762  990.779   161   V_chip7_adapt_r22_10_37161    \
+   1910.762   990.779    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.604684      3.361865       1.390697       2753   36       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1463.548      61.70841   1562.571      17.015 0.025 0    NoError    
+SexA_V_chip7.fits      3015.757  990.706   162   V_chip7_adapt_r22_10_37162    \
+   3015.757   990.706    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.812074      3.231819       0.7447399      2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     710.6717      61.63291   822.3551      17.712 0.041 0    NoError    
+SexA_V_chip7.fits      2709.114  992.663   163   V_chip7_adapt_r22_10_37163    \
+   2709.114   992.663    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.841342      3.129148       0.9291216      2785   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     550.1212      61.79502   663.907       17.945 0.048 0    NoError    
+SexA_V_chip7.fits      1801.308  993.202   164   V_chip7_adapt_r22_10_37164    \
+   1801.308   993.202    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.61008       3.397011       1.501747       2772   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     277.3124      61.69563   376.6473      18.560 0.085 0    NoError    
+SexA_V_chip7.fits      3592.152  993.251   165   V_chip7_adapt_r22_10_37165    \
+   3592.152   993.251    0.000   0.000   INDEF   INDEF          0    NoError   \
+   -0.828191      3.102835       -0.6814225     2778   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     322766.5      61.71995   322817.6      11.228 0.001 0    NoError    
+SexA_V_chip7.fits      3482.410  1001.351  166   V_chip7_adapt_r22_10_37166    \
+   3482.410   1001.351   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.75409       3.112683       0.8179171      2781   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     424.0151      61.5186    531.9243      18.185 0.058 0    NoError    
+SexA_V_chip7.fits      623.784   1002.654  167   V_chip7_adapt_r22_10_37167    \
+   623.784    1002.654   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.71318       3.221146       1.201401       2778   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     166068.7      61.63497   166174.3      11.949 0.002 0    NoError    
+SexA_V_chip7.fits      3234.452  1015.803  168   V_chip7_adapt_r22_10_37168    \
+   3234.452   1015.803   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.689283      3.240324       1.330627       2781   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     275.6532      61.63247   379.7679      18.551 0.081 0    NoError    
+SexA_V_chip7.fits      2154.191  1021.663  169   V_chip7_adapt_r22_10_37169    \
+   2154.191   1021.663   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.110976      3.1857         0.5408154      2783   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     745.7367      61.69014   875.9631      17.644 0.038 0    NoError    
+SexA_V_chip7.fits      1974.243  1026.820  170   V_chip7_adapt_r22_10_37170    \
+   1974.243   1026.820   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.537531      3.218687       0.619393       2785   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     148557.8      61.7041    148652.7      12.070 0.002 0    NoError    
+SexA_V_chip7.fits      2412.657  1030.533  171   V_chip7_adapt_r22_10_37171    \
+   2412.657   1030.533   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.644822      3.249759       0.7095464      2781   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     414.9728      61.56195   516.2312      18.218 0.061 0    NoError    
+SexA_V_chip7.fits      2263.139  1041.275  172   V_chip7_adapt_r22_10_37172    \
+   2263.139   1041.275   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.868016      3.233989       1.161739       2781   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     347.4366      61.74192   462.7715      18.337 0.068 0    NoError    
+SexA_V_chip7.fits      260.814   1043.634  173   V_chip7_adapt_r22_10_37173    \
+   260.814    1043.634   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.553386      4.382556       0.7169112      2767   25       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     224825.5      61.67043   224921.3      11.620 0.001 0    NoError    
+SexA_V_chip7.fits      740.901   1043.804  174   V_chip7_adapt_r22_10_37174    \
+   740.901    1043.804   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.259879      3.224948       -0.660867      2786   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     562.2338      61.56726   701.3683      17.885 0.047 0    NoError    
+SexA_V_chip7.fits      736.433   1043.994  175   V_chip7_adapt_r22_10_37175    \
+   736.433    1043.994   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.226474      3.208075       1.117939       2783   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     931.2455      61.88663   1069.034      17.428 0.033 0    NoError    
+SexA_V_chip7.fits      3604.230  1044.502  176   V_chip7_adapt_r22_10_37176    \
+   3604.230   1044.502   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.251932      3.328767       0.6260974      2775   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     17423.53      61.61407   17500.66      14.392 0.005 0    NoError    
+SexA_V_chip7.fits      414.566   1048.921  177   V_chip7_adapt_r22_10_37177    \
+   414.566    1048.921   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.095728      3.497383       0.9546319      2776   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     775.4386      61.83881   905.0359      17.608 0.040 0    NoError    
+SexA_V_chip7.fits      502.654   1050.276  178   V_chip7_adapt_r22_10_37178    \
+   502.654    1050.276   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.426399      3.111181       1.191952       2772   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     258.684       61.52357   407.9647      18.473 0.073 0    NoError    
+SexA_V_chip7.fits      1858.939  1051.399  179   V_chip7_adapt_r22_10_37179    \
+   1858.939   1051.399   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.722178      3.293995       -1.217199      2792   3        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     375.4904      61.88228   482.0627      18.292 0.066 0    NoError    
+SexA_V_chip7.fits      1225.710  1053.521  180   V_chip7_adapt_r22_10_37180    \
+   1225.710   1053.521   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.781666      3.135955       1.138237       2770   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     135895.3      61.55811   136005.       12.166 0.002 0    NoError    
+SexA_V_chip7.fits      3970.932  1052.720  181   V_chip7_adapt_r22_10_37181    \
+   3970.932   1052.720   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.509397      3.295829       -1.03013       2777   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1201.446      61.73154   1294.623      17.220 0.029 0    NoError    
+SexA_V_chip7.fits      1041.806  1054.242  182   V_chip7_adapt_r22_10_37182    \
+   1041.806   1054.242   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.143818      3.129281       -1.087298      2771   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     135.2285      61.7108    267.5252      18.932 0.109 0    NoError    
+SexA_V_chip7.fits      1295.772  1058.273  183   V_chip7_adapt_r22_10_37183    \
+   1295.772   1058.273   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.093234      3.180686       0.6959289      2778   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     835.4141      61.68027   964.5253      17.539 0.035 0    NoError    
+SexA_V_chip7.fits      1474.890  1059.954  184   V_chip7_adapt_r22_10_37184    \
+   1474.890   1059.954   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.993029      3.228069       -0.763181      2778   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3525.302      61.38535   3647.645      16.095 0.013 0    NoError    
+SexA_V_chip7.fits      3476.155  1072.387  185   V_chip7_adapt_r22_10_37185    \
+   3476.155   1072.387   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.387946      3.137621       -0.5810637     2784   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     200741.1      61.71368   200826.8      11.743 0.001 0    NoError    
+SexA_V_chip7.fits      716.468   1079.564  186   V_chip7_adapt_r22_10_37186    \
+   716.468    1079.564   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.128557      3.236718       -0.7354737     2795   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1854.838      61.53308   1985.815      16.755 0.020 0    NoError    
+SexA_V_chip7.fits      4076.162  1085.416  187   V_chip7_adapt_r22_10_37187    \
+   4076.162   1085.416   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.727861      3.354776       -0.3351066     2782   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     396.8312      61.67763   503.4016      18.245 0.064 0    NoError    
+SexA_V_chip7.fits      2921.407  1085.152  188   V_chip7_adapt_r22_10_37188    \
+   2921.407   1085.152   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.743366      3.273003       -0.8472841     2783   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1374.344      61.7093    1481.926      17.073 0.026 0    NoError    
+SexA_V_chip7.fits      3843.664  1092.472  189   V_chip7_adapt_r22_10_37189    \
+   3843.664   1092.472   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.81643       3.104564       -0.9469867     2785   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5879.336      61.5561    5991.149      15.556 0.010 0    NoError    
+SexA_V_chip7.fits      1014.203  1095.055  190   V_chip7_adapt_r22_10_37190    \
+   1014.203   1095.055   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.194916      3.05751        -0.6583698     2779   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1489.006      61.5623    1624.13       16.973 0.023 0    NoError    
+SexA_V_chip7.fits      2473.897  1099.547  191   V_chip7_adapt_r22_10_37191    \
+   2473.897   1099.547   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.644424      3.216331       -1.311411      2777   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     369.831       61.77004   471.4071      18.317 0.066 0    NoError    
+SexA_V_chip7.fits      906.849   1105.521  192   V_chip7_adapt_r22_10_37192    \
+   906.849    1105.521   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.581049      3.247711       1.446499       2777   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     54687.34      61.72172   54784.93      13.153 0.003 0    NoError    
+SexA_V_chip7.fits      2053.573  1108.971  193   V_chip7_adapt_r22_10_37193    \
+   2053.573   1108.971   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.458001      3.337895       0.7771523      2770   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1844.333      61.88708   1934.564      16.784 0.021 0    NoError    
+SexA_V_chip7.fits      218.093   1113.985  194   V_chip7_adapt_r22_10_37194    \
+   218.093    1113.985   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.118448      4.834415       -2.040961      2780   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     864.8765      61.33814   994.8182      17.506 0.047 0    NoError    
+SexA_V_chip7.fits      3571.024  1114.854  195   V_chip7_adapt_r22_10_37195    \
+   3571.024   1114.854   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.823465      3.04863        1.047549       2781   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7104.494      61.4141    7216.481      15.354 0.009 0    NoError    
+SexA_V_chip7.fits      1235.499  1117.536  196   V_chip7_adapt_r22_10_37196    \
+   1235.499   1117.536   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.016761      3.186843       -0.9877997     2792   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     389.5758      61.50011   513.6068      18.223 0.061 0    NoError    
+SexA_V_chip7.fits      3213.182  1119.676  197   V_chip7_adapt_r22_10_37197    \
+   3213.182   1119.676   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.7912        3.201656       -0.7977931     2782   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     417.975       61.71842   528.525       18.192 0.059 0    NoError    
+SexA_V_chip7.fits      2059.250  1121.499  198   V_chip7_adapt_r22_10_37198    \
+   2059.250   1121.499   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.736447      3.234625       -0.5328508     2779   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2357.23       61.59099   2464.179      16.521 0.017 0    NoError    
+SexA_V_chip7.fits      2783.895  1121.835  199   V_chip7_adapt_r22_10_37199    \
+   2783.895   1121.835   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.675069      3.319102       -1.27855       2778   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2243.2        61.51466   2346.242      16.574 0.018 0    NoError    
+SexA_V_chip7.fits      2653.125  1124.493  200   V_chip7_adapt_r22_10_37200    \
+   2653.125   1124.493   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.647119      3.433687       1.499267       2746   43       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     88.99346      61.75337   190.7086      19.299 0.162 0    NoError    
+SexA_V_chip7.fits      3668.126  1126.248  201   V_chip7_adapt_r22_10_37201    \
+   3668.126   1126.248   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.727002      3.151918       1.342784       2783   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1289.038      61.69254   1395.582      17.138 0.026 0    NoError    
+SexA_V_chip7.fits      726.563   1130.831  202   V_chip7_adapt_r22_10_37202    \
+   726.563    1130.831   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.137248      3.250414       1.086385       2777   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     834.9767      61.66745   966.7753      17.537 0.036 0    NoError    
+SexA_V_chip7.fits      1527.135  1135.048  203   V_chip7_adapt_r22_10_37203    \
+   1527.135   1135.048   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.797738      3.284984       -0.8401558     2770   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     366.6801      61.4138    477.0861      18.304 0.066 0    NoError    
+SexA_V_chip7.fits      1866.130  1135.366  204   V_chip7_adapt_r22_10_37204    \
+   1866.130   1135.366   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.963615      3.281689       1.541372       2781   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     451.9609      61.78601   573.2848      18.104 0.056 0    NoError    
+SexA_V_chip7.fits      2585.014  1139.858  205   V_chip7_adapt_r22_10_37205    \
+   2585.014   1139.858   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.474652      3.207144       -0.8275586     2769   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     891.1025      61.39948   981.6453      17.520 0.035 0    NoError    
+SexA_V_chip7.fits      3367.301  1140.222  206   V_chip7_adapt_r22_10_37206    \
+   3367.301   1140.222   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.536794      3.230846       1.213099       2762   28       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     666.3509      61.66357   761.1151      17.796 0.044 0    NoError    
+SexA_V_chip7.fits      417.309   1144.613  207   V_chip7_adapt_r22_10_37207    \
+   417.309    1144.613   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.112547      3.434994       -1.000799      2774   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4110.647      61.48231   4240.532      15.931 0.012 0    NoError    
+SexA_V_chip7.fits      795.914   1147.687  208   V_chip7_adapt_r22_10_37208    \
+   795.914    1147.687   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.630394      3.23968        0.7148204      2787   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1340.631      61.78856   1441.37       17.103 0.026 0    NoError    
+SexA_V_chip7.fits      4010.269  1154.304  209   V_chip7_adapt_r22_10_37209    \
+   4010.269   1154.304   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.683072      3.317604       1.048834       2779   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     673.4186      61.59424   777.0862      17.774 0.044 0    NoError    
+SexA_V_chip7.fits      3367.557  1156.842  210   V_chip7_adapt_r22_10_37210    \
+   3367.557   1156.842   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.631975      3.13218        0.9739382      2783   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     17598.08      61.69327   17698.77      14.380 0.005 0    NoError    
+SexA_V_chip7.fits      2703.648  1158.889  211   V_chip7_adapt_r22_10_37211    \
+   2703.648   1158.889   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.644181      3.434634       1.624538       2763   29       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     351.4356      61.80983   453.0621      18.360 0.072 0    NoError    
+SexA_V_chip7.fits      3578.268  1159.854  212   V_chip7_adapt_r22_10_37212    \
+   3578.268   1159.854   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.837726      3.236622       0.8497638      2787   3        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     215.7741      61.74092   329.237       18.706 0.092 0    NoError    
+SexA_V_chip7.fits      953.952   1165.350  213   V_chip7_adapt_r22_10_37213    \
+   953.952    1165.350   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.039059      3.187641       0.7894809      2782   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     379.767       61.85452   505.892       18.240 0.062 0    NoError    
+SexA_V_chip7.fits      2028.657  1165.615  214   V_chip7_adapt_r22_10_37214    \
+   2028.657   1165.615   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.626001      3.272634       -0.7835878     2782   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     9831.879      61.48869   9931.859      15.007 0.007 0    NoError    
+SexA_V_chip7.fits      1550.385  1167.805  215   V_chip7_adapt_r22_10_37215    \
+   1550.385   1167.805   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.887662      3.311939       -0.7091841     2783   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     768.9132      61.63405   885.2574      17.632 0.039 0    NoError    
+SexA_V_chip7.fits      3638.374  1195.999  216   V_chip7_adapt_r22_10_37216    \
+   3638.374   1195.999   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.945148      3.177543       0.7006577      2783   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1930.437      61.89948   2050.84       16.720 0.020 0    NoError    
+SexA_V_chip7.fits      2167.598  1198.951  217   V_chip7_adapt_r22_10_37217    \
+   2167.598   1198.951   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.004402      3.117917       0.5980396      2771   22       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     261.2003      61.89074   385.2543      18.536 0.077 0    NoError    
+SexA_V_chip7.fits      4049.605  1199.014  218   V_chip7_adapt_r22_10_37218    \
+   4049.605   1199.014   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.825085      3.345879       1.145953       2785   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2988.326      61.89595   3101.291      16.271 0.015 0    NoError    
+SexA_V_chip7.fits      2641.551  1203.101  219   V_chip7_adapt_r22_10_37219    \
+   2641.551   1203.101   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.823662      3.305597       -0.7757032     2781   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     23867.67      61.77441   23980.32      14.050 0.004 0    NoError    
+SexA_V_chip7.fits      2253.175  1212.116  220   V_chip7_adapt_r22_10_37220    \
+   2253.175   1212.116   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.751941      3.212797       1.350639       2777   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     408.6503      61.54776   516.4784      18.217 0.061 0    NoError    
+SexA_V_chip7.fits      1613.108  1218.157  221   V_chip7_adapt_r22_10_37221    \
+   1613.108   1218.157   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.259107      3.275856       1.477835       2780   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     862.7872      61.50759   1001.739      17.498 0.035 0    NoError    
+SexA_V_chip7.fits      1657.771  1225.043  222   V_chip7_adapt_r22_10_37222    \
+   1657.771   1225.043   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.036082      3.266166       -0.492946      2787   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1014.476      61.63402   1139.968      17.358 0.031 0    NoError    
+SexA_V_chip7.fits      2405.052  1225.613  223   V_chip7_adapt_r22_10_37223    \
+   2405.052   1225.613   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.735876      3.292802       0.9616899      2776   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     27315.24      61.88023   27422.65      13.905 0.004 0    NoError    
+SexA_V_chip7.fits      1048.923  1231.420  224   V_chip7_adapt_r22_10_37224    \
+   1048.923   1231.420   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.206059      3.378887       1.399537       2762   27       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     54425.41      61.85901   54500.01      13.159 0.003 0    NoError    
+SexA_V_chip7.fits      1040.196  1232.936  225   V_chip7_adapt_r22_10_37225    \
+   1040.196   1232.936   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.442033      3.201148       0.7528673      2784   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     213569.2      61.54809   213658.       11.676 0.001 0    NoError    
+SexA_V_chip7.fits      2030.139  1234.124  226   V_chip7_adapt_r22_10_37226    \
+   2030.139   1234.124   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.931764      3.286848       0.4652312      2789   4        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     617.3117      61.50731   736.1294      17.833 0.045 0    NoError    
+SexA_V_chip7.fits      895.287   1238.329  227   V_chip7_adapt_r22_10_37227    \
+   895.287    1238.329   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.89803       3.196451       -0.7913646     2774   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3529.609      61.53895   3646.412      16.095 0.013 0    NoError    
+SexA_V_chip7.fits      2540.804  1249.185  228   V_chip7_adapt_r22_10_37228    \
+   2540.804   1249.185   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.665612      3.246537       1.182792       2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4834.734      61.65443   4937.427      15.766 0.011 0    NoError    
+SexA_V_chip7.fits      1768.762  1271.248  229   V_chip7_adapt_r22_10_37229    \
+   1768.762   1271.248   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.983228      3.242375       -1.009861      2779   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1203.582      61.6764    1325.901      17.194 0.028 0    NoError    
+SexA_V_chip7.fits      1374.623  1271.680  230   V_chip7_adapt_r22_10_37230    \
+   1374.623   1271.680   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.661822      3.412647       1.262894       2737   51       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     355.5174      61.47751   457.682       18.349 0.071 0    NoError    
+SexA_V_chip7.fits      924.211   1274.010  231   V_chip7_adapt_r22_10_37231    \
+   924.211    1274.010   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.059294      3.240635       -0.6643179     2786   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     110.6939      61.59744   237.5412      19.061 0.125 0    NoError    
+SexA_V_chip7.fits      1360.891  1282.520  232   V_chip7_adapt_r22_10_37232    \
+   1360.891   1282.520   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.046423      3.312761       -1.285171      2775   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1635.22       61.76463   1761.616      16.885 0.023 0    NoError    
+SexA_V_chip7.fits      2028.995  1287.346  233   V_chip7_adapt_r22_10_37233    \
+   2028.995   1287.346   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.89518       3.227869       0.9822584      2777   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3012.313      61.8576    3129.544      16.261 0.015 0    NoError    
+SexA_V_chip7.fits      3017.315  1296.303  234   V_chip7_adapt_r22_10_37234    \
+   3017.315   1296.303   0.000   0.000   INDEF   INDEF          0    NoError   \
+   0.1618351      3.369467       1.115191       2770   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     686220.6      61.55714   686210.7      10.409 0.001 0    NoError    
+SexA_V_chip7.fits      1544.546  1298.931  235   V_chip7_adapt_r22_10_37235    \
+   1544.546   1298.931   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.034889      3.334274       0.401966       2772   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     793.6902      61.82405   919.4954      17.591 0.038 0    NoError    
+SexA_V_chip7.fits      2571.464  1310.173  236   V_chip7_adapt_r22_10_37236    \
+   2571.464   1310.173   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.852401      3.168185       -0.7599806     2780   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1307.328      61.6887    1421.6        17.118 0.026 0    NoError    
+SexA_V_chip7.fits      1848.099  1310.791  237   V_chip7_adapt_r22_10_37237    \
+   1848.099   1310.791   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.910655      3.253273       1.055942       2737   53       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1054.083      61.59249   1171.765      17.328 0.031 0    NoError    
+SexA_V_chip7.fits      1084.974  1314.769  238   V_chip7_adapt_r22_10_37238    \
+   1084.974   1314.769   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.167597      3.312418       -0.7705978     2782   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1055.27       61.63988   1188.88       17.312 0.031 0    NoError    
+SexA_V_chip7.fits      3978.847  1315.837  239   V_chip7_adapt_r22_10_37239    \
+   3978.847   1315.837   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.468612      3.343749       0.8018757      2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     956.5081      61.57089   1046.932      17.450 0.034 0    NoError    
+SexA_V_chip7.fits      1820.493  1316.792  240   V_chip7_adapt_r22_10_37240    \
+   1820.493   1316.792   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.986638      3.305334       1.26054        2735   54       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1122.438      61.6463    1244.907      17.262 0.029 0    NoError    
+SexA_V_chip7.fits      3560.562  1316.679  241   V_chip7_adapt_r22_10_37241    \
+   3560.562   1316.679   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.847302      3.114198       -0.2834237     2783   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1185.635      61.53217   1299.303      17.216 0.027 0    NoError    
+SexA_V_chip7.fits      1142.055  1319.028  242   V_chip7_adapt_r22_10_37242    \
+   1142.055   1319.028   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.104025      3.269014       0.7100963      2779   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     335.6505      61.3421    464.7158      18.332 0.068 0    NoError    
+SexA_V_chip7.fits      252.777   1329.122  243   V_chip7_adapt_r22_10_37243    \
+   252.777    1329.122   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.567661      4.487725       -0.9887978     2774   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     292.99        61.63272   451.2419      18.364 0.091 0    NoError    
+SexA_V_chip7.fits      2067.537  1355.251  244   V_chip7_adapt_r22_10_37244    \
+   2067.537   1355.251   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.893788      3.233873       -1.070361      2775   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1086.112      61.56944   1202.712      17.300 0.030 0    NoError    
+SexA_V_chip7.fits      3854.262  1355.139  245   V_chip7_adapt_r22_10_37245    \
+   3854.262   1355.139   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.491938      3.150558       -0.991564      2746   45       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2895.069      61.72167   2987.154      16.312 0.015 0    NoError    
+SexA_V_chip7.fits      1325.572  1357.285  246   V_chip7_adapt_r22_10_37246    \
+   1325.572   1357.285   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.91378       3.290804       0.5336927      2743   46       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     616.3521      61.5131    734.0746      17.836 0.046 0    NoError    
+SexA_V_chip7.fits      1832.172  1360.412  247   V_chip7_adapt_r22_10_37247    \
+   1832.172   1360.412   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.271009      3.232548       -1.031978      2781   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5000.429      61.65481   5140.448      15.722 0.011 0    NoError    
+SexA_V_chip7.fits      2682.225  1369.307  248   V_chip7_adapt_r22_10_37248    \
+   2682.225   1369.307   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.881535      3.257388       -0.7324069     2781   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     237.0857      61.65272   353.0875      18.630 0.087 0    NoError    
+SexA_V_chip7.fits      2827.157  1369.083  249   V_chip7_adapt_r22_10_37249    \
+   2827.157   1369.083   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.913447      3.19087        -0.6211305     2778   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     489.5801      61.47879   607.2165      18.042 0.052 0    NoError    
+SexA_V_chip7.fits      666.536   1380.120  250   V_chip7_adapt_r22_10_37250    \
+   666.536    1380.120   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.835657      3.178589       1.03863        2779   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     36338.64      61.757     36452.        13.596 0.004 0    NoError    
+SexA_V_chip7.fits      1233.513  1387.781  251   V_chip7_adapt_r22_10_37251    \
+   1233.513   1387.781   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.047581      3.228967       1.161558       2778   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     250.3254      61.62571   376.509       18.561 0.081 0    NoError    
+SexA_V_chip7.fits      1397.859  1392.793  252   V_chip7_adapt_r22_10_37252    \
+   1397.859   1392.793   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.765878      3.394994       1.14477        2757   31       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5349.811      61.60641   5458.601      15.657 0.010 0    NoError    
+SexA_V_chip7.fits      2136.397  1398.314  253   V_chip7_adapt_r22_10_37253    \
+   2136.397   1398.314   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.188648      3.263442       1.64195        2736   52       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     230552.3      61.49395   230625.4      11.593 0.001 0    NoError    
+SexA_V_chip7.fits      2765.969  1399.935  254   V_chip7_adapt_r22_10_37254    \
+   2765.969   1399.935   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.993949      3.261944       -0.6302398     2778   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     313.4029      61.34016   435.712       18.402 0.072 0    NoError    
+SexA_V_chip7.fits      257.665   1406.405  255   V_chip7_adapt_r22_10_37255    \
+   257.665    1406.405   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.524517      4.578597       -0.6427269     2766   22       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     444.2872      61.51002   599.5703      18.055 0.071 0    NoError    
+SexA_V_chip7.fits      1621.220  1407.629  256   V_chip7_adapt_r22_10_37256    \
+   1621.220   1407.629   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.421772      3.411417       1.143817       2741   48       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     60439.54      61.60242   60527.12      13.045 0.003 0    NoError    
+SexA_V_chip7.fits      253.465   1410.100  257   V_chip7_adapt_r22_10_37257    \
+   253.465    1410.100   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.568408      4.547806       -0.8429496     2773   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     95.13416      61.76604   253.7745      18.989 0.160 0    NoError    
+SexA_V_chip7.fits      3424.815  1416.256  258   V_chip7_adapt_r22_10_37258    \
+   3424.815   1416.256   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.705365      3.205328       1.13216        2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2134.568      61.7316    2239.843      16.624 0.019 0    NoError    
+SexA_V_chip7.fits      1057.208  1417.719  259   V_chip7_adapt_r22_10_37259    \
+   1057.208   1417.719   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.139822      3.181958       -0.5670944     2782   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     330.9995      61.70613   463.0396      18.336 0.067 0    NoError    
+SexA_V_chip7.fits      3831.245  1424.065  260   V_chip7_adapt_r22_10_37260    \
+   3831.245   1424.065   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.839301      3.206581       -0.6227826     2784   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     472.4891      61.66343   585.9067      18.080 0.054 0    NoError    
+SexA_V_chip7.fits      2750.068  1443.716  261   V_chip7_adapt_r22_10_37261    \
+   2750.068   1443.716   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.975437      3.217629       -0.7265787     2784   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     804.9301      61.73922   926.892       17.582 0.037 0    NoError    
+SexA_V_chip7.fits      3584.234  1445.193  262   V_chip7_adapt_r22_10_37262    \
+   3584.234   1445.193   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.637432      3.269162       1.30352        2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2752.607      61.6968    2853.631      16.362 0.016 0    NoError    
+SexA_V_chip7.fits      3281.274  1451.654  263   V_chip7_adapt_r22_10_37263    \
+   3281.274   1451.654   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.178704      3.123893       0.5866009      2773   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3071.177      61.52597   3205.224      16.235 0.014 0    NoError    
+SexA_V_chip7.fits      686.371   1474.759  264   V_chip7_adapt_r22_10_37264    \
+   686.371    1474.759   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.270572      3.155433       -1.212309      2780   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3591.815      61.56177   3731.595      16.070 0.013 0    NoError    
+SexA_V_chip7.fits      3642.973  1475.014  265   V_chip7_adapt_r22_10_37265    \
+   3642.973   1475.014   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -0.6821028     3.19624        1.030229       2768   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     491435.8      61.34619   491477.7      10.771 0.001 0    NoError    
+SexA_V_chip7.fits      684.179   1480.140  266   V_chip7_adapt_r22_10_37266    \
+   684.179    1480.140   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.082769      3.187573       -1.214104      2781   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2759.123      61.58138   2887.383      16.349 0.015 0    NoError    
+SexA_V_chip7.fits      1324.719  1493.808  267   V_chip7_adapt_r22_10_37267    \
+   1324.719   1493.808   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.131791      3.362962       0.6372426      2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5089.01       61.73584   5220.618      15.706 0.011 0    NoError    
+SexA_V_chip7.fits      1406.869  1494.548  268   V_chip7_adapt_r22_10_37268    \
+   1406.869   1494.548   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.189123      3.251475       0.8900371      2777   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     8062.064      61.7427    8197.227      15.216 0.008 0    NoError    
+SexA_V_chip7.fits      4035.643  1494.610  269   V_chip7_adapt_r22_10_37269    \
+   4035.643   1494.610   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.729585      3.326798       -0.6913354     2774   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2112.317      61.49842   2218.684      16.635 0.019 0    NoError    
+SexA_V_chip7.fits      1165.729  1499.426  270   V_chip7_adapt_r22_10_37270    \
+   1165.729   1499.426   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.97804       3.28352        0.3800725      2777   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     15609.13      61.52454   15730.82      14.508 0.006 0    NoError    
+SexA_V_chip7.fits      2362.907  1501.724  271   V_chip7_adapt_r22_10_37271    \
+   2362.907   1501.724   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.113732      3.291745       -1.307782      2781   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2464.313      61.71961   2594.772      16.465 0.017 0    NoError    
+SexA_V_chip7.fits      1925.644  1503.128  272   V_chip7_adapt_r22_10_37272    \
+   1925.644   1503.128   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.952772      3.347143       1.138649       2779   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3406.793      61.78818   3527.452      16.131 0.014 0    NoError    
+SexA_V_chip7.fits      2151.256  1506.602  273   V_chip7_adapt_r22_10_37273    \
+   2151.256   1506.602   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.040959      3.187452       -1.326173      2781   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     75.05278      61.52546   200.6237      19.244 0.144 0    NoError    
+SexA_V_chip7.fits      3560.350  1511.352  274   V_chip7_adapt_r22_10_37274    \
+   3560.350   1511.352   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.821097      3.276524       1.122403       2777   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3040.773      61.48075   3152.736      16.253 0.015 0    NoError    
+SexA_V_chip7.fits      1830.284  1525.685  275   V_chip7_adapt_r22_10_37275    \
+   1830.284   1525.685   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.051357      3.244255       -0.5584744     2777   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     351.3513      61.56691   477.647       18.302 0.066 0    NoError    
+SexA_V_chip7.fits      2443.705  1540.743  276   V_chip7_adapt_r22_10_37276    \
+   2443.705   1540.743   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.11376       3.111469       -1.163302      2776   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1844.02       61.61586   1974.261      16.761 0.020 0    NoError    
+SexA_V_chip7.fits      3792.223  1542.739  277   V_chip7_adapt_r22_10_37277    \
+   3792.223   1542.739   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.117445      3.241608       1.04942        2775   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     291998.6      61.69469   292067.5      11.336 0.001 0    NoError    
+SexA_V_chip7.fits      2291.989  1549.405  278   V_chip7_adapt_r22_10_37278    \
+   2291.989   1549.405   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.883866      3.223102       0.3568514      2778   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1635.992      61.89403   1752.592      16.891 0.022 0    NoError    
+SexA_V_chip7.fits      1590.195  1560.792  279   V_chip7_adapt_r22_10_37279    \
+   1590.195   1560.792   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.633439      3.722898       2.157192       2741   45       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5560.106      61.67229   5660.844      15.618 0.010 0    NoError    
+SexA_V_chip7.fits      3540.701  1567.871  280   V_chip7_adapt_r22_10_37280    \
+   3540.701   1567.871   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.774337      3.267707       0.7630368      2778   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1210.892      61.75879   1320.473      17.198 0.028 0    NoError    
+SexA_V_chip7.fits      1094.911  1572.022  281   V_chip7_adapt_r22_10_37281    \
+   1094.911   1572.022   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.981754      3.319641       1.415401       2776   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5148.957      61.33985   5270.517      15.695 0.011 0    NoError    
+SexA_V_chip7.fits      1135.100  1574.325  282   V_chip7_adapt_r22_10_37282    \
+   1135.100   1574.325   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.193694      3.411483       -0.9804174     2773   20       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1146.899      61.79608   1282.461      17.230 0.029 0    NoError    
+SexA_V_chip7.fits      3579.657  1578.122  283   V_chip7_adapt_r22_10_37283    \
+   3579.657   1578.122   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.889465      3.154587       1.140853       2782   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     719.4639      61.79026   836.2144      17.694 0.040 0    NoError    
+SexA_V_chip7.fits      3825.520  1584.510  284   V_chip7_adapt_r22_10_37284    \
+   3825.520   1584.510   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.49334       3.256803       1.489999       2790   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7474.151      61.50116   7565.993      15.303 0.008 0    NoError    
+SexA_V_chip7.fits      393.548   1587.057  285   V_chip7_adapt_r22_10_37285    \
+   393.548    1587.057   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.523958      3.793761       -0.6180907     2773   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     151.9646      61.8472    308.0644      18.778 0.113 0    NoError    
+SexA_V_chip7.fits      2540.246  1589.816  286   V_chip7_adapt_r22_10_37286    \
+   2540.246   1589.816   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.155237      3.293444       -0.8464466     2779   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1590.654      61.71157   1723.657      16.909 0.023 0    NoError    
+SexA_V_chip7.fits      1741.275  1589.383  287   V_chip7_adapt_r22_10_37287    \
+   1741.275   1589.383   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.962466      3.288174       -1.467566      2779   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     226.6736      61.49854   347.3624      18.648 0.089 0    NoError    
+SexA_V_chip7.fits      3825.489  1596.494  288   V_chip7_adapt_r22_10_37288    \
+   3825.489   1596.494   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.57053       3.143135       0.7630178      2797   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7170.878      61.50162   7267.468      15.347 0.009 0    NoError    
+SexA_V_chip7.fits      2028.616  1602.022  289   V_chip7_adapt_r22_10_37289    \
+   2028.616   1602.022   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.256658      3.405172       1.32675        2777   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     294.1734      61.89704   433.8539      18.407 0.075 0    NoError    
+SexA_V_chip7.fits      628.297   1603.094  290   V_chip7_adapt_r22_10_37290    \
+   628.297    1603.094   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.34146       3.495946       1.310304       2755   39       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2161.804      61.75936   2306.411      16.593 0.019 0    NoError    
+SexA_V_chip7.fits      2714.366  1607.028  291   V_chip7_adapt_r22_10_37291    \
+   2714.366   1607.028   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.964654      3.389071       0.8389913      2787   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     348.2286      61.88007   469.8015      18.320 0.069 0    NoError    
+SexA_V_chip7.fits      2044.160  1609.214  292   V_chip7_adapt_r22_10_37292    \
+   2044.160   1609.214   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.312885      3.400552       0.780406       2771   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3465.905      61.64631   3608.485      16.107 0.014 0    NoError    
+SexA_V_chip7.fits      2083.152  1608.919  293   V_chip7_adapt_r22_10_37293    \
+   2083.152   1608.919   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.349507      3.483161       1.045521       2770   20       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     858.7391      61.47135   1003.166      17.497 0.036 0    NoError    
+SexA_V_chip7.fits      594.091   1617.703  294   V_chip7_adapt_r22_10_37294    \
+   594.091    1617.703   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.305038      3.594171       1.189532       2755   40       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2478.04       61.75994   2620.398      16.454 0.017 0    NoError    
+SexA_V_chip7.fits      3348.311  1622.393  295   V_chip7_adapt_r22_10_37295    \
+   3348.311   1622.393   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.857622      3.29643        -0.5291383     2781   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     335.7332      61.48889   449.9563      18.367 0.070 0    NoError    
+SexA_V_chip7.fits      3277.648  1627.488  296   V_chip7_adapt_r22_10_37296    \
+   3277.648   1627.488   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.717853      3.43682        -1.235941      2777   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     17565.1       61.57139   17670.87      14.382 0.005 0    NoError    
+SexA_V_chip7.fits      2430.271  1629.293  297   V_chip7_adapt_r22_10_37297    \
+   2430.271   1629.293   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.296258      3.391025       1.280656       2778   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     411.2189      61.61333   552.699       18.144 0.060 0    NoError    
+SexA_V_chip7.fits      2209.834  1634.388  298   V_chip7_adapt_r22_10_37298    \
+   2209.834   1634.388   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.308576      3.405821       1.294544       2782   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     257.381       61.68501   399.7855      18.495 0.080 0    NoError    
+SexA_V_chip7.fits      1884.617  1635.787  299   V_chip7_adapt_r22_10_37299    \
+   1884.617   1635.787   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.974757      3.557337       0.610518       2777   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2307.349      61.60275   2428.999      16.536 0.018 0    NoError    
+SexA_V_chip7.fits      390.032   1650.085  300   V_chip7_adapt_r22_10_37300    \
+   390.032    1650.085   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.208473      4.108941       1.179644       2777   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1586.058      61.34296   1721.532      16.910 0.026 0    NoError    
+SexA_V_chip7.fits      1510.818  1656.282  301   V_chip7_adapt_r22_10_37301    \
+   1510.818   1656.282   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.047963      3.739554       1.084978       2749   40       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2078.483      61.74897   2204.942      16.642 0.020 0    NoError    
+SexA_V_chip7.fits      935.359   1656.828  302   V_chip7_adapt_r22_10_37302    \
+   935.359    1656.828   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -0.5896045     3.857087       1.397825       2776   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     540040.4      61.70241   540076.8      10.669 0.001 0    NoError    
+SexA_V_chip7.fits      390.031   1656.662  303   V_chip7_adapt_r22_10_37303    \
+   390.031    1656.662   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.185688      4.145085       0.8204448      2784   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     360.0278      61.8426    495.1964      18.263 0.078 0    NoError    
+SexA_V_chip7.fits      3645.487  1657.678  304   V_chip7_adapt_r22_10_37304    \
+   3645.487   1657.678   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.372563      3.457599       -0.7372172     2785   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     5824.188      61.54421   5908.661      15.571 0.010 0    NoError    
+SexA_V_chip7.fits      282.521   1668.146  305   V_chip7_adapt_r22_10_37305    \
+   282.521    1668.146   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.073032      5.493406       1.699057       2758   32       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1986.562      61.72787   2114.525      16.687 0.027 0    NoError    
+SexA_V_chip7.fits      354.250   1673.488  306   V_chip7_adapt_r22_10_37306    \
+   354.250    1673.488   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.450619      4.720663       1.639756       2774   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     348.44        61.58696   499.3661      18.254 0.087 0    NoError    
+SexA_V_chip7.fits      789.684   1675.062  307   V_chip7_adapt_r22_10_37307    \
+   789.684    1675.062   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.183755      3.681952       1.386171       2786   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3530.09       61.79941   3665.045      16.090 0.014 0    NoError    
+SexA_V_chip7.fits      805.258   1687.652  308   V_chip7_adapt_r22_10_37308    \
+   805.258    1687.652   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.249869      3.876998       -1.014101      2755   33       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     304.0173      61.55068   442.4982      18.385 0.082 0    NoError    
+SexA_V_chip7.fits      2466.067  1696.775  309   V_chip7_adapt_r22_10_37309    \
+   2466.067   1696.775   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.059268      3.735703       -1.231225      2755   39       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2179.246      61.62212   2306.143      16.593 0.020 0    NoError    
+SexA_V_chip7.fits      3621.187  1708.537  310   V_chip7_adapt_r22_10_37310    \
+   3621.187   1708.537   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.723446      3.726049       -0.8186067     2784   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     22723.37      61.66231   22829.64      14.104 0.005 0    NoError    
+SexA_V_chip7.fits      3322.307  1709.865  311   V_chip7_adapt_r22_10_37311    \
+   3322.307   1709.865   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.998758      3.743181       1.058842       2773   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     315.8146      61.76766   439.2732      18.393 0.080 0    NoError    
+SexA_V_chip7.fits      1756.892  1719.483  312   V_chip7_adapt_r22_10_37312    \
+   1756.892   1719.483   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.108621      4.0107         -1.32124       2776   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     414.0325      61.76397   544.2693      18.160 0.069 0    NoError    
+SexA_V_chip7.fits      2985.377  1718.716  313   V_chip7_adapt_r22_10_37313    \
+   2985.377   1718.716   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.037277      4.005873       0.4017113      2775   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     12590.67      61.49203   12715.95      14.739 0.006 0    NoError    
+SexA_V_chip7.fits      4096.061  1720.913  314   V_chip7_adapt_r22_10_37314    \
+   4096.061   1720.913   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.670043      4.09285        1.433288       2773   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2616.801      61.37876   2719.306      16.414 0.018 0    NoError    
+SexA_V_chip7.fits      4087.632  1722.657  315   V_chip7_adapt_r22_10_37315    \
+   4087.632   1722.657   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.654401      4.302041       1.694523       2772   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     7560.845      61.47838   7662.555      15.289 0.009 0    NoError    
+SexA_V_chip7.fits      586.206   1726.879  316   V_chip7_adapt_r22_10_37316    \
+   586.206    1726.879   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.604347      4.187312       1.405338       2778   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     625.1019      61.59271   785.5106      17.762 0.052 0    NoError    
+SexA_V_chip7.fits      2922.047  1725.614  317   V_chip7_adapt_r22_10_37317    \
+   2922.047   1725.614   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.689126      4.071837       1.516089       2781   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4601.189      61.88281   4705.716      15.818 0.012 0    NoError    
+SexA_V_chip7.fits      901.719   1734.832  318   V_chip7_adapt_r22_10_37318    \
+   901.719    1734.832   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.929586      4.279441       1.395209       2779   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     514.1447      61.75675   633.3097      17.996 0.064 0    NoError    
+SexA_V_chip7.fits      1990.634  1743.750  319   V_chip7_adapt_r22_10_37319    \
+   1990.634   1743.750   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.186565      4.241108       -1.68398       2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1851.968      61.549     1986.549      16.755 0.024 0    NoError    
+SexA_V_chip7.fits      3971.756  1761.889  320   V_chip7_adapt_r22_10_37320    \
+   3971.756   1761.889   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.260983      4.3401         1.589548       2754   39       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     63842.74      61.67939   63920.51      12.986 0.003 0    NoError    
+SexA_V_chip7.fits      2348.401  1762.685  321   V_chip7_adapt_r22_10_37321    \
+   2348.401   1762.685   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.968734      4.319051       1.795961       2772   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3248.383      61.49796   3369.456      16.181 0.016 0    NoError    
+SexA_V_chip7.fits      1347.921  1768.121  322   V_chip7_adapt_r22_10_37322    \
+   1347.921   1768.121   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.432308      4.467691       1.725491       2777   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     128.8555      61.43774   278.291       18.889 0.144 0    NoError    
+SexA_V_chip7.fits      2588.391  1772.558  323   V_chip7_adapt_r22_10_37323    \
+   2588.391   1772.558   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.152307      4.449827       -1.110546      2782   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     58855.52      61.56373   58988.03      13.073 0.003 0    NoError    
+SexA_V_chip7.fits      2102.520  1775.919  324   V_chip7_adapt_r22_10_37324    \
+   2102.520   1775.919   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.231426      4.339028       0.679484       2769   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     927.2704      61.78704   1065.144      17.431 0.040 0    NoError    
+SexA_V_chip7.fits      3210.968  1776.408  325   V_chip7_adapt_r22_10_37325    \
+   3210.968   1776.408   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.283239      4.296548       0.3311482      2776   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     368.0653      61.89181   509.3791      18.232 0.078 0    NoError    
+SexA_V_chip7.fits      2018.833  1780.155  326   V_chip7_adapt_r22_10_37326    \
+   2018.833   1780.155   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.12891       4.593891       0.3128004      2740   49       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     11114.57      61.58348   11245.67      14.873 0.007 0    NoError    
+SexA_V_chip7.fits      2832.124  1780.088  327   V_chip7_adapt_r22_10_37327    \
+   2832.124   1780.088   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.932316      4.423728       1.76512        2744   42       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     41962.11      61.45194   42080.86      13.440 0.003 0    NoError    
+SexA_V_chip7.fits      511.470   1787.382  328   V_chip7_adapt_r22_10_37328    \
+   511.470    1787.382   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.876561      4.539124       1.536253       2778   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     194026.3      61.5798    194141.8      11.780 0.001 0    NoError    
+SexA_V_chip7.fits      3555.895  1787.223  329   V_chip7_adapt_r22_10_37329    \
+   3555.895   1787.223   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.913923      4.226025       -1.050344      2777   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     546.5955      61.62943   664.5494      17.944 0.060 0    NoError    
+SexA_V_chip7.fits      2435.042  1789.233  330   V_chip7_adapt_r22_10_37330    \
+   2435.042   1789.233   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.905614      4.344751       -1.289226      2787   9        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     162360.5      61.64249   162478.       11.973 0.002 0    NoError    
+SexA_V_chip7.fits      2016.712  1790.649  331   V_chip7_adapt_r22_10_37331    \
+   2016.712   1790.649   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.154812      4.418088       1.434352       2751   37       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     86.46281      61.50383   218.992       19.149 0.179 0    NoError    
+SexA_V_chip7.fits      864.194   1793.600  332   V_chip7_adapt_r22_10_37332    \
+   864.194    1793.600   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.336076      4.59986        -1.230612      2770   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     527.1503      61.6191    671.0972      17.933 0.064 0    NoError    
+SexA_V_chip7.fits      1890.196  1794.560  333   V_chip7_adapt_r22_10_37333    \
+   1890.196   1794.560   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.88583       4.468916       -1.612595      2775   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     40582.26      61.62154   40698.46      13.476 0.003 0    NoError    
+SexA_V_chip7.fits      2885.625  1795.654  334   V_chip7_adapt_r22_10_37334    \
+   2885.625   1795.654   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.192468      4.381126       1.55058        2767   20       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1124.09       61.48303   1258.89       17.250 0.035 0    NoError    
+SexA_V_chip7.fits      1140.534  1809.333  335   V_chip7_adapt_r22_10_37335    \
+   1140.534   1809.333   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.16269       4.711301       -1.46869       2777   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     88.75694      61.55281   221.8766      19.135 0.188 0    NoError    
+SexA_V_chip7.fits      3868.987  1814.026  336   V_chip7_adapt_r22_10_37336    \
+   3868.987   1814.026   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.759546      4.688425       2.302356       2774   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     308.5998      61.34631   416.5415      18.451 0.102 0    NoError    
+SexA_V_chip7.fits      2933.739  1820.256  337   V_chip7_adapt_r22_10_37337    \
+   2933.739   1820.256   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.370339      4.711715       0.4828552      2769   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     734.2204      61.65147   880.3553      17.638 0.051 0    NoError    
+SexA_V_chip7.fits      1286.374  1832.999  338   V_chip7_adapt_r22_10_37338    \
+   1286.374   1832.999   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.125363      5.004098       -2.030863      2784   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     63836.94      61.89948   63968.5       12.985 0.003 0    NoError    
+SexA_V_chip7.fits      898.102   1837.898  339   V_chip7_adapt_r22_10_37339    \
+   898.102    1837.898   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.408291      5.088616       -1.277534      2777   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     8228.315      61.4441    8376.29       15.192 0.009 0    NoError    
+SexA_V_chip7.fits      2584.361  1844.310  340   V_chip7_adapt_r22_10_37340    \
+   2584.361   1844.310   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.166622      4.846796       -1.107427      2766   21       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     225.9872      61.47986   359.1908      18.612 0.121 0    NoError    
+SexA_V_chip7.fits      1292.451  1844.946  341   V_chip7_adapt_r22_10_37341    \
+   1292.451   1844.946   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.003202      5.302527       2.335381       2767   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     251.6568      61.85107   375.5569      18.563 0.126 0    NoError    
+SexA_V_chip7.fits      2200.551  1855.988  342   V_chip7_adapt_r22_10_37342    \
+   2200.551   1855.988   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.254131      5.210484       1.563244       2772   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     236.5256      61.88093   376.0133      18.562 0.124 0    NoError    
+SexA_V_chip7.fits      1378.714  1857.744  343   V_chip7_adapt_r22_10_37343    \
+   1378.714   1857.744   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.042374      5.372324       1.303039       2781   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     105336.2      61.63164   105462.       12.442 0.002 0    NoError    
+SexA_V_chip7.fits      3514.487  1857.123  344   V_chip7_adapt_r22_10_37344    \
+   3514.487   1857.123   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.812429      5.021354       1.785699       2768   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     3044.003      61.75541   3155.93       16.252 0.018 0    NoError    
+SexA_V_chip7.fits      716.297   1859.548  345   V_chip7_adapt_r22_10_37345    \
+   716.297    1859.548   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.307037      5.154264       1.828507       2778   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     186.737       61.5338    328.6977      18.708 0.140 0    NoError    
+SexA_V_chip7.fits      1563.991  1859.000  346   V_chip7_adapt_r22_10_37346    \
+   1563.991   1859.000   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.177735      5.320064       -2.031281      2770   8        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1112.272      61.34739   1245.871      17.261 0.041 0    NoError    
+SexA_V_chip7.fits      1216.596  1861.802  347   V_chip7_adapt_r22_10_37347    \
+   1216.596   1861.802   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.385617      5.15001        -1.303103      2766   19       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     328.7937      61.60924   475.7698      18.307 0.098 0    NoError    
+SexA_V_chip7.fits      1371.498  1866.449  348   V_chip7_adapt_r22_10_37348    \
+   1371.498   1866.449   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.562481      5.327832       -1.350071      2801   5        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1252.621      61.51077   1348.73       17.175 0.038 0    NoError    
+SexA_V_chip7.fits      3823.757  1868.050  349   V_chip7_adapt_r22_10_37349    \
+   3823.757   1868.050   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.797194      5.144372       0.8279665      2782   14       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     509.8925      61.66161   620.7104      18.018 0.076 0    NoError    
+SexA_V_chip7.fits      2898.127  1870.733  350   V_chip7_adapt_r22_10_37350    \
+   2898.127   1870.733   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.568894      5.103717       1.360259       2785   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     575.5744      61.72035   734.1274      17.836 0.065 0    NoError    
+SexA_V_chip7.fits      2288.655  1870.441  351   V_chip7_adapt_r22_10_37351    \
+   2288.655   1870.441   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.436002      5.116503       1.334808       2779   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     360.0268      61.55479   509.9744      18.231 0.091 0    NoError    
+SexA_V_chip7.fits      1373.413  1871.275  352   V_chip7_adapt_r22_10_37352    \
+   1373.413   1871.275   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.324033      5.559678       2.468358       2751   37       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     270.8176      61.51111   352.2604      18.633 0.140 0    NoError    
+SexA_V_chip7.fits      2644.177  1892.538  353   V_chip7_adapt_r22_10_37353    \
+   2644.177   1892.538   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.806865      5.327356       -1.888343      2776   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2380.325      61.67942   2553.451      16.482 0.022 0    NoError    
+SexA_V_chip7.fits      1594.905  1899.092  354   V_chip7_adapt_r22_10_37354    \
+   1594.905   1899.092   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.263112      6.149639       -2.352002      2764   20       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     4266.083      61.4249    4405.094      15.890 0.016 0    NoError    
+SexA_V_chip7.fits      1949.026  1908.904  355   V_chip7_adapt_r22_10_37355    \
+   1949.026   1908.904   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.329121      6.362806       -2.080888      2748   40       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1230.443      61.34573   1373.325      17.156 0.044 0    NoError    
+SexA_V_chip7.fits      3771.503  1910.216  356   V_chip7_adapt_r22_10_37356    \
+   3771.503   1910.216   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.42234       5.998374       1.182974       2771   16       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     6513.089      61.63489   6600.755      15.451 0.011 0    NoError    
+SexA_V_chip7.fits      1354.260  1912.465  357   V_chip7_adapt_r22_10_37357    \
+   1354.260   1912.465   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.279466      6.717044       2.126048       2768   18       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1002.635      61.56153   1142.963      17.355 0.054 0    NoError    
+SexA_V_chip7.fits      1854.331  1914.381  358   V_chip7_adapt_r22_10_37358    \
+   1854.331   1914.381   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.427194      6.714728       -2.5235        2762   27       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     365.593       61.48603   453.3455      18.359 0.131 0    NoError    
+SexA_V_chip7.fits      3774.349  1915.650  359   V_chip7_adapt_r22_10_37359    \
+   3774.349   1915.650   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.486004      6.040767       -1.721466      2770   15       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     11954.11      61.48155   12045.48      14.798 0.007 0    NoError    
+SexA_V_chip7.fits      2970.500  1922.133  360   V_chip7_adapt_r22_10_37360    \
+   2970.500   1922.133   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.563417      6.283137       -2.924849      2775   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     146.3973      61.7441    304.6732      18.790 0.182 0    NoError    
+SexA_V_chip7.fits      2534.449  1924.378  361   V_chip7_adapt_r22_10_37361    \
+   2534.449   1924.378   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.796309      6.372185       -2.179307      2775   12       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     481.3721      61.56972   653.54        17.962 0.088 0    NoError    
+SexA_V_chip7.fits      2664.486  1942.684  362   V_chip7_adapt_r22_10_37362    \
+   2664.486   1942.684   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.553692      6.716699       -1.466004      2781   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     159.2212      61.54098   316.378       18.749 0.186 0    NoError    
+SexA_V_chip7.fits      3365.058  1943.870  363   V_chip7_adapt_r22_10_37363    \
+   3365.058   1943.870   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.558476      6.799219       2.096048       2770   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     979.9146      61.4216    1137.06       17.361 0.055 0    NoError    
+SexA_V_chip7.fits      2892.539  1949.900  364   V_chip7_adapt_r22_10_37364    \
+   2892.539   1949.900   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -3.108746      7.140323       2.630054       2769   17       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1306.534      61.76622   1498.549      17.061 0.044 0    NoError    
+SexA_V_chip7.fits      2897.319  1955.516  365   V_chip7_adapt_r22_10_37365    \
+   2897.319   1955.516   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.999378      7.364937       2.881149       2780   13       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     178.1358      61.54155   362.7221      18.601 0.178 0    NoError    
+SexA_V_chip7.fits      2823.587  1958.787  366   V_chip7_adapt_r22_10_37366    \
+   2823.587   1958.787   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.813259      7.665096       -1.731083      2775   10       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     215.8997      61.58578   389.1564      18.525 0.173 0    NoError    
+SexA_V_chip7.fits      3459.157  1963.785  367   V_chip7_adapt_r22_10_37367    \
+   3459.157   1963.785   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -1.751666      7.817811       2.154453       2781   6        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     1116.191      61.64182   1224.167      17.280 0.058 0    NoError    
+SexA_V_chip7.fits      1996.520  1966.058  368   V_chip7_adapt_r22_10_37368    \
+   1996.520   1966.058   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -3.193298      7.632234       1.067733       2768   11       0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     2565.518      61.80926   2762.893      16.397 0.027 0    NoError    
+SexA_V_chip7.fits      3468.009  1970.422  369   V_chip7_adapt_r22_10_37369    \
+   3468.009   1970.422   0.000   0.000   INDEF   INDEF          0    NoError   \
+   -2.017856      7.834737       3.178384       2787   7        0    NoError   \
+   1.             INDEF          INDEF                  INDEF                  \
+   4.42     103879.8      61.88984   104004.6      12.457 0.002 0    NoError    
