@@ -1,5 +1,8 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Davis(1989)}]{davis1989}
+Davis, L.~E. 1989, A User's Guide to the IRAF APPHOT Package, National Optical Astronomy Observatories, revised May 1989
 
 \bibitem[{Dohm-Palmer {et~al.}(2002)Dohm-Palmer, Skillman, Mateo, Saha, Dolphin, Tolstoy, Gallagher, \& Cole}]{dohmpalmer2002}
 Dohm-Palmer, R.~C., Skillman, E.~D., Mateo, M., {et~al.} 2002, \href{http://dx.doi.org/10.1086/324635}{\color{magenta}The Astronomical Journal}, 123, 813
@@ -10,7 +13,13 @@ Flores, R., Fantino, E., Battaglia, G., \& Aparicio, A. 2026, \href{http://dx.do
 \bibitem[{Howell(2006)}]{howell2006}
 Howell, S.~B. 2006, Handbook of CCD Astronomy, 2nd edn. (Cambridge: Cambridge University Press)
 
+\bibitem[{Stetson(1987)}]{stetson1987}
+Stetson, P.~B. 1987, \href{http://dx.doi.org/10.1086/131977}{\color{magenta}Publications of the Astronomical Society of the Pacific}, 99, 191
+
 \bibitem[{{Subaru Telescope}(2004)}]{subaru2004sextansa}
 {Subaru Telescope}. 2004, A Treasure Chest of Stars -- Dwarf Irregular Galaxy Sextans A, \url{https://subarutelescope.org/old/Pressrelease/2004/02/23/index.html}, press release, 23 de febrero de 2004
+
+\bibitem[{Tody(1986)}]{tody1986}
+Tody, D. 1986, in Proceedings of SPIE, Vol. 627, Instrumentation in Astronomy VI, ed. D.~L. Crawford, 733
 
 \end{thebibliography}

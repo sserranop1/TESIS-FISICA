@@ -978,6 +978,8 @@ Archivo & Objeto & Uso principal \\
 
 \texttt{M41.fits} & M41 & Fotometría multicanal \\
 
+\texttt{SexA\_V\_chip1.fits} & Sextans A & Fotometría fija y adaptativa \\
+
 \bottomrule
 
 \end{tabular}
@@ -1537,6 +1539,137 @@ Diagrama color--magnitud de M92 después de aplicar los diferentes criterios de 
 % ============================================================
 % DISCUSIÓN GENERAL DE LOS RESULTADOS
 % ============================================================
+
+\section{Procesamiento manual de V en el chip 1 de Sextans A}
+\label{sec:sextans-chip1}
+
+El chip 1 del mosaico de Sextans A se procesó en el filtro $V$ como caso de referencia para desarrollar y evaluar la selección adaptativa del anillo de cielo. La imagen utilizada, \texttt{SexA\_V\_chip1.fits}, ya hacía parte de un mosaico previamente reducido; por tanto, este análisis comienza con la caracterización fotométrica de la imagen y no repite la calibración CCD del mosaico. La inspección y las mediciones iniciales se realizaron manualmente con \texttt{imexamine}. Las pruebas de detección y la fotometría se ejecutaron con IRAF, mientras que Python se empleó para organizar los catálogos, aplicar los criterios geométricos y estadísticos, comparar las mediciones y generar las gráficas. Las tareas de IRAF y la fotometría de apertura siguen los procedimientos descritos para el sistema IRAF y sus paquetes de fotometría \citep{tody1986,davis1989}; la detección mediante \texttt{DAOFIND} se basa en el método de \citet{stetson1987}.
+
+\subsection{Caracterización del perfil estelar y del cielo}
+
+La primera medición fue el ancho a media altura de la función de dispersión puntual, FWHM. Se inspeccionaron quince perfiles estelares con \texttt{imexamine} y se seleccionó el valor \texttt{DIRECT} para cada perfil. La selección excluyó cuatro estrellas cuyo máximo superaba el límite de saturación adoptado de $39\,000$ ADU, dos perfiles considerablemente más anchos que el grupo principal y una medición repetida de una misma fuente. Se conservaron ocho valores, $4.56$, $4.52$, $4.56$, $4.50$, $4.34$, $4.52$, $4.46$ y $4.46$ píxeles. Su mediana fue $4.51$ píxeles, su media $4.49$ píxeles y su desviación estándar $0.072$ píxeles. Esta mediana se utilizó como escala característica de las fuentes en el chip.
+
+El nivel y la dispersión del cielo se estimaron en dieciséis regiones de $15\times15$ píxeles, seleccionadas visualmente lejos de fuentes, bordes y áreas de relleno. Para cada caja se registraron la media, la mediana y la desviación estándar; esta última se usó como medida de la dispersión del fondo. Para reducir el efecto de cajas contaminadas, se aplicó el límite superior de Tukey, $Q_3+1.5\,IQR$. Con $Q_1=2.9998$ ADU y $Q_3=3.6078$ ADU se obtuvo $IQR=0.6080$ ADU y un límite de $4.5198$ ADU. Dos regiones, con dispersiones de $6.735$ y $7.598$ ADU, superaron ese límite. La mediana de las catorce regiones aceptadas fue $\sigma_{\mathrm{sky}}=3.1585$ ADU, adoptada como $3.16$ ADU. La mediana del nivel de fondo fue aproximadamente $-2.24$ ADU. La Figura~\ref{fig:sextans-chip1-sky} muestra las mediciones, las dos regiones rechazadas y los valores estadísticos utilizados.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{img/sextansA_chip1_cielo_sigma.png}
+\caption{Dispersión del cielo medida en las dieciséis regiones del chip 1. Las dos cajas por encima del límite superior de Tukey se excluyeron; la línea punteada inferior indica la mediana adoptada para $\sigma_{\mathrm{sky}}$.}
+\label{fig:sextans-chip1-sky}
+\end{figure}
+
+\subsection{Selección del umbral y limpieza geométrica}
+
+Con $FWHM=4.51$ píxeles y $\sigma_{\mathrm{sky}}=3.16$ ADU se probaron siete umbrales de \texttt{DAOFIND}. El número de detecciones disminuyó de $70\,760$ para un umbral de $2.0$ a $38\,056$, $20\,442$, $12\,362$, $8\,138$, $3\,609$ y $1\,536$ para los umbrales $2.5$, $3.0$, $3.5$, $4.0$, $5.0$ y $6.0$, respectivamente. Para ubicar la transición entre la rápida reducción de detecciones a umbrales bajos y el descenso más gradual a umbrales altos, se ajustó un polinomio cuadrático a $\ln N$ en función del umbral $x$:
+
+\begin{equation}
+\ln N=0.0686305x^2-1.4870904x+13.8302793,
+\label{eq:sextans-chip1-threshold}
+\end{equation}
+
+con $R^2=0.9985$. Se adoptó como criterio operacional el valor para el cual la pendiente del ajuste es $-1$, es decir, $d\ln N/dx=-1$. La solución fue $x=3.5486$, redondeada a \texttt{threshold}$=3.55$. La Figura~\ref{fig:sextans-chip1-threshold-counts} presenta las detecciones de cada prueba y la Figura~\ref{fig:sextans-chip1-threshold-fit} muestra el ajuste que determina el umbral adoptado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_threshold_conteos.png}
+\caption{Número de detecciones de \texttt{DAOFIND} en función del umbral probado para V en el chip 1. La línea vertical marca el umbral adoptado, $3.55$.}
+\label{fig:sextans-chip1-threshold-counts}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_threshold_ajuste.png}
+\caption{Ajuste cuadrático de $\ln N$ frente al umbral. La intersección de la pendiente del ajuste con $-1$ determina el valor operacional $3.55$.}
+\label{fig:sextans-chip1-threshold-fit}
+\end{figure}
+
+La ejecución final de \texttt{DAOFIND} produjo $11\,819$ candidatos. La imagen tiene dimensiones de $2097\times4136$ píxeles y contiene $236\,976$ píxeles con el valor de relleno de $50\,000$ ADU, equivalentes al $2.73\%$ del área. Para evitar que las aperturas se superpusieran con estas regiones inválidas o con el borde del chip, se adoptó $r_{\mathrm{ap}}=3FWHM=13.53$ píxeles y se exigió que cada centro estuviera a una distancia mayor que ese radio tanto de los bordes como de los píxeles de relleno. La limpieza conservó $10\,593$ detecciones y rechazó $1\,226$, por lo que permaneció el $89.63\%$ del catálogo inicial.
+
+Para la fotometría de referencia se definió un anillo fijo con radio interior $r_{\mathrm{in}}=5FWHM=22.55$ píxeles y ancho $\Delta r=15$ píxeles, de modo que $r_{\mathrm{out}}=37.55$ píxeles. Se aplicó un segundo control geométrico que exigía espacio válido para el anillo completo, además de la apertura. Con esta condición quedaron $8\,327$ fuentes aptas para \texttt{PHOT}, equivalentes al $70.45\%$ de las detecciones originales.
+
+\subsection{Fotometría fija, error y aislamiento de las fuentes}
+
+La fotometría fija se ejecutó sobre las $8\,327$ coordenadas aptas. Se mantuvo fija la posición determinada por \texttt{DAOFIND} y se estimó el cielo con el algoritmo de modo, usando el anillo entre $22.55$ y $37.55$ píxeles y rechazo de valores extremos a $3\sigma$. Se obtuvieron $8\,327$ registros; $5\,068$ tenían una magnitud válida y $5\,047$ tenían valores válidos simultáneamente de magnitud y error fotométrico. Por tanto, el $60.61\%$ de las fuentes enviadas a \texttt{PHOT} produjo una medición completa.
+
+La distribución de \texttt{MERR} para las $5\,047$ mediciones válidas tuvo mediana de $0.830$ mag, primer cuartil de $0.403$ mag, tercer cuartil de $1.796$ mag y percentil 90 de $4.353$ mag. La cola de errores grandes motivó establecer un corte provisional de $MERR\leq0.20$ mag para formar la muestra usada en la evaluación de contaminación. Este corte conservó $745$ fuentes, el $14.76\%$ de las mediciones completas, y corresponde aproximadamente a $S/N\geq5.43$ usando $S/N\approx1.0857/MERR$. La Figura~\ref{fig:sextans-chip1-merr} muestra la distribución de los errores; la Figura~\ref{fig:sextans-chip1-merr-cut} muestra cuántas fuentes sobreviven a distintos cortes. El límite de $0.20$ mag se usa aquí como filtro de calidad para esta evaluación, no como descarte definitivo del catálogo científico.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_merr_distribucion.png}
+\caption{Distribución de los errores fotométricos válidos. La visualización del histograma se limita a $MERR\leq2$ mag para hacer visible la región de mayor concentración; el resumen estadístico se calculó con las $5\,047$ mediciones válidas.}
+\label{fig:sextans-chip1-merr}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_merr_umbral_fuentes.png}
+\caption{Número de fuentes conservadas al variar el límite superior de \texttt{MERR}. La línea vertical señala el corte provisional de $0.20$ mag, que retiene $745$ fuentes.}
+\label{fig:sextans-chip1-merr-cut}
+\end{figure}
+
+La calidad indicada por \texttt{MERR} no garantiza que una fuente esté aislada de otras detecciones. Por ello, las $745$ fuentes se compararon con el catálogo completo de \texttt{DAOFIND}, y se midió para cada una la distancia a la detección distinta más próxima. La mediana de esas distancias fue $14.36$ píxeles, con un mínimo de $0.60$ y un máximo de $129.65$ píxeles. Se definió como distancia crítica el radio de apertura, $d_{\mathrm{crit}}=13.53$ píxeles, y se clasificó una fuente como aislada cuando su vecino más próximo estaba más lejos que ese valor. El criterio retuvo $385$ fuentes y rechazó $360$; así, el $51.68\%$ de la muestra con bajo error fotométrico quedó disponible para estudiar el cielo local. La Figura~\ref{fig:sextans-chip1-neighbors} presenta la distribución de distancias y el límite utilizado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_vecinos_distancia.png}
+\caption{Distancia al vecino detectado más cercano para las fuentes de la muestra de calidad. Las fuentes con distancia menor o igual a $13.53$ píxeles se excluyeron del análisis del anillo.}
+\label{fig:sextans-chip1-neighbors}
+\end{figure}
+
+\subsection{Contaminación del anillo fijo y selección adaptativa}
+
+Para las $385$ fuentes aisladas se evaluó la contaminación del anillo fijo. Dentro de cada anillo se identificaron píxeles altos usando el límite $Q_3+1.5\,IQR$ de su propia distribución. Luego se calculó $f_{\mathrm{out}}=N_{\mathrm{out}}/N_{\mathrm{sky}}$, la fracción de píxeles del anillo por encima de ese límite. La distribución de $f_{\mathrm{out}}$ entre las fuentes aisladas también se filtró con el límite superior de Tukey. Con $Q_1=0.003881$, $Q_3=0.010608$ e $IQR=0.006727$ se obtuvo $f_{\mathrm{lim}}=0.020698$, o $2.07\%$. La Figura~\ref{fig:sextans-chip1-fout} muestra esa distribución y el límite global.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_fout_distribucion.png}
+\caption{Distribución de $f_{\mathrm{out}}$ para las fuentes aisladas. Los valores por encima del límite global de $2.07\%$ se clasificaron como anillos fijos contaminados.}
+\label{fig:sextans-chip1-fout}
+\end{figure}
+
+El anillo fijo se clasificó como limpio para $323$ fuentes y contaminado para $62$, que representan el $83.90\%$ y el $16.10\%$ de las fuentes aisladas, respectivamente. Para las fuentes contaminadas se probaron anillos alternativos desplazando cinco píxeles hacia fuera cada vez, sin cambiar el radio de apertura: $22.55$--$37.55$, $27.55$--$42.55$, $32.55$--$47.55$, $37.55$--$52.55$ y $42.55$--$57.55$ píxeles. El método conservó el anillo original para las $323$ fuentes limpias y encontró un anillo alternativo aceptable para otras $43$. Las $19$ restantes no tuvieron una solución aceptable entre las alternativas examinadas. La distribución de las fuentes entre los cinco anillos elegidos se muestra en la Figura~\ref{fig:sextans-chip1-rings}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_anillos_adaptativos.png}
+\caption{Número de fuentes asignadas a cada anillo después de la selección adaptativa. El grupo con el anillo original reúne las $323$ fuentes limpias; los otros cuatro grupos corresponden a fuentes cuyo anillo fue desplazado.}
+\label{fig:sextans-chip1-rings}
+\end{figure}
+
+La selección adaptativa recuperó $43$ de las $62$ fuentes inicialmente contaminadas, para una tasa de recuperación de $69.35\%$. Al sumar estas fuentes a las $323$ que conservaron el anillo inicial, se obtuvo una muestra final de $366$ fuentes con una región de cielo aceptable, equivalente al $95.06\%$ de las $385$ fuentes aisladas. Las ejecuciones de \texttt{PHOT} se agruparon según los cinco anillos elegidos y mantuvieron fijos el radio de apertura, las coordenadas y los demás parámetros fotométricos.
+
+Las $323$ estrellas que conservaron el anillo de referencia constituyeron un grupo de control. Al comparar la nueva ejecución de \texttt{PHOT} con la fotometría fija, las coordenadas coincidieron exactamente y las diferencias de magnitud, error, nivel de cielo, dispersión y flujo fueron nulas. Esta prueba muestra que las ejecuciones reprodujeron el resultado fijo cuando la geometría no cambió y permite atribuir a la selección del anillo las diferencias medidas para las fuentes desplazadas.
+
+\subsection{Cambios fotométricos en las fuentes recuperadas}
+
+La comparación entre anillo fijo y adaptativo se realizó para las $43$ fuentes desplazadas con fotometría válida en ambas ejecuciones. En todas ellas disminuyó $f_{\mathrm{out}}$: su mediana pasó de $4.51\%$ con el anillo inicial a $1.34\%$ con el seleccionado, y la mediana de $\Delta f_{\mathrm{out}}=f_{\mathrm{out,adapt}}-f_{\mathrm{out,fijo}}$ fue $-0.02889$, equivalente a una reducción de $2.89$ puntos porcentuales. La Figura~\ref{fig:sextans-chip1-fout-comparison} compara directamente ambos valores y muestra que las 43 fuentes quedan por debajo de la diagonal de igualdad.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_comparacion_fout.png}
+\caption{Fracción de píxeles altos antes y después de desplazar el anillo para las 43 fuentes recuperadas. Los puntos bajo la diagonal indican menor contaminación según $f_{\mathrm{out}}$; la línea horizontal marca el límite final de $2.07\%$.}
+\label{fig:sextans-chip1-fout-comparison}
+\end{figure}
+
+La modificación del cielo produjo cambios pequeños en la magnitud. La mediana de $\Delta MAG= MAG_{\mathrm{adapt}}-MAG_{\mathrm{fijo}}$ fue $-0.004$ mag y la mediana de $|\Delta MAG|$ fue $0.019$ mag; la dispersión robusta de las diferencias, estimada con la desviación absoluta mediana, fue $0.0282$ mag. El cociente mediano entre el flujo adaptativo y el flujo fijo fue $1.00363$, correspondiente a un aumento de flujo de aproximadamente $0.36\%$. La Figura~\ref{fig:sextans-chip1-dmag} muestra la distribución de los cambios de magnitud.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.72\textwidth]{img/sextansA_chip1_delta_mag.png}
+\caption{Distribución de $\Delta MAG$ para las fuentes recuperadas. La mediana, $-0.004$ mag, es cercana a cero y la mediana de la diferencia absoluta es $0.019$ mag.}
+\label{fig:sextans-chip1-dmag}
+\end{figure}
+
+La mediana de \texttt{MERR} disminuyó de $0.031$ a $0.029$ mag, y $24$ de las $43$ fuentes, equivalentes al $55.81\%$, presentaron una reducción individual del error. La relación señal a ruido aproximada aumentó de una mediana de $35.02$ a $37.44$. El nivel de cielo disminuyó en mediana $0.1653$ ADU y la dispersión del cielo $0.0641$ ADU. Estos cambios describen una mejora del indicador de contaminación y cambios fotométricos internos moderados; no demuestran por sí solos una mayor exactitud absoluta, porque las magnitudes siguen sin calibrarse contra estándares o un catálogo externo.
+
+La Figura~\ref{fig:sextans-chip1-stages} resume el tamaño de la muestra en las etapas principales: detección, controles geométricos, fotometría válida, corte en \texttt{MERR}, aislamiento y evaluación de los anillos. La etapa adaptativa supera el número de anillos fijos limpios porque recupera parte de las fuentes cuyo anillo inicial estaba contaminado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{img/sextansA_chip1_resumen_etapas.png}
+\caption{Número de fuentes que permanece en las etapas principales del procesamiento de V en el chip 1. El total de anillos aceptados incluye fuentes con anillo fijo limpio y fuentes recuperadas al desplazar el anillo.}
+\label{fig:sextans-chip1-stages}
+\end{figure}
 
 \section{Discusión general}
 

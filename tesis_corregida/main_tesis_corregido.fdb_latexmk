@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main_tesis_corregido"] 1788376059.60252 "main_tesis_corregido.aux" "main_tesis_corregido.bbl" "main_tesis_corregido" 1788376062.42175 0
+["bibtex main_tesis_corregido"] 1794928263.19493 "main_tesis_corregido.aux" "main_tesis_corregido.bbl" "main_tesis_corregido" 1794928266.46808 0
   "./aa_url.bst" 1786130806 32289 3724ed287755feb5467871a2960b1f7b ""
-  "./global.bib" 1788376039.5616 1492 039dfc1a5dc1c253daf81ac74cb57b5b ""
-  "main_tesis_corregido.aux" 1788376062.20704 21478 c1d6d7cc3962eafd6dac5d2c0962d50e "pdflatex"
+  "./global.bib" 1794928259.74908 2498 a388e406d7cfaea71d0dc8c08c5c3dfb ""
+  "main_tesis_corregido.aux" 1794928266.23968 29455 46381a12d1b15087f0af8881e33ccce3 "pdflatex"
   (generated)
   "main_tesis_corregido.bbl"
   "main_tesis_corregido.blg"
   (rewritten before read)
-["pdflatex"] 1788376059.67469 "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" "main_tesis_corregido.pdf" "main_tesis_corregido" 1788376062.42187 0
-  "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" 1788376039.51977 78521 2e8324a2596c16ed69f33b7d378f6e67 ""
+["pdflatex"] 1794928263.27227 "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" "main_tesis_corregido.pdf" "main_tesis_corregido" 1794928266.46821 0
+  "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" 1794928245.96096 94410 0068c2b2f52fb282fd910a804499ca66 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1699652218 3877 2ca811886181a05a861d20a35de75e06 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1698694482 3136 bbe665bd0bb471a2da1e8fd326cff9fa ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -227,13 +227,24 @@
   "img/m92Encontradas.png" 1786995517.82509 921152 ab6209cb1734a55d2eea9645ea90befc ""
   "img/rechazadasAnilloCielo.png" 1786995517.81062 857437 627b5282640b4d87ed37a0de45ef9ba7 ""
   "img/rechazadasVecinosCercanos.png" 1786995517.81607 844243 747a90a1aeeb318a0cc943a9f5ee7137 ""
-  "main_tesis_corregido.aux" 1788376062.20704 21478 c1d6d7cc3962eafd6dac5d2c0962d50e "pdflatex"
-  "main_tesis_corregido.bbl" 1788376059.67234 1070 a1089921e0e7a552c37b59cf4432f2f6 "bibtex main_tesis_corregido"
-  "main_tesis_corregido.lof" 1788376062.20968 3863 01da56ef187e3b37e5ad600670caed06 "pdflatex"
-  "main_tesis_corregido.lot" 1788376062.20969 463 3ffe1adae71b5c9e4a7d16eb65b12c44 "pdflatex"
-  "main_tesis_corregido.out" 1788376062.20933 7766 c360d568410403c875b64dc031c3a190 "pdflatex"
-  "main_tesis_corregido.tex" 1788376039.51977 78521 2e8324a2596c16ed69f33b7d378f6e67 ""
-  "main_tesis_corregido.toc" 1788376062.20959 7064 df963b1b9f7e12cec6c3fea4b2047c95 "pdflatex"
+  "img/sextansA_chip1_anillos_adaptativos.png" 1794927920.24216 22674 14957c0679b7ebf94de9f21f1a8286cb ""
+  "img/sextansA_chip1_cielo_sigma.png" 1794927920.17458 30680 1b1c626f517f668c22a3c1f7d2c15f61 ""
+  "img/sextansA_chip1_comparacion_fout.png" 1794927920.24852 30869 a5daab260b81dd1a6a21de9b51c54082 ""
+  "img/sextansA_chip1_delta_mag.png" 1794927920.24536 20063 cd6ee11606c54e72c2951bd01cb65ade ""
+  "img/sextansA_chip1_fout_distribucion.png" 1794927920.239 20378 5619e4f6e74fa5328e1b3bb6a7f1f577 ""
+  "img/sextansA_chip1_merr_distribucion.png" 1794927920.22759 23640 bee0578d03486d0272f7a1f44948b4b8 ""
+  "img/sextansA_chip1_merr_umbral_fuentes.png" 1794927920.23169 29232 603dafb28efdc12849b6e3cddf20f8c5 ""
+  "img/sextansA_chip1_resumen_etapas.png" 1794927920.2522 25973 95e3f6428ef499364b89ae7fd0b22d27 ""
+  "img/sextansA_chip1_threshold_ajuste.png" 1794927920.22449 35627 a19200a85d5b17443df8136bcb2b4ad3 ""
+  "img/sextansA_chip1_threshold_conteos.png" 1794927920.22112 31141 b70e7ddea5e1b77f66c69ef331559561 ""
+  "img/sextansA_chip1_vecinos_distancia.png" 1794927920.23545 20976 ae8bb4dacb83db8cd3962856adb16ada ""
+  "main_tesis_corregido.aux" 1794928266.23968 29455 46381a12d1b15087f0af8881e33ccce3 "pdflatex"
+  "main_tesis_corregido.bbl" 1794928263.26971 1549 f92a9daa2a1af176bf53c7be85a0f0c0 "bibtex main_tesis_corregido"
+  "main_tesis_corregido.lof" 1794928266.24286 6880 0e0cd24743dbe60a93063218047ab3b2 "pdflatex"
+  "main_tesis_corregido.lot" 1794928266.24291 463 7e03122bb59700f55d28cad420eb3698 "pdflatex"
+  "main_tesis_corregido.out" 1794928266.24258 8107 8a045a2f446f6338636998818ef485b1 "pdflatex"
+  "main_tesis_corregido.tex" 1794928245.96096 94410 0068c2b2f52fb282fd910a804499ca66 ""
+  "main_tesis_corregido.toc" 1794928266.24282 7791 c9205b0180364ca3a441479e55549796 "pdflatex"
   (generated)
   "main_tesis_corregido.aux"
   "main_tesis_corregido.lof"
