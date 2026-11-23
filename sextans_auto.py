@@ -1200,8 +1200,18 @@ def analizar_post_phot(
 
     n_limpias = len(cielo_limpio)
     n_contam = len(cielo_contaminado)
-    n_aceptadas = (df_adapt["estado"] == "aceptado").sum()
-    n_recuperadas = n_aceptadas - n_limpias
+    aceptadas = df_adapt["estado"] == "aceptado"
+    n_aceptadas = int(aceptadas.sum())
+    movidas = df_adapt[
+        aceptadas & (df_adapt["r_in"] > r_sky_in + 1e-8)
+    ]
+    claves_contaminadas = set(zip(
+        cielo_contaminado["x"].round(3),
+        cielo_contaminado["y"].round(3),
+    ))
+    claves_movidas = set(zip(movidas["x"].round(3), movidas["y"].round(3)))
+    n_recuperadas = len(claves_contaminadas & claves_movidas)
+    n_sin_evaluacion = max(0, len(aisladas) - len(df_anillos))
 
     resumen = {
         "chip": chip,
@@ -1220,7 +1230,8 @@ def analizar_post_phot(
         "N_fijo_contaminado": n_contam,
         "N_adapt_aceptadas": int(n_aceptadas),
         "N_recuperadas": int(n_recuperadas),
-        "N_sin_solucion": int(len(df_adapt) - n_aceptadas),
+        "N_sin_solucion": int(n_contam - n_recuperadas),
+        "N_sin_evaluacion_anillo_fijo": int(n_sin_evaluacion),
         "tasa_recuperacion": (
             100.0 * n_recuperadas / n_contam
             if n_contam > 0 else np.nan
@@ -1587,11 +1598,14 @@ def comparar_fijo_adaptativo(
         validate="one_to_one"
     )
 
-    if fout["f_out_inicial"].isna().any():
-        raise ValueError(
-            "No se pudo recuperar f_out inicial "
-            "para algunas estrellas desplazadas."
+    sin_fout_inicial = fout["f_out_inicial"].isna()
+    if sin_fout_inicial.any():
+        print(
+            "Fuentes desplazadas sin f_out inicial; "
+            "se excluyen solo de esta comparación:",
+            int(sin_fout_inicial.sum()),
         )
+        fout = fout.loc[~sin_fout_inicial].copy()
 
     fout["delta_f_out"] = (
         fout["f_out_final"]
@@ -1830,6 +1844,7 @@ def _prepare(r,args):
     _save_plot(im,stars,sky,pic,f'{pref} | FWHM={fwhm:.2f} pix | σ cielo={sigma:.2f} ADU')
     r_ap,r_sky_in,r_sky_out=geometria_fotometrica(fwhm,args.ap_fwhm_multiplier)
     info=dict(fwhm=fwhm,sigma_sky=sigma,sigma_inicial=sig0,
+              seed_fwhm=args.seed_fwhm,semilla=args.seed,
               ap_fwhm_multiplier=args.ap_fwhm_multiplier,
               r_ap=r_ap,r_sky_in=r_sky_in,r_sky_out=r_sky_out,
               n_estrellas=len(stars),
@@ -1865,9 +1880,24 @@ def _iraf_params(r,fw,sigma):
 
 def _write_cl(path,lines):
     # Precarga paquetes y SIEMPRE termina con salto de línea.
-    lines=['noao','digiphot','daophot','']+list(lines)
+    # En la instalación Homebrew usada para este proyecto no existe una
+    # subcarpeta bin(arch); apuntar noaobin al binario NOAO real evita que
+    # IRAF intente abrir x_apphot.e desde el directorio de trabajo.
+    lines=['noao','reset noaobin = "noao$bin/"','digiphot','daophot','']+list(lines)
     path.write_text('\n'.join(lines).rstrip()+'\n',encoding='utf-8')
     return path
+
+
+def _with_iraf_header(content):
+    """Carga los paquetes fotométricos y corrige la ruta de binarios NOAO."""
+    lines=content.splitlines()
+    header={'noao','digiphot','daophot','reset noaobin = "noao$bin/"'}
+    while lines and lines[0].strip() in header:
+        lines.pop(0)
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    preamble='noao\nreset noaobin = "noao$bin/"\ndigiphot\ndaophot\n\n'
+    return preamble+'\n'.join(lines).rstrip()+'\n'
 
 
 def _iraf_exec(script,outputs,args):
@@ -1963,7 +1993,7 @@ def _fixed(r,args):
         ap_fwhm_multiplier=args.ap_fwhm_multiplier)
     # No duplicar encabezado si ya existía en la función original.
     content=script.read_text()
-    if not content.startswith('noao\n'):content='noao\ndigiphot\ndaophot\n\n'+content
+    content=_with_iraf_header(content)
     script.write_text(content.rstrip()+'\n')
     mag=r['carpeta']/f'{r["prefijo"]}_fixed.mag'
     complete=_iraf_exec(script,[dat,mag],args)
@@ -1980,7 +2010,7 @@ def _adaptive(r,args):
         args.chip,args.filtro,p['fwhm'],p['sigma_sky'],base=args.base,
         ap_fwhm_multiplier=args.ap_fwhm_multiplier)
     script=info['script_adapt'];content=script.read_text()
-    if not content.startswith('noao\n'):content='noao\ndigiphot\ndaophot\n\n'+content
+    content=_with_iraf_header(content)
     script.write_text(content.rstrip()+'\n')
     outs=[]
     for _,row in info['tabla_grupos'].iterrows():

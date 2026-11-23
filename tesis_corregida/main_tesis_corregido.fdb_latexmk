@@ -1,14 +1,13 @@
 # Fdb version 4
-["bibtex main_tesis_corregido"] 1794928263.19493 "main_tesis_corregido.aux" "main_tesis_corregido.bbl" "main_tesis_corregido" 1794928266.46808 0
+["bibtex main_tesis_corregido"] 1795471622.17878 "main_tesis_corregido.aux" "main_tesis_corregido.bbl" "main_tesis_corregido" 1795471626.57974 0
   "./aa_url.bst" 1786130806 32289 3724ed287755feb5467871a2960b1f7b ""
-  "./global.bib" 1794928259.74908 2498 a388e406d7cfaea71d0dc8c08c5c3dfb ""
-  "main_tesis_corregido.aux" 1794928266.23968 29455 46381a12d1b15087f0af8881e33ccce3 "pdflatex"
+  "./global.bib" 1795466336.07948 3769 5985b3c899744ebe54de9a21c689e345 ""
+  "main_tesis_corregido.aux" 1795471626.3625 41240 811474452033cdea37eaaeca0dc3de06 "pdflatex"
   (generated)
   "main_tesis_corregido.bbl"
   "main_tesis_corregido.blg"
   (rewritten before read)
-["pdflatex"] 1794928263.27227 "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" "main_tesis_corregido.pdf" "main_tesis_corregido" 1794928266.46821 0
-  "/Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex" 1794928245.96096 94410 0068c2b2f52fb282fd910a804499ca66 ""
+["pdflatex"] 1795471622.25022 "main_tesis_corregido.tex" "main_tesis_corregido.pdf" "main_tesis_corregido" 1795471626.57991 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc" 1699652218 3877 2ca811886181a05a861d20a35de75e06 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1698694482 3136 bbe665bd0bb471a2da1e8fd326cff9fa ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
@@ -16,8 +15,10 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm" 1591219423 1160 c2197cdaa08622262260a0a34b1dfcef ""
@@ -238,13 +239,19 @@
   "img/sextansA_chip1_threshold_ajuste.png" 1794927920.22449 35627 a19200a85d5b17443df8136bcb2b4ad3 ""
   "img/sextansA_chip1_threshold_conteos.png" 1794927920.22112 31141 b70e7ddea5e1b77f66c69ef331559561 ""
   "img/sextansA_chip1_vecinos_distancia.png" 1794927920.23545 20976 ae8bb4dacb83db8cd3962856adb16ada ""
-  "main_tesis_corregido.aux" 1794928266.23968 29455 46381a12d1b15087f0af8881e33ccce3 "pdflatex"
-  "main_tesis_corregido.bbl" 1794928263.26971 1549 f92a9daa2a1af176bf53c7be85a0f0c0 "bibtex main_tesis_corregido"
-  "main_tesis_corregido.lof" 1794928266.24286 6880 0e0cd24743dbe60a93063218047ab3b2 "pdflatex"
-  "main_tesis_corregido.lot" 1794928266.24291 463 7e03122bb59700f55d28cad420eb3698 "pdflatex"
-  "main_tesis_corregido.out" 1794928266.24258 8107 8a045a2f446f6338636998818ef485b1 "pdflatex"
-  "main_tesis_corregido.tex" 1794928245.96096 94410 0068c2b2f52fb282fd910a804499ca66 ""
-  "main_tesis_corregido.toc" 1794928266.24282 7791 c9205b0180364ca3a441479e55549796 "pdflatex"
+  "img/sextansA_chip5_control_semi.png" 1795466011.36384 1287093 0d912a61fcbb52b0946b461160d7586e ""
+  "img/sextansA_chip5_localizacion_recuperadas_BVI.png" 1795470812.26934 1515801 f5f0655fb40a3a86479af294f0bf5688 ""
+  "img/sextansA_chip5_recuperada_anillos_BVI.png" 1795470812.53265 489281 faa9a2f17d45ec82d822fb52dda08136 ""
+  "img/sextansA_chips2_8_cielo.png" 1795465629.17333 80971 a3c23a051b6161c5607ac93e7766130e ""
+  "img/sextansA_chips2_8_conteos.png" 1795465629.16998 252314 c274bb8a880f667d5cc510a0676bbcf1 ""
+  "img/sextansA_chips2_8_fotometria.png" 1795465629.17169 197092 6c178e1c84df7fc5810d0e011aa7d78e ""
+  "main_tesis_corregido.aux" 1795471626.3625 41240 811474452033cdea37eaaeca0dc3de06 "pdflatex"
+  "main_tesis_corregido.bbl" 1795471622.24727 2374 668780620377cd57bccbc9a2a1029e15 "bibtex main_tesis_corregido"
+  "main_tesis_corregido.lof" 1795471626.36644 8985 78e961a4a348aeb464b02292898afccc "pdflatex"
+  "main_tesis_corregido.lot" 1795471626.36647 2728 bb854a42a25b08365a8813b791b14c79 "pdflatex"
+  "main_tesis_corregido.out" 1795471626.36612 8609 42121e25e62a60ce9b5e0209e8d70739 "pdflatex"
+  "main_tesis_corregido.tex" 1795471608.17872 136880 aa46aa87f4afed108df4b110ee3294e2 ""
+  "main_tesis_corregido.toc" 1795471626.36639 8566 379ccb46441d57e52c5467bb4548e438 "pdflatex"
   (generated)
   "main_tesis_corregido.aux"
   "main_tesis_corregido.lof"

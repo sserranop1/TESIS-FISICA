@@ -1,9 +1,15 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Imágenes principales empleadas durante el análisis.}}{24}{table.caption.11}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Valores de FWHM, radio de apertura y threshold utilizados durante el análisis. }}{26}{table.caption.12}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Imágenes principales empleadas durante el análisis.}}{26}{table.caption.11}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Valores de FWHM, radio de apertura y threshold utilizados durante el análisis. }}{28}{table.caption.12}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Parámetros de Sextans A en $V$. El chip 1 se procesó manualmente y los chips 2--8 mediante el flujo semiautomático. $m$ es el múltiplo aplicado al FWHM para definir la apertura; $r_{\rm in}$ es el radio interno del anillo de cielo, cuyo ancho fue de 15 píxeles.}}{61}{table.caption.42}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Conteos de la selección fotométrica por chip. El chip 1 corresponde al análisis manual y los chips 2--8 al semiautomático. $N_{\rm PHOT}$ incluye magnitud y error válidos; $MERR\leq 0.20$ y aislamiento definen la muestra candidata al análisis del cielo. $N_{\rm anillo\,ok}=N_{\rm fijo\,limpio}+N_{\rm recup.}$. En los chips 2 y 5, una fuente aislada en cada uno no tuvo evaluación válida del anillo fijo y se incluye entre las fuentes sin solución; las demás fuentes de esa columna no obtuvieron un anillo alternativo aceptable.}}{61}{table.caption.43}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Fuentes con anillo fijo contaminado y recuperación al aceptar un anillo alternativo en los filtros $B$ e $I$. El porcentaje es $N_{\rm recuperadas}/N_{\rm contaminadas}$ y no representa la completitud del catálogo.}}{65}{table.caption.47}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Resumen de selección en los ocho chips de Sextans A para $B$ e $I$. $N_{\rm PHOT}$ cuenta mediciones con magnitud y error válidos; ``sin sol.'' son anillos fijos contaminados que no encontraron alternativa aceptable; ``sin eval.'' son fuentes aisladas cuyo anillo fijo no pudo medirse.}}{65}{table.caption.48}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Conteos de selección y anillos en el chip 5. $N_{\rm PHOT}$ incluye solo magnitudes y errores válidos. ``Sin eval.'' se refiere a fuentes aisladas sin medición del anillo fijo; ``sin sol.'' cuenta contaminaciones fijas sin un anillo alternativo aceptable.}}{66}{table.caption.49}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Cambios fotométricos en las fuentes desplazadas del chip 5. $N_{\rm movidas}$ cuenta comparaciones con magnitud y error válidos; para $I$, los valores de $f_{\rm out}$ usan las trece fuentes con anillo fijo evaluable.}}{68}{table.caption.52}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

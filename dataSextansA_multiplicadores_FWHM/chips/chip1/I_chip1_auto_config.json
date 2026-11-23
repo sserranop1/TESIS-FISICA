@@ -1,0 +1,18 @@
+{
+  "fwhm": 4.4,
+  "sigma_sky": 18.1,
+  "sigma_inicial": 16.93180591216207,
+  "ap_fwhm_multiplier": 3.0,
+  "r_ap": 13.200000000000001,
+  "r_sky_in": 22.0,
+  "r_sky_out": 37.0,
+  "n_estrellas": 15,
+  "n_cajas": 15,
+  "n_estrellas_fwhm_tukey": 15,
+  "n_cajas_tukey": 14,
+  "stars_csv": "/Users/santiagoserranoperico/Desktop/Universidad/tesis/dataSextansA_multiplicadores_FWHM/chips/chip1/I_chip1_auto_estrellas.csv",
+  "sky_csv": "/Users/santiagoserranoperico/Desktop/Universidad/tesis/dataSextansA_multiplicadores_FWHM/chips/chip1/I_chip1_auto_cielo.csv",
+  "grafica": "/Users/santiagoserranoperico/Desktop/Universidad/tesis/dataSextansA_multiplicadores_FWHM/chips/chip1/I_chip1_auto_control.png",
+  "metodo_fwhm": "Ajuste gaussiano 2D a 15 fuentes con SHARP estelar de IRAF",
+  "metodo_cielo": "15 cajas 15x15 sin fuentes y con proxy de sharpness bajo"
+}

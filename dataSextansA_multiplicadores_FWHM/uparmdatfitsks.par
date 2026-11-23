@@ -1,5 +1,5 @@
 salgorithm,s,h,"mode",|median|mode|centroid|gauss|crosscor|ofilter|histplot|radplot|constant|file|mean|,,"Sky fitting algorithm"
-annulus,r,h,42.4,,,"Inner radius of sky annulus in scale units"
+annulus,r,h,39.95,,,"Inner radius of sky annulus in scale units"
 dannulus,r,h,15.,,,"Width of sky annulus in scale units"
 skyvalue,r,h,0.,,,"User sky value"
 smaxiter,i,h,10,,,"Maximum number of sky fitting iterations"

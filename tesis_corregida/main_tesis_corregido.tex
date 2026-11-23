@@ -97,42 +97,44 @@ Bogotá, Colombia\\
 
 \chapter*{Resumen}
 
-El análisis de imágenes astronómicas obtenidas con detectores CCD requiere una serie de procedimientos destinados a separar la señal producida por los objetos celestes de las contribuciones instrumentales y estadísticas introducidas durante la adquisición de los datos. En este trabajo se desarrolla e implementa un flujo de reducción y análisis fotométrico utilizando IRAF (\textit{Image Reduction and Analysis Facility}), aplicado principalmente a imágenes de los cúmulos estelares M92 y M41.
+Este trabajo desarrolla un flujo de reducción CCD y fotometría de apertura en IRAF, complementado con análisis en Python, y lo aplica a observaciones de M92, M41 y Sextans A. Para M92 se inspeccionan encabezados FITS y se realizan correcciones de \textit{overscan}, recorte, \textit{bias} y \textit{flat field}. En M92 y M41 se estudian la detección de fuentes, el ancho a media altura (FWHM), la estimación del cielo, las magnitudes instrumentales y sus errores; para M92 se construye además un diagrama color--magnitud instrumental en los filtros $B$ y $V$.
 
-El trabajo comprende tres etapas principales. En la primera se realiza la reducción de imágenes CCD del cúmulo globular M92 mediante procedimientos de inspección de encabezados FITS, corrección por \textit{overscan}, recorte de la región útil del detector, corrección por \textit{bias} y corrección por \textit{flat field}. En la segunda etapa se estudia la identificación y caracterización manual de fuentes estelares mediante las herramientas \texttt{display} e \texttt{imexamine} de IRAF, con especial atención a la determinación del ancho a media altura, FWHM (\textit{Full Width at Half Maximum}), y a la caracterización estadística del fondo de cielo.
+El análisis de Sextans A amplía el procedimiento a los ocho chips de un mosaico en el filtro $V$. El chip 1 se procesó manualmente y se utilizó para diseñar la selección de anillos de cielo adaptativos. Después, el programa \texttt{sextans\_auto.py} se aplicó también a los ocho chips en los filtros $B$ e $I$, con estimaciones independientes de FWHM, cielo y umbral para cada imagen. La inspección visual de los controles se conservó antes de aceptar los parámetros.
 
-En la tercera etapa se realiza fotometría de apertura sobre imágenes de M92 y M41. Para ello se estudian parámetros como el radio de apertura, el FWHM, el nivel de ruido del cielo y el umbral de detección utilizado por \texttt{daofind}. Se adopta una apertura correspondiente a tres veces la mediana del FWHM de cada imagen y un umbral de detección (\texttt{threshold}) de 3.5. Posteriormente se obtienen magnitudes instrumentales y errores fotométricos mediante \texttt{phot} y \texttt{qphot}.
+En los siete chips procesados con el programa se midieron FWHM entre $4.42$ y $4.62$ píxeles y umbrales entre $3.18$ y $4.45$. Se ensayaron radios de apertura entre uno y seis FWHM, asignando un múltiplo distinto a cada chip. El catálogo reunió $47\,236$ detecciones; $18\,880$ mediciones tuvieron magnitud y error válidos. De las $4\,113$ fuentes que superaron los filtros de error y aislamiento, $4\,111$ pudieron clasificarse por la calidad del anillo fijo: $3\,686$ fueron limpias y $425$ contaminadas. El método adaptativo recuperó otras $285$ fuentes y dejó $3\,971$ con un anillo aceptado; dos fuentes no tuvieron una evaluación válida del anillo fijo y se contaron entre las $142$ sin solución aceptable. En las fuentes recuperadas, la fracción mediana de píxeles altos del anillo disminuyó en los siete chips; los cambios medianos de magnitud absoluta por chip estuvieron entre $0.004$ y $0.023$ mag.
 
-Para M92 se construye además un diagrama color--magnitud instrumental utilizando observaciones en los filtros $B$ y $V$. Como parte del proceso de depuración de la muestra fotométrica se implementan dos criterios adicionales. El primero utiliza el algoritmo de vecinos más cercanos para eliminar fuentes que poseen otra estrella dentro de una distancia de $3\times FWHM$. El segundo analiza la distribución de cuentas en los anillos utilizados para determinar el fondo local, identificando posibles casos de contaminación por fuentes vecinas.
+En los filtros $B$ e $I$, el anillo adaptativo recuperó, respectivamente, $253$ de $379$ fuentes con anillo fijo contaminado ($66.8\%$) y $421$ de $534$ ($78.8\%$). La mediana de $|\Delta MAG|$ en las fuentes desplazadas fue $0.013$ mag en $B$ y $0.012$ mag en $I$; la mediana de $f_{\rm out}$ disminuyó en $2.26$ y $2.59$ puntos porcentuales. En el chip 5, el procedimiento recuperó $1/3$ fuentes en $B$, $4/7$ en $V$ y $13/13$ en $I$. Estas comparaciones muestran la utilidad de revisar el cielo local para conservar fuentes que el anillo fijo descartaría, sin implicar que cada magnitud o error individual mejore.
 
-Los resultados permiten establecer un procedimiento reproducible para pasar desde una imagen CCD cruda hasta una muestra de fuentes adecuada para análisis fotométrico. El trabajo muestra además la importancia de la reducción instrumental, la selección de parámetros fotométricos y la inspección de fuentes contaminadas en campos estelares relativamente densos.
+Las magnitudes de este trabajo son instrumentales y no se comparan con estándares externos. Por ello, los resultados cuantifican la consistencia interna de los procedimientos de detección, selección del cielo y fotometría, pero no constituyen una calibración absoluta ni una demostración de completitud. El procesamiento muestra cómo la inspección visual, los controles estadísticos robustos y la selección adaptativa del anillo pueden integrarse en un flujo reproducible para datos CCD.
 
 \vspace{5mm}
 
 \noindent
 \textbf{Palabras clave:}
-CCD, fotometría de apertura, IRAF, M92, M41, FWHM, diagrama color--magnitud, reducción de imágenes.
+CCD, fotometría de apertura, IRAF, automatización semiautomática, M92, M41, Sextans A, FWHM.
 
 
 % ============================================================
 % RESUMEN EN INGLÉS
 % ============================================================
 
-\chapter*{Resumen en inglés}
+\chapter*{Abstract}
 
-Astronomical images obtained with CCD detectors require several processing stages to separate the signal produced by astronomical sources from instrumental and statistical contributions introduced during data acquisition. This work develops and implements a CCD reduction and aperture-photometry workflow using IRAF (\textit{Image Reduction and Analysis Facility}), mainly applied to observations of the stellar clusters M92 and M41.
+This work develops a CCD reduction and aperture-photometry workflow using IRAF, complemented by Python analysis, and applies it to observations of M92, M41, and Sextans A. For M92, FITS headers are inspected and overscan, trimming, bias, and flat-field corrections are performed. The M92 and M41 analyses examine source detection, full width at half maximum (FWHM), local-sky estimation, instrumental magnitudes, and photometric errors. An instrumental $B-V$ color--magnitude diagram is also constructed for M92.
 
-The procedure includes CCD image reduction, manual and automatic stellar-source identification, estimation of the stellar FWHM and local sky background, automatic source detection, aperture photometry, instrumental magnitude determination, and construction of an instrumental color--magnitude diagram for M92.
+The Sextans A analysis covers all eight chips of a $V$-band mosaic. Chip 1 was processed manually and used to develop the adaptive sky-annulus selection. The program \texttt{sextans\_auto.py} was then applied to all eight chips in filters $B$ and $I$, estimating FWHM, sky, and detection threshold independently for each image. Visual inspection of control plots remained part of the acceptance procedure.
 
-An aperture radius corresponding to three times the median stellar FWHM was adopted, while a detection threshold of 3.5 times the background noise was used for automatic source detection. Additional quality criteria based on nearest-neighbor distances and possible contamination of the sky annulus were implemented to improve the final photometric sample.
+Across the seven chips processed by the program, the measured FWHM ranges from 4.42 to 4.62 pixels and the adopted detection thresholds from 3.18 to 4.45. Aperture radii from one to six FWHM were tested, with a different multiplier assigned to each chip. The resulting catalogs contain 47,236 detections, of which 18,880 have valid magnitudes and errors. Of the 4,113 sources passing the error and isolation cuts, 4,111 could be classified by fixed-annulus quality: 3,686 were clean and 425 contaminated. The adaptive procedure recovered a further 285 sources, yielding 3,971 with an accepted annulus; two sources had no valid fixed-annulus assessment and are included among the 142 without an acceptable solution. For recovered sources, the median fraction of high-valued sky-annulus pixels decreased in all seven chips; the per-chip median absolute magnitude changes ranged from 0.004 to 0.023 mag.
 
-The resulting workflow provides a practical framework for processing CCD observations and obtaining instrumental photometric measurements suitable for subsequent photometric calibration and stellar-population analysis.
+In filters $B$ and $I$, the adaptive annulus recovered 253 of 379 sources with contaminated fixed annuli (66.8\%) and 421 of 534 (78.8\%), respectively. The median absolute magnitude change among moved sources was 0.013 mag in $B$ and 0.012 mag in $I$; median $f_{\rm out}$ fell by 2.26 and 2.59 percentage points. On chip 5, the method recovered 1/3 sources in $B$, 4/7 in $V$, and 13/13 in $I$. The results show how local-sky review can retain sources rejected by a fixed-annulus procedure, while not implying that every individual magnitude or error improves.
+
+The magnitudes remain instrumental and were not calibrated against external standards. The results therefore describe the internal consistency of detection, sky selection, and photometry; they do not establish absolute calibration or completeness. The workflow demonstrates how visual inspection, robust statistical controls, and adaptive annulus selection can be combined in a reproducible CCD-processing procedure.
 
 \vspace{5mm}
 
 \noindent
-\textbf{Palabras clave en inglés:}
-CCD, aperture photometry, IRAF, M92, M41, FWHM, color--magnitude diagram.
+\textbf{Keywords:}
+CCD, aperture photometry, IRAF, semiautomatic processing, M92, M41, Sextans A, FWHM.
 
 
 % ============================================================
@@ -178,11 +180,11 @@ Sin embargo, la precisión del resultado depende de diferentes parámetros. Entr
 
 El software IRAF proporciona herramientas para realizar cada una de estas etapas. Mediante tareas especializadas es posible inspeccionar imágenes FITS, realizar reducción CCD, medir perfiles estelares, detectar fuentes automáticamente, efectuar fotometría y extraer los resultados para análisis posterior.
 
-En este trabajo se implementa un flujo de reducción y fotometría utilizando IRAF, aplicado a imágenes de los cúmulos M92 y M41. El procedimiento se desarrolló inicialmente a través de tres talleres: reducción CCD, identificación manual de fuentes y fotometría de apertura. Posteriormente, el análisis se extendió mediante la construcción de un diagrama color--magnitud para M92 y mediante criterios adicionales destinados a seleccionar fuentes fotométricamente más confiables.
+En este trabajo se implementa un flujo de reducción y fotometría utilizando IRAF y Python. La primera parte se aplicó a imágenes de los cúmulos M92 y M41 e incluyó la reducción CCD, la identificación de fuentes, la fotometría de apertura y la construcción de un diagrama color--magnitud instrumental para M92. En una segunda parte, el procedimiento se extendió a los ocho chips de Sextans A: el análisis manual del chip 1 sirvió de referencia para desarrollar un programa semiautomático que procesa los chips 2--8 y permite seleccionar anillos de cielo adaptativos.
 
 Los cúmulos estelares son particularmente apropiados para este tipo de análisis porque contienen numerosas estrellas observadas aproximadamente a una misma distancia y, en primera aproximación, asociadas a una misma población. Un diagrama color--magnitud permite ordenar dichas estrellas de acuerdo con su luminosidad y su color, proporcionando información fundamental sobre las características de la población estelar.
 
-Este trabajo constituye por tanto una introducción práctica y teórica al procesamiento de imágenes CCD y a la fotometría estelar, y establece las bases para una futura calibración fotométrica y un análisis más detallado de las propiedades físicas de M92.
+El trabajo constituye una aplicación práctica del procesamiento CCD y la fotometría estelar, con énfasis en la automatización reproducible y el control de contaminación del cielo local. Los resultados constituyen magnitudes instrumentales y establecen una base para una calibración posterior de M92, M41 y Sextans A.
 
 
 % ============================================================
@@ -546,7 +548,7 @@ Este fenómeno se conoce como \textit{seeing}.
 
 \subsection{Ancho a media altura (FWHM)}
 
-Una medida ampliamente utilizada del tamaño de una estrella en una imagen es el FWHM, \textit{Full Width at Half Maximum}.
+Una medida ampliamente utilizada del tamaño de una estrella en una imagen es el FWHM, \textit{Full Width at Half Maximum}. En condiciones de observación atmosférica, este parámetro resume el ensanchamiento del perfil observado y permite fijar una escala de trabajo para la detección y la fotometría \citep{howell2006}.
 
 El FWHM corresponde al ancho del perfil de intensidad medido al nivel correspondiente a la mitad de su máximo.
 
@@ -631,7 +633,7 @@ Una apertura demasiado pequeña excluye parte del perfil estelar.
 
 Una apertura demasiado grande incluye numerosos píxeles adicionales de cielo y aumenta la probabilidad de contaminación por objetos vecinos.
 
-En este trabajo se adoptó como criterio un radio de apertura de $r_{\rm ap}=3\,FWHM$. Para disminuir la sensibilidad a estrellas individuales con perfiles anómalos, se utilizó específicamente $r_{\rm ap}=3\,{\rm median}(FWHM)$.
+En el análisis inicial de M92 y M41 y en el procesamiento manual del chip 1 de Sextans A se adoptó $r_{\rm ap}=3\,FWHM$, usando la mediana de las mediciones estelares para reducir la influencia de perfiles anómalos. En la extensión semiautomática de Sextans A se variaron los múltiplos entre chips; estos valores se documentan en la Tabla~\ref{tab:sextans-chips} y no se deben interpretar como una única apertura adoptada para todo el mosaico.
 
 
 % ============================================================
@@ -640,13 +642,7 @@ En este trabajo se adoptó como criterio un radio de apertura de $r_{\rm ap}=3\,
 
 \subsection{Estimación del fondo de cielo}
 
-La contribución del cielo debe estimarse localmente debido a que su nivel puede variar a través de la imagen.
-
-En fotometría de apertura suele utilizarse un anillo concéntrico alrededor de la estrella.
-
-El anillo queda determinado por:
-
-El anillo de cielo queda caracterizado por un radio interno, denominado \texttt{annulus}, y por un ancho adicional, denominado \texttt{dannulus}.
+La contribución del cielo debe estimarse localmente debido a que su nivel puede variar a través de la imagen. En fotometría de apertura suele utilizarse un anillo concéntrico alrededor de la estrella, caracterizado por un radio interno, denominado \texttt{annulus}, y por un ancho adicional, denominado \texttt{dannulus} \citep{davis1989,irafapphot2026}.
 
 En este trabajo se utilizó un radio interno de $r_{\rm in}=15\ {\rm pix}$ y un ancho de $\Delta r=10\ {\rm pix}$, por lo que el anillo se extendió aproximadamente entre 15 y 25 píxeles desde el centro de la estrella.
 
@@ -919,20 +915,20 @@ Por ello la selección debe realizarse estudiando simultáneamente el número de
 
 \section{Estructura del documento}
 
-El presente capítulo reúne la contextualización del problema, los fundamentos teóricos necesarios para comprender el funcionamiento de los detectores CCD, las principales fuentes de ruido, los procedimientos de calibración, la formación de la imagen estelar, la fotometría de apertura, los criterios de selección de fuentes y los diagramas color--magnitud. Al final del capítulo se presentan la pregunta de investigación y los objetivos que orientan el trabajo.
+El presente capítulo reúne la contextualización del problema, los fundamentos teóricos necesarios para comprender los detectores CCD, sus principales fuentes de ruido, la reducción instrumental, la formación de la imagen estelar, la fotometría de apertura, los criterios de selección de fuentes y los diagramas color--magnitud. Al final se presentan la pregunta de investigación y los objetivos.
 
-El Capítulo 2 describe la metodología empleada para la reducción de las imágenes de M92 y el análisis fotométrico de M92 y M41. El Capítulo 3 reúne los resultados obtenidos y su discusión, relacionando los procedimientos aplicados con el comportamiento observado en las imágenes y en las mediciones fotométricas. El Capítulo 4 presenta las conclusiones y las posibles líneas de trabajo futuro.
+El Capítulo 2 describe los datos y los procedimientos de reducción y fotometría aplicados a M92, M41 y Sextans A, incluida la implementación semiautomática para los chips 2--8 de esta última. El Capítulo 3 presenta los resultados de los tres objetos y discute la comparación de radios de apertura y de anillos de cielo. El Capítulo 4 reúne las conclusiones y las líneas de trabajo que permitirían calibrar y validar externamente las mediciones.
 
 \section{Pregunta de investigación}
 
-¿Cómo se puede implementar un flujo de trabajo basado en IRAF que permita reducir imágenes CCD, identificar y seleccionar fuentes estelares y obtener magnitudes instrumentales confiables mediante fotometría de apertura en imágenes de los cúmulos M92 y M41?
+¿Cómo se puede implementar y evaluar un flujo de trabajo reproducible, basado en IRAF y Python, para reducir imágenes CCD, detectar fuentes y obtener magnitudes instrumentales mediante fotometría de apertura, incluyendo el control del cielo local en imágenes de M92, M41 y Sextans A?
 
 
 \section{Objetivos}
 
 \subsection{Objetivo general}
 
-Implementar un flujo de trabajo para la reducción de imágenes CCD, identificación de fuentes y obtención de magnitudes instrumentales mediante fotometría de apertura utilizando IRAF, aplicado a observaciones de M92 y M41.
+Implementar y evaluar un flujo reproducible para reducir imágenes CCD, detectar fuentes y obtener magnitudes instrumentales mediante fotometría de apertura con IRAF y Python, aplicado a observaciones de M92, M41 y Sextans A, con énfasis en la selección del anillo de cielo.
 
 
 \subsection{Objetivos específicos}
@@ -941,7 +937,9 @@ El primer objetivo específico consiste en aplicar procedimientos de reducción 
 
 El segundo objetivo específico es determinar parámetros adecuados para la detección y la fotometría de fuentes estelares mediante el análisis del FWHM, el fondo de cielo, el umbral de detección y el radio de apertura.
 
-El tercer objetivo específico consiste en obtener y depurar magnitudes instrumentales de estrellas de M92 y M41 mediante fotometría de apertura, y evaluar los resultados a partir de los errores fotométricos, los criterios de aislamiento y los diagramas color--magnitud.
+El tercer objetivo específico consiste en obtener y depurar magnitudes instrumentales de M92 y M41 mediante fotometría de apertura, y evaluar los resultados con los errores fotométricos, los criterios de aislamiento y el diagrama color--magnitud.
+
+El cuarto objetivo específico consiste en desarrollar y aplicar un procedimiento semiautomático a Sextans A en los filtros $B$, $V$ e $I$, documentar el programa que ejecuta las etapas de selección y fotometría, y comparar las mediciones con anillos fijos y adaptativos en los ocho chips.
 
 
 \chapter{Metodología}
@@ -961,7 +959,8 @@ Las imágenes utilizadas fueron:
 
 \centering
 
-\begin{tabular}{lll}
+\small
+\begin{tabular}{p{0.34\textwidth}p{0.17\textwidth}p{0.39\textwidth}}
 
 \toprule
 Archivo & Objeto & Uso principal \\
@@ -980,6 +979,10 @@ Archivo & Objeto & Uso principal \\
 
 \texttt{SexA\_V\_chip1.fits} & Sextans A & Fotometría fija y adaptativa \\
 
+\texttt{SexA\_V\_chipN.fits}, $N=2$--8 & Sextans A & Fotometría semiautomática y prueba de radios de apertura \\
+
+\texttt{SexA\_B\_chipN.fits}, \texttt{SexA\_I\_chipN.fits}, $N=1$--8 & Sextans A & Fotometría semiautomática y selección adaptativa del cielo \\
+
 \bottomrule
 
 \end{tabular}
@@ -997,9 +1000,9 @@ Archivo & Objeto & Uso principal \\
 
 \section{Entorno computacional}
 
-El procesamiento se realizó principalmente mediante IRAF.
+El procesamiento se realizó principalmente mediante IRAF, en particular con las tareas de reducción CCD y del paquete APPHOT/DAOPHOT documentadas por Tody y Davis \citep{tody1986,davis1989}. La detección de fuentes con \texttt{DAOFIND} emplea el algoritmo DAO y los parámetros de FWHM, dispersión del cielo y umbral descritos en la documentación de IRAF \citep{irafdaofind2026,stetson1987}.
 
-La visualización de imágenes y el marcado interactivo de coordenadas se realizó mediante un servidor gráfico compatible con las tareas \texttt{display} y \texttt{tvmark}.
+La visualización de imágenes y el marcado interactivo de coordenadas se realizó mediante un servidor gráfico compatible con las tareas \texttt{display} y \texttt{tvmark}. La tarea \texttt{imexamine} se usó para inspección y mediciones iniciales; sus perfiles sirvieron para caracterizar el FWHM, mientras que la fotometría se calculó con las tareas específicas del paquete APPHOT \citep{irafapphot2026}.
 
 Python fue utilizado adicionalmente para realizar análisis numérico, procesamiento de los archivos producidos por IRAF, comparación de coordenadas, análisis estadístico y generación de gráficas.
 
@@ -1098,7 +1101,7 @@ El archivo \texttt{M41.fits} estaba compuesto por múltiples extensiones FITS. C
 
 \section{Detección automática de estrellas}
 
-La detección automática se realizó mediante \texttt{daofind}. Para cada imagen se especificó el archivo de salida de coordenadas, el valor de \texttt{fwhmpsf} determinado previamente a partir del FWHM, la dispersión del fondo mediante el parámetro \texttt{sigma} y un umbral de detección de \texttt{threshold=3.5}; además, se desactivó la verificación interactiva con \texttt{verify-}. Las coordenadas generadas fueron posteriormente superpuestas sobre la imagen con \texttt{tvmark}, lo que permitió comprobar visualmente que las detecciones correspondieran a fuentes estelares reales y descartar posibles identificaciones espurias.
+La detección automática de M92 y M41 se realizó mediante \texttt{daofind}. Para cada imagen se especificó el archivo de salida de coordenadas, el valor de \texttt{fwhmpsf} determinado previamente a partir del FWHM, la dispersión del fondo mediante el parámetro \texttt{sigma} y un umbral de detección de \texttt{threshold=3.5}; además, se desactivó la verificación interactiva con \texttt{verify-}. En esa tarea el umbral se expresa en unidades de la dispersión del cielo y modifica el nivel mínimo de realce de una fuente sobre el fondo \citep{irafdaofind2026}. Las coordenadas generadas fueron superpuestas sobre la imagen con \texttt{tvmark} para comprobar visualmente que correspondieran a fuentes y detectar posibles identificaciones espurias. Los umbrales individuales calculados para Sextans A se describen en la Sección~\ref{sec:metodo-sextans-auto}.
 
 
 % ============================================================
@@ -1107,7 +1110,7 @@ La detección automática se realizó mediante \texttt{daofind}. Para cada image
 
 \section{Fotometría de apertura}
 
-Después de determinar las coordenadas, las magnitudes instrumentales fueron obtenidas mediante \texttt{phot}. Para cada imagen se indicó el archivo de coordenadas correspondiente y se definió un archivo de salida con extensión \texttt{.mag}; las opciones \texttt{interac-} y \texttt{verify-} permitieron ejecutar el procedimiento sin interacción manual para cada fuente. Una vez finalizada la fotometría, la tarea \texttt{txdump} se utilizó para extraer de los archivos resultantes las columnas \texttt{XCENTER}, \texttt{YCENTER}, \texttt{MAG} y \texttt{MERR}, que contienen las coordenadas de las fuentes, sus magnitudes instrumentales y los errores fotométricos. Estos valores se guardaron en archivos de texto para realizar los análisis numéricos y las gráficas posteriores.
+Después de determinar las coordenadas, las magnitudes instrumentales fueron obtenidas mediante \texttt{phot}. Para cada imagen se indicó el archivo de coordenadas correspondiente y se definió un archivo de salida con extensión \texttt{.mag}; las opciones \texttt{interac-} y \texttt{verify-} permitieron ejecutar el procedimiento sin interacción manual para cada fuente. La tarea integra la estimación del cielo local con la suma de cuentas dentro de una apertura y calcula magnitudes y errores a partir de esos valores \citep{davis1989,irafapphot2026}. Una vez finalizada la fotometría, \texttt{txdump} extrajo las columnas \texttt{XCENTER}, \texttt{YCENTER}, \texttt{MAG} y \texttt{MERR} para el análisis numérico y las gráficas posteriores.
 
 
 % ============================================================
@@ -1115,8 +1118,6 @@ Después de determinar las coordenadas, las magnitudes instrumentales fueron obt
 % ============================================================
 
 \section{Construcción del CMD de M92}
-
-Para construir el diagrama color--magnitud se utilizaron las mediciones de las imágenes
 
 Para construir el diagrama color--magnitud se utilizaron las mediciones de \texttt{m92011.fits}, correspondiente al filtro $V$, y de \texttt{m92015.fits}, correspondiente al filtro $B$.
 
@@ -1148,7 +1149,55 @@ Se utilizó un radio interno de $r_{\rm in}=15\ {\rm pix}$ y un ancho de $\Delta
 
 Una fracción elevada de estos valores puede indicar la presencia de otra fuente estelar dentro del anillo.
 
-Las estrellas asociadas a anillos contaminados fueron descartadas de la muestra fotométrica final.
+Las estrellas asociadas a anillos contaminados fueron descartadas de la muestra fotométrica inicial. Para Sextans A también se evaluó si un desplazamiento radial del anillo permitía obtener una región local menos contaminada; el procedimiento se detalla en la metodología específica que sigue.
+
+\section{Procedimiento semiautomático para Sextans A}
+\label{sec:metodo-sextans-auto}
+
+La extensión a Sextans A se realizó sobre imágenes ya reducidas del filtro $V$ correspondientes a los chips 1--8 del mosaico. La calibración de sesgo, campo plano y sobrelectura no se volvió a ejecutar en esta etapa. El chip 1 se procesó manualmente y sirvió para establecer la secuencia de selección adaptativa; los chips 2--8 se reprocesaron con \texttt{sextans\_auto.py}. El programa coordina las etapas de Python y las tareas IRAF de \texttt{DAOFIND} y \texttt{PHOT}; el análisis de las tareas y de las mediciones de apertura sigue la documentación de IRAF/APPHOT \citep{irafdaofind2026,irafapphot2026}.
+
+La ejecución semiautomática comienza con una detección preliminar mediante \texttt{DAOFIND}, usando $FWHM=4.5$ píxeles como valor semilla, un umbral de 5 y una estimación provisional de la dispersión del fondo. Esta detección inicial no se utiliza como catálogo científico. Sus parámetros de forma sirven para escoger estrellas candidatas. Se requieren valores de \texttt{SHARP} entre 0.2 y 1.0, magnitudes de \texttt{SROUND} y \texttt{GROUND} menores que 0.5, separación de al menos cinco veces el FWHM semilla frente a otra detección, ausencia de píxeles de relleno y un pico inferior al 85\% del nivel de saturación indicado en el encabezado. El campo se divide en una malla de cinco columnas y tres filas, y se selecciona una candidata en cada una de sus quince celdas.
+
+Sobre cada candidata se ajusta un perfil gaussiano circular bidimensional por mínimos cuadrados no lineales. El ajuste proporciona una estimación de FWHM independiente de la medición rápida de \texttt{imexamine}. Se excluyen valores extremos según el criterio de Tukey y se adopta la mediana de los ajustes aceptados como FWHM operativo. En esta aplicación se exigió que al menos doce de las quince medidas pasaran el control; el valor semilla únicamente guía la selección y no sustituye la medición final.
+
+La estimación del cielo usa quince cajas de $15\times15$ píxeles, una por celda de la misma malla. Cada caja debe quedar alejada de las detecciones, evitar los píxeles de relleno y cumplir límites de dispersión, fracción de valores altos y estructura puntual local. Este último control es un indicador calculado a partir de la diferencia entre la imagen y una versión suavizada; no es el parámetro estelar \texttt{SHARP} de \texttt{DAOFIND}. La dispersión de las cajas se filtra con el límite superior de Tukey, $Q_3+1.5\,IQR$, y la mediana de las regiones aceptadas define el valor de $\sigma_{\mathrm{sky}}$. El uso de la mediana y de límites robustos reduce la sensibilidad a regiones contaminadas y valores extremos \citep{tukey1977,beers1990}.
+
+Después de medir el FWHM y el cielo, el programa ejecuta \texttt{DAOFIND} en siete umbrales, $2.0$, $2.5$, $3.0$, $3.5$, $4.0$, $5.0$ y $6.0$. Para cada chip ajusta una parábola a $\ln N$ frente al umbral $x$, donde $N$ es el número de detecciones. El valor operativo se calcula en el punto donde la pendiente del ajuste es $-1$, $d\ln N/dx=-1$, y se redondea a dos decimales. Este criterio localiza una transición en la curva de conteos; no es una medida independiente de completitud ni de pureza, que requeriría pruebas adicionales, por ejemplo inyecciones y recuperaciones de fuentes artificiales. Las siete series de conteos y los ajustes se guardan por chip.
+
+Para cada imagen se define el radio de apertura como $r_{\mathrm{ap}}=m\,FWHM$, con el múltiplo $m$ asignado al chip. El radio interno del cielo se fija en $r_{\mathrm{in}}=\max(5,m+1)\,FWHM$ y el ancho del anillo es de 15 píxeles. Así se mantiene al menos una separación de un FWHM entre el borde de la apertura y el anillo; para $m\leq4$ el radio interno queda en cinco FWHM, y para el caso $m=6$ queda en siete FWHM. Las detecciones cuyas aperturas o anillos intersectan bordes o píxeles de relleno se excluyen antes de ejecutar \texttt{PHOT}.
+
+La fotometría fija produce magnitudes y errores en el anillo inicial. Para evaluar el cielo, el programa conserva las mediciones con $MERR\leq0.20$ mag, exige que la detección más cercana esté a más de un radio de apertura y calcula $f_{\mathrm{out}}$, la fracción de píxeles del anillo por encima de su límite superior de Tukey local. Un segundo límite de Tukey sobre la distribución de $f_{\mathrm{out}}$ clasifica los anillos como limpios o contaminados. Para estos últimos se prueban hasta cuatro anillos alternativos, desplazados hacia afuera en pasos de cinco píxeles y sin modificar la apertura. Se acepta el primer anillo que pasa el mismo criterio; los objetos sin alternativa aceptable quedan registrados como no resueltos por este procedimiento.
+
+Las mediciones con anillo adaptativo se comparan con las del anillo fijo. Las fuentes que conservan el anillo original funcionan como control de reproducción; la diferencia de magnitud se define como $\Delta MAG=MAG_{\mathrm{adapt}}-MAG_{\mathrm{fijo}}$. El programa genera para cada chip los catálogos, las tablas de selección, las imágenes de control, las comparaciones y un resumen JSON. La inspección de la figura de control, que muestra las quince estrellas y las quince regiones del cielo seleccionadas, es parte del criterio de aceptación de una corrida; los parámetros automáticos no reemplazan la revisión del usuario. La Figura~\ref{fig:sextans-chip5-control} ilustra esta salida para el chip 5.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth]{img/sextansA_chip5_control_semi.png}
+\caption{Control visual del procedimiento semiautomático para el chip 5 de Sextans A en $V$. Los círculos verdes señalan las quince fuentes usadas para estimar el FWHM y los cuadrados cian las quince cajas de cielo; las líneas delimitan la malla de cinco columnas y tres filas.}
+\label{fig:sextans-chip5-control}
+\end{figure}
+
+La corrida de chips 2--8 se ejecutó con el modo automático de \texttt{sextans\_auto.py}, un intérprete IRAF 2.18.2 y un entorno aislado definido por el envoltorio \texttt{irafcl-wrapper}. La opción \texttt{--ap-fwhm-multiplier} permite asignar cada radio de apertura. La opción \texttt{--stage} permite ejecutar por separado las etapas \texttt{bootstrap}, \texttt{select}, \texttt{thresholds}, \texttt{final}, \texttt{fixed}, \texttt{adaptive} y \texttt{compare}. Los productos se organizaron en subcarpetas por chip bajo \path{dataSextansA_multiplicadores_FWHM/chips}; los resúmenes CSV y JSON se conservaron junto con los catálogos y controles visuales.
+
+\subsection{Funcionamiento del script automático}
+\label{subsec:funcionamiento-sextans-auto}
+
+\texttt{sextans\_auto.py} coordina el análisis en Python con las tareas fotométricas de IRAF. Recibe el directorio de datos, el chip, el filtro, el modo de ejecución, el intérprete y los valores semilla de FWHM y apertura. Construye las rutas de trabajo y organiza los resultados por chip. Utiliza imágenes FITS ya reducidas; no repite la corrección de sobrelectura, sesgo ni campo plano. En su lugar, genera los comandos para \texttt{DAOFIND} y \texttt{PHOT}, tareas del paquete APPHOT \citep{irafdaofind2026,irafapphot2026}.
+
+La corrida completa encadena siete etapas. \texttt{bootstrap} obtiene una detección preliminar; \texttt{select} estima FWHM y cielo a partir de muestras distribuidas; \texttt{thresholds} calcula el umbral; y \texttt{final} crea el catálogo definitivo. Luego, \texttt{fixed} ejecuta la fotometría inicial, \texttt{adaptive} mide las alternativas de anillo aceptadas y \texttt{compare} verifica el grupo de control y compara ambas mediciones. La opción \texttt{--stage} ejecuta una etapa por separado. Antes de avanzar, cada etapa comprueba los archivos previos y detiene la corrida si falta un producto o falla una validación.
+
+En modo automático, Python ejecuta los comandos mediante el intérprete indicado con \texttt{--iraf-exe} y guarda un registro por etapa; \texttt{--timeout} limita su duración. En modo manual, genera archivos \texttt{.cl} que el usuario ejecuta en IRAF antes de volver a solicitar la etapa. Las salidas existentes se conservan por defecto; \texttt{--force} crea copias \texttt{.bak} antes de recalcularlas.
+
+Cada carpeta de chip conserva catálogos, tablas CSV, parámetros JSON y gráficas de control y comparación. El observador revisa que las estrellas no estén saturadas ni tengan perfiles anómalos y que las cajas de cielo no coincidan con fuentes o estructuras del fondo. Así, el script automatiza las etapas repetibles y sus verificaciones, pero la aceptación de los parámetros sigue requiriendo inspección humana.
+
+\subsection{Extensión del flujo a los filtros $B$ e $I$}
+\label{subsec:metodo-sextans-bi}
+
+Después de procesar $V$, se ejecutó el mismo flujo semiautomático en las imágenes ya reducidas de $B$ e $I$ para los chips 1--8. No se repitieron las correcciones de \textit{bias}, \textit{overscan} ni campo plano. En cada filtro se seleccionaron de nuevo las estrellas de referencia y las cajas de cielo, se midieron FWHM y dispersión local, y se calculó un umbral propio con las siete curvas de conteos. De esta manera, los parámetros reflejan el fondo y la respuesta de cada imagen en vez de trasladar directamente los valores medidos en $V$.
+
+Para mantener una comparación consistente de aperturas, se usó en cada chip el mismo múltiplo $m$ aplicado en la corrida de $V$: $3$ en el chip 1; $2.5$, $1.5$, $1.5$, $2$, $6$, $1$ y $1.5$ en los chips 2--8. El FWHM se volvió a estimar en cada filtro, por lo que el radio en píxeles cambió aun cuando se conservó el múltiplo. En $I$, para el chip 2 se fijó el FWHM semilla en $4.0$ píxeles (frente al valor predeterminado de $4.5$) porque la primera selección dejó menos de doce de las quince medidas dentro del límite de Tukey. Con la semilla ajustada pasaron doce medidas y el FWHM final fue $3.99$ píxeles; la semilla solo guio la selección y no sustituyó la estimación final.
+
+La comparación tradicional/adaptativa se hizo por separado para cada filtro y sobre las mismas coordenadas, radio de apertura y parámetros fotométricos. El método tradicional conserva el anillo de cielo inicial; el adaptativo intenta hasta cuatro anillos más externos en pasos de cinco píxeles y mantiene la misma apertura. Se considera \emph{recuperada} una fuente con anillo fijo evaluado y contaminado cuyo anillo alternativo pasa el límite estadístico. Las fuentes sin evaluación válida del anillo fijo se contabilizan aparte, pues no constituyen recuperaciones frente al método tradicional.
 
 
 % ============================================================
@@ -1257,9 +1306,9 @@ La estructura multiextensión de M41 fue separada en tres imágenes independient
 
 \section{Selección del umbral de detección}
 
-Se estudiaron diferentes valores del umbral de detección con el objetivo de analizar cómo variaba el número de fuentes identificadas automáticamente.
+Para las imágenes de M92 y M41 se estudiaron diferentes valores del umbral de detección con el objetivo de analizar cómo variaba el número de fuentes identificadas automáticamente. En la extensión a Sextans A el umbral se calculó por separado para cada chip mediante el procedimiento descrito en la Sección~\ref{sec:metodo-sextans-auto}.
 
-El valor finalmente adoptado para el procedimiento fotométrico fue \texttt{threshold=3.5}, ya que permitió conservar una cantidad importante de detecciones evitando un aumento excesivo de fuentes espurias.
+Para M92 y M41 se adoptó \texttt{threshold=3.5}, que conservó una cantidad importante de detecciones y evitó el aumento de detecciones débiles asociado a umbrales más bajos. Este criterio es distinto del ajuste por chip aplicado a Sextans A.
 
 
 \begin{figure}[H]
@@ -1671,6 +1720,200 @@ La Figura~\ref{fig:sextans-chip1-stages} resume el tamaño de la muestra en las 
 \label{fig:sextans-chip1-stages}
 \end{figure}
 
+\section{Resumen por chip de Sextans A}
+\label{sec:resultados-sextans-auto}
+
+El chip 1, procesado manualmente, fue el caso de referencia; los chips 2--8 se procesaron con el programa semiautomático. Las Tablas~\ref{tab:sextans-chips} y \ref{tab:sextans-resultados} reúnen los parámetros y conteos de los ocho chips. Para los chips 2--8, la estimación automática produjo valores de FWHM entre $4.42$ y $4.62$ píxeles y dispersión de cielo entre $3.11$ y $3.59$ ADU. Los umbrales obtenidos con el ajuste de $\ln N$ variaron de $3.18$ a $4.45$, con coeficientes de determinación $R^2$ entre $0.9980$ y $0.9987$. Las diferencias de umbral entre chips reflejan que cada imagen tiene una curva de conteos propia; por ello no se impuso un único valor a todo el mosaico.
+
+Los radios de apertura se expresaron como múltiplos del FWHM y variaron entre chips para examinar un intervalo amplio. La Tabla~\ref{tab:sextans-chips} reúne la configuración fotométrica de cada imagen; el conteo de \texttt{DAOFIND} corresponde al umbral indicado. La Tabla~\ref{tab:sextans-resultados} presenta los conteos de las etapas de selección. Las mediciones completas tienen magnitud y error definidos; el resto de los criterios se aplica en secuencia a la muestra de calidad.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{crrrrcrr}
+\toprule
+Chip & FWHM & $\sigma_{\rm cielo}$ & Umbral & $m$ & $r_{\rm ap}$ & $r_{\rm in}$ & $N_{\rm det}$ \\
+ & [pix] & [ADU] & & & [pix] & [pix] & \\
+\midrule
+1 & 4.51 & 3.16 & 3.55 & 3.0 & 13.53 & 22.55 & 11\,819 \\
+2 & 4.48 & 3.59 & 3.80 & 2.5 & 11.20 & 22.40 & 7\,645 \\
+3 & 4.62 & 3.17 & 4.32 & 1.5 & 6.93 & 23.10 & 2\,561 \\
+4 & 4.61 & 3.23 & 4.44 & 1.5 & 6.92 & 23.05 & 1\,856 \\
+5 & 4.48 & 3.20 & 3.72 & 2.0 & 8.96 & 22.40 & 6\,150 \\
+6 & 4.62 & 3.42 & 4.45 & 6.0 & 27.72 & 32.34 & 1\,570 \\
+7 & 4.42 & 3.34 & 3.78 & 1.0 & 4.42 & 22.10 & 9\,719 \\
+8 & 4.48 & 3.11 & 3.18 & 1.5 & 6.72 & 22.40 & 17\,735 \\
+\bottomrule
+\end{tabular}
+\caption{Parámetros de Sextans A en $V$. El chip 1 se procesó manualmente y los chips 2--8 mediante el flujo semiautomático. $m$ es el múltiplo aplicado al FWHM para definir la apertura; $r_{\rm in}$ es el radio interno del anillo de cielo, cuyo ancho fue de 15 píxeles.}
+\label{tab:sextans-chips}
+\end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabular}{crrrrrrrr}
+\toprule
+Chip & $N_{\rm PHOT}$ & $MERR\leq0.20$ & $N_{\rm aisl.}$ & $N_{\rm fijo\,limpio}$ & $N_{\rm fijo\,cont.}$ & $N_{\rm recup.}$ & $N_{\rm anillo\,ok}$ & $N_{\rm sin\,sol.}$ \\
+\midrule
+1 & 5\,047 & 745 & 385 & 323 & 62 & 43 & 366 & 19 \\
+2 & 2\,450 & 564 & 426 & 352 & 73 & 51 & 403 & 23 \\
+3 & 1\,142 & 535 & 484 & 402 & 82 & 59 & 461 & 23 \\
+4 & 749 & 439 & 394 & 330 & 64 & 40 & 370 & 24 \\
+5 & 3\,685 & 2\,216 & 1\,479 & 1\,471 & 7 & 4 & 1\,475 & 4 \\
+6 & 616 & 333 & 234 & 199 & 35 & 22 & 221 & 13 \\
+7 & 3\,027 & 492 & 437 & 369 & 68 & 46 & 415 & 22 \\
+8 & 7\,211 & 820 & 659 & 563 & 96 & 63 & 626 & 33 \\
+\bottomrule
+\end{tabular}
+\caption{Conteos de la selección fotométrica por chip. El chip 1 corresponde al análisis manual y los chips 2--8 al semiautomático. $N_{\rm PHOT}$ incluye magnitud y error válidos; $MERR\leq0.20$ y aislamiento definen la muestra candidata al análisis del cielo. $N_{\rm anillo\,ok}=N_{\rm fijo\,limpio}+N_{\rm recup.}$. En los chips 2 y 5, una fuente aislada en cada uno no tuvo evaluación válida del anillo fijo y se incluye entre las fuentes sin solución; las demás fuentes de esa columna no obtuvieron un anillo alternativo aceptable.}
+\label{tab:sextans-resultados}
+\end{table}
+
+En conjunto, los chips 2--8 reúnen $47\,236$ detecciones de \texttt{DAOFIND} y $18\,880$ mediciones con magnitud y error válidos. El corte $MERR\leq0.20$ mag conservó $5\,399$ mediciones; de ellas, $4\,113$ cumplieron además el criterio de aislamiento. El anillo fijo pudo clasificarse en $4\,111$ fuentes: $3\,686$ fueron limpias y $425$ contaminadas. En los chips 2 y 5 hubo una fuente aislada por chip sin evaluación válida del anillo fijo. El desplazamiento adaptativo aceptó $285$ fuentes adicionales, para un total de $3\,971$ fuentes con anillo aceptable; las $140$ fuentes restantes con anillo fijo contaminado no encontraron una alternativa que superara los criterios, y las dos fuentes sin evaluación inicial del anillo tampoco tuvieron un anillo aceptable. Estos conteos se refieren a una muestra de calidad y no a la completitud del catálogo ni al número total de estrellas del campo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth]{img/sextansA_chips2_8_conteos.png}
+\caption{Conteos por etapa para los chips 2--8: corrida anterior en azul y corrida semiautomática con los múltiplos de apertura de la Tabla~\ref{tab:sextans-chips} en naranja. Los distintos conteos muestran el efecto conjunto de la selección y de la configuración de cada corrida; no deben interpretarse como un experimento de apertura controlado.}
+\label{fig:sextans-chips-counts}
+\end{figure}
+
+\subsection{Comparación de radios y fotometría adaptativa}
+
+En la corrida previa se había utilizado $r_{\rm ap}=3FWHM$ para los chips 2--8. La nueva corrida asignó $m=2.5$, $1.5$, $1.5$, $2$, $6$, $1$ y $1.5$ a los chips 2--8, respectivamente. Así, los radios lineales fueron de $4.42$ a $27.72$ píxeles. Para seis chips el anillo comenzó a $5FWHM$; en el chip 6, cuya apertura fue de $6FWHM$, comenzó a $7FWHM$ para conservar una separación de un FWHM. En todos los casos el anillo mantuvo un ancho de 15 píxeles.
+
+La comparación entre fotometría fija y adaptativa se realizó sobre las fuentes cuyo anillo fue desplazado y que tenían ambas mediciones válidas. El número de fuentes comparables por chip fue 51, 59, 40, 4, 22, 46 y 63. En estos subconjuntos, la mediana de $\Delta MAG$ estuvo entre $-0.007$ y $+0.019$ mag, mientras que la mediana de $|\Delta MAG|$ varió entre $0.004$ y $0.023$ mag. El cambio mediano de $f_{\rm out}$ fue negativo en los siete chips: se redujo entre 1.82 y 3.50 puntos porcentuales en la muestra desplazada de cada chip. Para el chip 5 esta comparación se basa en solo cuatro fuentes y por ello es menos representativa que las de los demás chips.
+
+La Figura~\ref{fig:sextans-chips-phot} muestra los cambios de magnitud, errores y flujo para las fuentes con anillo desplazado. En el conjunto por chip, la mediana de \texttt{MERR} disminuyó en seis chips y permaneció igual en el chip 3; esto describe el subconjunto emparejado y no prueba que la selección adaptativa mejore toda medición del catálogo. La Figura~\ref{fig:sextans-chips-sky} compara la contaminación del anillo fijo con la del anillo seleccionado y muestra que el valor mediano de $f_{\rm out}$ disminuyó en cada subconjunto analizado. El chip 5 mantuvo el mayor nivel mediano de $f_{\rm out}$, incluso después del desplazamiento, lo que señala una región más exigente para la estimación local del cielo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth]{img/sextansA_chips2_8_fotometria.png}
+\caption{Comparación de magnitudes, errores y flujo para fuentes con anillo desplazado en los chips 2--8. Se presentan la corrida previa y la corrida semiautomática; cada punto resume la estadística del subconjunto correspondiente de un chip.}
+\label{fig:sextans-chips-phot}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\textwidth]{img/sextansA_chips2_8_cielo.png}
+\caption{Fracción de píxeles altos en los anillos de cielo antes de la selección adaptativa, después de desplazar los anillos y cambio entre ambas etapas para los chips 2--8.}
+\label{fig:sextans-chips-sky}
+\end{figure}
+
+Esta comparación documenta el comportamiento fotométrico en radios distintos, pero no aísla el efecto causal de $m$. La nueva corrida también cambió la selección de estrellas de referencia y cajas de cielo frente al procesamiento previo, y el múltiplo se asignó por chip en vez de medir todos los valores sobre la misma imagen y la misma muestra. En consecuencia, el conjunto sirve para mostrar que el flujo se ejecutó con aperturas de uno a seis FWHM y para identificar diferencias entre chips; no permite concluir que uno de esos radios sea óptimo. Una determinación del radio óptimo requeriría repetir los mismos chips con varios múltiplos, manteniendo idénticas las detecciones, coordenadas, parámetros de cielo y criterios de selección, y comparando después la curva de crecimiento y las magnitudes de una muestra común.
+
+\subsection{Resultados multibanda en $B$ e $I$}
+\label{subsec:resultados-sextans-bi}
+
+La aplicación a $B$ e $I$ generó catálogos independientes para los ocho chips. En $B$, el FWHM varió entre $4.54$ y $4.89$ píxeles, la dispersión del cielo entre $2.25$ y $2.58$ ADU y el umbral calculado entre $2.88$ y $4.66$. En $I$, el FWHM varió entre $3.94$ y $4.75$ píxeles, el cielo entre $17.05$ y $19.63$ ADU y el umbral entre $3.71$ y $4.40$. La diferencia de fondo entre las bandas confirma que era necesario estimar los parámetros por imagen; no se reutilizó el umbral o el nivel de cielo de $V$.
+
+La Tabla~\ref{tab:sextans-bi-recuperadas-chip} detalla la clasificación de los anillos fijos por chip. En $B$, $253$ de los $379$ anillos contaminados encontraron una alternativa aceptable, una recuperación ponderada de $66.8\%$; en $I$ se recuperaron $421$ de $534$, equivalentes a $78.8\%$. Las fuentes con anillo fijo no evaluable se informan aparte y no se incluyen en el denominador de recuperación.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{crrrcrrr}
+\toprule
+Chip & $B$ contaminadas & $B$ recuperadas & $B$ [\%] & $I$ contaminadas & $I$ recuperadas & $I$ [\%] \\
+\midrule
+1 & 47 & 34 & 72.3 & 59 & 42 & 71.2 \\
+2 & 58 & 39 & 67.2 & 80 & 62 & 77.5 \\
+3 & 58 & 42 & 72.4 & 92 & 76 & 82.6 \\
+4 & 50 & 32 & 64.0 & 91 & 67 & 73.6 \\
+5 & 3 & 1 & 33.3 & 13 & 13 & 100.0 \\
+6 & 29 & 17 & 58.6 & 23 & 16 & 69.6 \\
+7 & 67 & 51 & 76.1 & 99 & 84 & 84.8 \\
+8 & 67 & 37 & 55.2 & 77 & 61 & 79.2 \\
+\bottomrule
+\end{tabular}
+\caption{Fuentes con anillo fijo contaminado y recuperación al aceptar un anillo alternativo en los filtros $B$ e $I$. El porcentaje es $N_{\rm recuperadas}/N_{\rm contaminadas}$ y no representa la completitud del catálogo.}
+\label{tab:sextans-bi-recuperadas-chip}
+\end{table}
+
+En el conjunto de $B$ se obtuvieron $63\,133$ detecciones de \texttt{DAOFIND}; $26\,820$ mediciones tenían magnitud y error válidos, y $5\,152$ pasaron además el corte $MERR\leq0.20$ mag. Después del criterio de aislamiento quedaron $3\,377$ fuentes: $2\,998$ anillos fijos fueron limpios y $379$ contaminados. En $I$ hubo $22\,919$ detecciones, $13\,739$ mediciones completas y $9\,832$ bajo el corte de error. De las $8\,188$ fuentes aisladas, $8\,183$ tuvieron evaluación válida del anillo fijo; $7\,649$ fueron clasificadas como limpias y $534$ como contaminadas. Las cinco fuentes restantes no tuvieron anillo fijo evaluable.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Filtro & $N_{\rm det}$ & $N_{\rm PHOT}$ & $MERR\leq0.20$ & $N_{\rm aisl.}$ & Fijo limpio & Fijo contaminado & Recuperadas & Sin sol. & Sin eval. & Recuperación [\%] \\
+\midrule
+$B$ & 63\,133 & 26\,820 & 5\,152 & 3\,377 & 2\,998 & 379 & 253 & 126 & 0 & 66.8 \\
+$I$ & 22\,919 & 13\,739 & 9\,832 & 8\,188 & 7\,649 & 534 & 421 & 113 & 5 & 78.8 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Resumen de selección en los ocho chips de Sextans A para $B$ e $I$. $N_{\rm PHOT}$ cuenta mediciones con magnitud y error válidos; ``sin sol.'' son anillos fijos contaminados que no encontraron alternativa aceptable; ``sin eval.'' son fuentes aisladas cuyo anillo fijo no pudo medirse.}
+\label{tab:sextans-bi-resumen}
+\end{table}
+
+La comparación fotométrica emparejada incluyó $253$ fuentes desplazadas en $B$ y $423$ en $I$. Para las fuentes con un valor inicial y final de $f_{\rm out}$, este indicador disminuyó en todos los casos: su mediana pasó de $3.25\%$ a $0.91\%$ en $B$ y de $5.28\%$ a $2.70\%$ en $I$. La mediana de $\Delta MAG$ fue $-0.004$ mag en $B$ y $-0.005$ mag en $I$; las medianas de $|\Delta MAG|$ fueron $0.013$ y $0.012$ mag, respectivamente. El error \texttt{MERR} disminuyó para el $58.1\%$ de las fuentes desplazadas en $B$ y el $57.4\%$ en $I$. Así, el resultado más consistente fue la reducción del indicador de contaminación; las magnitudes y sus errores no mejoraron en cada fuente.
+
+\subsection{Análisis detallado del chip 5 en $B$, $V$ e $I$}
+\label{subsec:resultados-chip5-bvi}
+
+El chip 5 permite observar cómo cambia la selección del cielo en una región con fuentes cercanas dentro o alrededor de los anillos. La Tabla~\ref{tab:sextans-chip5-seleccion-bvi} resume las etapas de calidad en las tres bandas. En $B$, tres anillos fijos fueron clasificados como contaminados y uno encontró una alternativa; en $V$, se recuperaron cuatro de siete; en $I$, los trece anillos fijos contaminados tuvieron una alternativa aceptable. En $I$ hubo además dos fuentes cuyo anillo fijo no pudo evaluarse; se informan aparte y no se cuentan entre las trece recuperadas.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Filtro & $N_{\rm det}$ & $N_{\rm PHOT}$ & $MERR\leq0.20$ & $N_{\rm aisl.}$ & Fijo limpio & Fijo contaminado & Recuperadas & Sin eval. & Sin sol. \\
+\midrule
+$B$ & 6\,430 & 3\,623 & 2\,047 & 1\,241 & 1\,238 & 3 & 1 & 0 & 2 \\
+$V$ & 6\,150 & 3\,685 & 2\,216 & 1\,479 & 1\,471 & 7 & 4 & 1 & 3 \\
+$I$ & 6\,335 & 4\,519 & 3\,317 & 2\,518 & 2\,503 & 13 & 13 & 2 & 0 \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Conteos de selección y anillos en el chip 5. $N_{\rm PHOT}$ incluye solo magnitudes y errores válidos. ``Sin eval.'' se refiere a fuentes aisladas sin medición del anillo fijo; ``sin sol.'' cuenta contaminaciones fijas sin un anillo alternativo aceptable.}
+\label{tab:sextans-chip5-seleccion-bvi}
+\end{table}
+
+La Figura~\ref{fig:sextans-chip5-recovered-overview} localiza las fuentes recuperadas sobre cada imagen completa. Los recuadros señalan las regiones ampliadas en la Figura~\ref{fig:sextans-chip5-recovered-cutouts}, donde se comparan los radios del anillo fijo y del aceptado. En los tres filtros el método conserva las coordenadas y la apertura: el cambio se limita al lugar usado para estimar el cielo. En las fuentes ilustradas, $f_{\rm out}$ bajó de $15.6\%$ a $10.2\%$ en $B$, de $14.9\%$ a $9.9\%$ en $V$ y de $14.3\%$ a $10.3\%$ en $I$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{img/sextansA_chip5_localizacion_recuperadas_BVI.png}
+\caption{Ubicación de fuentes recuperadas en las imágenes completas del chip 5. Los círculos ámbar indican fuentes cuyo anillo fijo fue clasificado como contaminado y para las que se aceptó un anillo alternativo; los recuadros cian marcan las regiones ampliadas en la Figura~\ref{fig:sextans-chip5-recovered-cutouts}.}
+\label{fig:sextans-chip5-recovered-overview}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{img/sextansA_chip5_recuperada_anillos_BVI.png}
+\caption{Recortes del chip 5 alrededor de una fuente recuperada en cada filtro. Los círculos ámbar discontinuos muestran los límites del anillo fijo, los verdes los límites del anillo adaptativo y los cian la apertura. Se incluye el cambio individual de magnitud de cada ejemplo.}
+\label{fig:sextans-chip5-recovered-cutouts}
+\end{figure}
+
+La Tabla~\ref{tab:sextans-chip5-comparacion-bvi} presenta la comparación entre las mediciones de anillo fijo y adaptativo en las fuentes desplazadas. En $B$ la mediana de $f_{\rm out}$ disminuyó $5.43$ puntos porcentuales, pero la comparación fotométrica se limita a una fuente: su magnitud cambió $-0.023$ mag y \texttt{MERR} pasó de $0.078$ a $0.080$ mag. Este tamaño de muestra impide generalizar el resultado de $B$ para el chip.
+
+En $V$, las cuatro fuentes comparables tuvieron un cambio mediano de magnitud de $+0.019$ mag y una diferencia absoluta mediana de $0.0225$ mag. La mediana de \texttt{MERR} disminuyó de $0.0615$ a $0.0585$ mag, aunque solo una de las cuatro fuentes redujo su error individual. La mediana de $f_{\rm out}$ bajó $3.50$ puntos porcentuales.
+
+En $I$, la magnitud cambió $+0.002$ mag en mediana entre las quince fuentes desplazadas, pero la mediana de la diferencia absoluta fue mayor, $0.050$ mag; los cambios individuales estuvieron entre $-0.303$ y $+0.100$ mag. La mediana de \texttt{MERR} pasó de $0.074$ a $0.078$ mag y el error disminuyó en siete de las quince fuentes. Para el análisis de $f_{\rm out}$ solo se compararon trece, porque dos fuentes no tenían valor inicial del anillo fijo. Estos datos muestran que mover el anillo puede resolver una contaminación local, pero no garantiza magnitudes más estables para todos los objetos, especialmente en la región más exigente del chip.
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Filtro & Fijas contaminadas & Recuperadas & Tasa [\%] & $N_{\rm movidas}$ & Mediana $\Delta MAG$ & Mediana $|\Delta MAG|$ & $f_{\rm out}$ fijo $\rightarrow$ adapt. [\%] & \texttt{MERR} fija $\rightarrow$ adapt. \\
+\midrule
+$B$ & 3 & 1 & 33.3 & 1 & $-0.023$ & $0.023$ & $15.62\rightarrow10.18$ & $0.078\rightarrow0.080$ \\
+$V$ & 7 & 4 & 57.1 & 4 & $+0.019$ & $0.0225$ & $14.22\rightarrow10.72$ & $0.0615\rightarrow0.0585$ \\
+$I$ & 13 & 13 & 100.0 & 15 & $+0.002$ & $0.050$ & $11.80\rightarrow9.72$ & $0.074\rightarrow0.078$ \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Cambios fotométricos en las fuentes desplazadas del chip 5. $N_{\rm movidas}$ cuenta comparaciones con magnitud y error válidos; para $I$, los valores de $f_{\rm out}$ usan las trece fuentes con anillo fijo evaluable.}
+\label{tab:sextans-chip5-comparacion-bvi}
+\end{table}
+
+La comparación con el procedimiento tradicional de anillo fijo evidencia la importancia del método adaptativo para evitar que una única región de cielo decida el rechazo de una fuente: en el chip 5 se rescataron fuentes en las tres bandas, incluidas todas las contaminaciones fijas evaluables en $I$. La selección adicional también produce una muestra fotométrica mayor para análisis posteriores. Sin embargo, el cambio de $f_{\rm out}$ es un indicador interno de limpieza del fondo, no una medida de la magnitud verdadera; la validación absoluta requiere estándares o simulaciones de inyección y recuperación. Los resúmenes por chip se conservan en \path{dataSextansA_multiplicadores_FWHM/resumen_filtros_BI.csv} y el detalle del chip 5 en \path{dataSextansA_multiplicadores_FWHM/resumen_chip5_BVI.csv}.
+
 \section{Discusión general}
 
 El procedimiento desarrollado permitió analizar diferentes etapas necesarias para transformar imágenes CCD en mediciones fotométricas instrumentales.
@@ -1679,9 +1922,7 @@ La reducción inicial es indispensable debido a que los valores contenidos en un
 
 Las correcciones realizadas buscan, por tanto, que las diferencias de cuentas presentes entre diferentes estrellas representen de forma más fiel diferencias reales de flujo.
 
-El análisis del FWHM permitió establecer una escala característica para el tamaño de las fuentes observadas. En lugar de utilizar un radio de apertura fijo e independiente de las condiciones de cada imagen, el empleo de un múltiplo del FWHM relaciona la apertura con el perfil estelar observado.
-
-La utilización de tres veces la mediana del FWHM proporcionó un criterio uniforme para definir las aperturas utilizadas en las diferentes imágenes.
+El análisis del FWHM permitió establecer una escala característica para el tamaño de las fuentes observadas. En M92, M41 y el procesamiento manual del chip 1 se utilizó una apertura de tres veces la mediana del FWHM. En la prueba semiautomática de los chips 2--8 se variaron los radios entre uno y seis FWHM, lo que permitió comprobar que el programa acepta y documenta aperturas diferentes en función del chip.
 
 El uso de la mediana también reduce la sensibilidad a perfiles anómalos, estrellas saturadas o mediciones incorrectas individuales.
 
@@ -1689,7 +1930,7 @@ La detección automática mediante \texttt{daofind} mostró además la importanc
 
 Un umbral de detección muy pequeño incrementa la sensibilidad a fluctuaciones del fondo, mientras que uno demasiado grande elimina fuentes reales de menor señal.
 
-El valor de 3.5 adoptado en el trabajo proporcionó un equilibrio apropiado para las imágenes estudiadas.
+En M92 y M41 se utilizó un umbral de 3.5. Para Sextans A se estimó un umbral por chip a partir de la transición en la curva de conteos, obteniéndose valores entre 3.18 y 4.45. Estos umbrales son decisiones operativas para los datos disponibles; sin inyecciones de fuentes artificiales no permiten establecer por sí solos las tasas de detección o contaminación.
 
 Las gráficas de magnitud instrumental contra error muestran la relación esperada entre intensidad y precisión fotométrica. Las estrellas brillantes poseen generalmente errores menores, mientras que el error aumenta progresivamente para objetos más débiles.
 
@@ -1725,6 +1966,18 @@ Para obtener magnitudes comparables con sistemas fotométricos estándar sería 
 
 Por tanto, el CMD obtenido en este trabajo debe entenderse principalmente como un diagrama instrumental que demuestra la integración de las diferentes etapas desarrolladas durante el proyecto.
 
+La extensión a los chips 2--8 muestra que la selección adaptativa del cielo pudo ejecutarse con un procedimiento reproducible: de $425$ anillos inicialmente clasificados como contaminados, $285$ encontraron una alternativa aceptable. Para las fuentes con anillos desplazados, la mediana de $f_{\rm out}$ disminuyó en los siete chips, mientras que los cambios de magnitud fueron pequeños en términos absolutos, con medianas por chip de entre $0.004$ y $0.023$ mag. Este resultado apoya el uso del anillo adaptativo como filtro de calidad local para la muestra analizada, pero no demuestra por sí mismo que las magnitudes sean más exactas respecto al flujo verdadero.
+
+La aplicación multibanda amplía esta evaluación a los ocho chips de $B$ e $I$. En $B$, el método encontró un anillo alternativo aceptable para $253$ de las $379$ fuentes cuyo anillo fijo estaba contaminado; en $I$ lo hizo para $421$ de $534$. La reducción de $f_{\rm out}$ se observó en todas las fuentes comparables: la mediana de los cambios pareados fue de $-2.26$ puntos porcentuales en $B$ y $-2.59$ en $I$. A la vez, las diferencias de magnitud permanecieron pequeñas en la mayoría de la muestra, con medianas de $|\Delta MAG|$ de $0.013$ y $0.012$ mag, respectivamente. Cerca del $58\%$ de las fuentes desplazadas en cada banda presentó una disminución de \texttt{MERR}; por tanto, el beneficio más uniforme es contar con una estimación local del cielo que supera el control de contaminación, no garantizar un error menor en cada medición.
+
+El chip 5 ilustra por qué esa alternativa es útil. Frente al criterio tradicional de aceptar solo el anillo fijo limpio, el procedimiento recuperó $1$ de las $3$ fuentes contaminadas en $B$, $4$ de $7$ en $V$ y $13$ de $13$ en $I$. La comparación es especialmente informativa en $I$, donde las trece fuentes con anillo fijo evaluable encontraron una alternativa; dos objetos adicionales sin evaluación inicial pudieron medirse con un anillo alternativo, pero se mantienen separados de la tasa de recuperación. En las fuentes comparables, la mediana de $f_{\rm out}$ pasó de $15.62\%$ a $10.18\%$ en $B$, de $14.22\%$ a $10.72\%$ en $V$ y de $11.80\%$ a $9.72\%$ en $I$. Las imágenes de las Figuras~\ref{fig:sextans-chip5-recovered-overview} y~\ref{fig:sextans-chip5-recovered-cutouts} muestran las ubicaciones y los recortes de ejemplos donde el anillo fijo se acerca a fuentes vecinas y el anillo desplazado evita parte de esa estructura.
+
+La fotometría del chip 5 también muestra el límite de la interpretación. Para las fuentes desplazadas, las medianas de $\Delta MAG$ fueron $-0.023$ mag en $B$, $+0.019$ mag en $V$ y $+0.002$ mag en $I$; en esta última banda, sin embargo, la mediana de $|\Delta MAG|$ fue $0.050$ mag y hubo cambios individuales entre $-0.303$ y $+0.100$ mag. La mediana de \texttt{MERR} aumentó ligeramente en $B$ e $I$ y disminuyó en $V$. Además, los conteos de contaminaciones en $B$ y $V$ son pequeños, así que no sustentan una generalización estadística para el chip completo. El método aporta una decisión de calidad más informada y permite conservar fuentes con cielo local aceptable; no convierte automáticamente cada magnitud en una medición más exacta.
+
+Esta diferencia es importante para construir catálogos por banda: un anillo fijo contaminado puede elevar la estimación del fondo y alterar el flujo neto, o llevar a excluir una detección que sí tiene una región local utilizable. Probar anillos alternativos reduce esa pérdida de fuentes y deja registrada la decisión para su revisión, lo que puede aportar más mediciones disponibles para el posterior cruce entre filtros y el análisis de poblaciones estelares. La ganancia debe entenderse como recuperación bajo los criterios de este flujo y no como completitud demostrada; para medir completitud, sesgo y exactitud absoluta aún se requieren inyecciones de estrellas artificiales y calibración con estándares.
+
+La comparación de los múltiplos de apertura debe leerse de manera exploratoria. Cada chip recibió un solo valor de $m$ y la corrida semiautomática cambió también la selección de las estrellas de referencia y de las cajas de cielo frente al procesamiento previo. Aunque los datos permiten documentar el desempeño entre $1$ y $6FWHM$, no aíslan el efecto del radio y no identifican un valor óptimo. En particular, una apertura mayor integra más flujo estelar, pero también más ruido del cielo y una región mayor susceptible a contaminación; la decisión debe evaluarse sobre una muestra común y junto con la curva de crecimiento.
+
 
 % ============================================================
 % CONCLUSIONES
@@ -1734,13 +1987,19 @@ Por tanto, el CMD obtenido en este trabajo debe entenderse principalmente como u
 
 Se implementó un flujo de trabajo para el procesamiento de imágenes astronómicas CCD utilizando IRAF, desde la reducción instrumental hasta la obtención de magnitudes mediante fotometría de apertura. La reducción de las imágenes de M92 permitió aplicar correcciones relacionadas con la región de sobrelectura, el recorte de la imagen, el nivel de polarización y el campo plano, preparando los datos para las etapas fotométricas posteriores.
 
-La utilización de \texttt{display} e \texttt{imexamine} permitió inspeccionar las imágenes, identificar fuentes estelares y determinar propiedades fundamentales para la fotometría. En particular, la mediana del FWHM se empleó como medida representativa del tamaño de las fuentes y el radio de apertura se definió como tres veces dicho valor. Para la detección automática con \texttt{daofind} se adoptó un umbral de detección de 3.5, y las detecciones fueron revisadas posteriormente mediante \texttt{tvmark}.
+La utilización de \texttt{display} e \texttt{imexamine} permitió inspeccionar las imágenes, identificar fuentes estelares y determinar propiedades fundamentales para la fotometría. En M92, M41 y el análisis manual del chip 1, la mediana del FWHM se empleó como medida representativa del tamaño de las fuentes y se adoptó un radio de apertura de tres veces dicho valor. En la corrida semiautomática de Sextans A se estimó el FWHM de forma robusta para cada chip y se probaron radios de uno a seis FWHM. Para M92 y M41 se adoptó un umbral de detección de 3.5; en Sextans A se estimó un valor por chip y las detecciones se verificaron mediante los controles visuales producidos por el programa.
 
 La fotometría realizada mediante \texttt{phot} y \texttt{qphot} permitió obtener magnitudes instrumentales y sus errores asociados. Las gráficas de magnitud frente a error mostraron el comportamiento esperado de un aumento de la incertidumbre hacia las fuentes de menor señal. Para M92 se construyó además un diagrama color--magnitud instrumental utilizando \texttt{m92011.fits} y \texttt{m92015.fits}, asociadas a los filtros $V$ y $B$, respectivamente.
 
 El análisis mediante vecinos más cercanos permitió identificar fuentes cuya medición podía estar afectada por estrellas localizadas dentro de una distancia de $3\times FWHM$. De forma complementaria, el estudio estadístico de los anillos de cielo permitió reconocer casos en los que la estimación del fondo local podía estar contaminada por estrellas próximas. La combinación de ambos criterios proporcionó una muestra fotométrica más depurada para la construcción del diagrama color--magnitud final.
 
-En conjunto, el procedimiento desarrollado constituye una base para extender el trabajo hacia una calibración fotométrica completa y una interpretación física más profunda del diagrama color--magnitud de M92.
+Se desarrolló el programa \texttt{sextans\_auto.py} para coordinar la detección preliminar, la selección espacial de estrellas y regiones de cielo, la estimación robusta del FWHM y del ruido, el ajuste del umbral de \texttt{DAOFIND}, la fotometría fija y la prueba de anillos alternativos. La intervención visual se conserva mediante paneles de control, lo que hace que el proceso sea semiautomático y facilita detectar selecciones inadecuadas antes de usar los catálogos.
+
+En los chips 2--8 se midieron FWHM entre $4.42$ y $4.62$ píxeles y se probaron aperturas de $1$ a $6FWHM$. La corrida produjo $47\,236$ detecciones y $18\,880$ mediciones completas; después de los filtros de error y aislamiento, $3\,686$ anillos fijos fueron clasificados como limpios y el anillo adaptativo recuperó $285$ fuentes adicionales. Para la muestra con anillo desplazado, los cambios medianos absolutos de magnitud permanecieron entre $0.004$ y $0.023$ mag por chip, y la fracción mediana de píxeles altos disminuyó en cada chip.
+
+Al extender el análisis a $B$ e $I$ en los ocho chips, el anillo adaptativo encontró alternativas aceptables para $253/379$ anillos contaminados en $B$ ($66.8\%$) y $421/534$ en $I$ ($78.8\%$). En las muestras comparables, $f_{\rm out}$ disminuyó en todos los casos; las medianas de $|\Delta MAG|$ fueron $0.013$ mag en $B$ y $0.012$ mag en $I$. El análisis detallado del chip 5 confirmó recuperaciones en las tres bandas: $1/3$ en $B$, $4/7$ en $V$ y $13/13$ en $I$. Esto demuestra que una región fija del anillo no siempre representa adecuadamente el cielo local y que evaluar alternativas puede conservar fuentes útiles para catálogos multibanda. La comparación también mostró que el cambio de anillo no reduce necesariamente el error fotométrico de cada fuente; los resultados se interpretan como control interno de contaminación y no como calibración o completitud.
+
+Los valores obtenidos continúan siendo magnitudes instrumentales. En consecuencia, la comparación demuestra consistencia interna y reducción del indicador de contaminación para las muestras seleccionadas, pero no determina calibración absoluta, completitud o el radio de apertura óptimo. El trabajo deja un flujo reproducible para continuar con una prueba controlada de radios, inyecciones de fuentes artificiales, calibración fotométrica y análisis de PSF.
 
 
 % ============================================================
@@ -1764,6 +2023,8 @@ Otra extensión importante corresponde a la utilización de fotometría de PSF.
 La fotometría de apertura funciona adecuadamente para estrellas suficientemente aisladas, pero pierde precisión cuando existe un alto grado de superposición entre perfiles estelares.
 
 La fotometría de PSF modela simultáneamente la distribución espacial de las fuentes y podría permitir conservar estrellas que actualmente deben eliminarse mediante el criterio de vecinos cercanos.
+
+Para Sextans A se debe repetir sobre cada chip una prueba controlada con varios múltiplos de FWHM, manteniendo fija la lista de detecciones, las coordenadas, la estimación del cielo y los criterios de calidad. La comparación de magnitudes en una muestra común y de curvas de crecimiento permitiría cuantificar el efecto del radio y elegirlo para el objetivo científico. Las simulaciones de inyección y recuperación de fuentes permitirían medir completitud y sesgos en función de magnitud y posición.
 
 Finalmente, una comparación sistemática entre fotometría de apertura y fotometría de PSF permitiría cuantificar el efecto de la densidad estelar sobre la precisión de las magnitudes obtenidas.
 
@@ -1806,7 +2067,7 @@ Para realizar la reducción CCD se cargaron primero los paquetes \texttt{noao}, 
 
 \section{Inspección de estrellas}
 
-La inspección interactiva de las fuentes se realizó cargando primero la imagen \texttt{m92011.fits} en el marco gráfico mediante \texttt{display m92011.fits 1} y ejecutando después \texttt{imexamine m92011.fits}. Esta combinación permitió seleccionar estrellas directamente sobre la imagen y revisar sus perfiles, posiciones y propiedades asociadas.
+La inspección interactiva se realizó desplegando \texttt{m92011.fits} con \texttt{display} y ejecutando \texttt{imexamine} sobre la misma imagen. Así fue posible seleccionar fuentes y revisar sus perfiles, posiciones y propiedades asociadas.
 
 
 % ------------------------------------------------------------
@@ -1864,9 +2125,21 @@ La Figura~\ref{fig:boxplot} reúne la distribución de los valores de los píxel
 
 \chapter{Material complementario}
 
-Los códigos utilizados para procesamiento estadístico, análisis de vecinos más cercanos, inspección de los anillos de cielo y construcción del CMD se conservaron como material complementario del proyecto.
+Los códigos utilizados para procesamiento estadístico, análisis de vecinos más cercanos, inspección de los anillos de cielo y construcción del CMD se conservaron como material complementario del proyecto. El programa de la extensión semiautomática está en el archivo \texttt{sextans\_auto.py}. El instructivo \texttt{LEEME\_sextans\_auto.md} describe sus dependencias, modos de ejecución y controles; los productos completos de la corrida y los archivos de resumen se conservan en \texttt{dataSextansA\_multiplicadores\_FWHM}. El siguiente comando muestra la configuración utilizada para el chip 6, con apertura de $6FWHM$:
 
-Los repositorios asociados al trabajo son \url{https://github.com/sserranop1/LAB.5} y \url{https://github.com/sserranop1/M41}.
+\begin{verbatim}
+SEXTANS_BASE="$PWD/dataSextansA_multiplicadores_FWHM"
+python3 sextans_auto.py --base "$SEXTANS_BASE" \
+  --chip 6 --filtro V --mode auto \
+  --iraf-exe "$SEXTANS_BASE/iraf_runtime/irafcl-wrapper" \
+  --ap-fwhm-multiplier 6
+\end{verbatim}
+
+Para reproducir los demás chips se cambia el número indicado por \texttt{--chip} y se asigna el múltiplo correspondiente de la Tabla~\ref{tab:sextans-chips}. Las carpetas de salida conservan los archivos IRAF, catálogos, mediciones, controles visuales y resúmenes JSON usados para construir los resultados.
+
+La extensión a los filtros $B$ e $I$ se reproduce con las mismas opciones, cambiando \texttt{--filtro V} por \texttt{--filtro B} o \texttt{--filtro I}; los resúmenes consolidados se encuentran en \path{dataSextansA_multiplicadores_FWHM/resumen_filtros_BI.csv} y \path{dataSextansA_multiplicadores_FWHM/resumen_chip5_BVI.csv}.
+
+Los repositorios asociados a las prácticas iniciales son \url{https://github.com/sserranop1/LAB.5} y \url{https://github.com/sserranop1/M41}.
 
 
 % ============================================================

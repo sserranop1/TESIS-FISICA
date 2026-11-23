@@ -2,7 +2,7 @@ PWD /Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida
 INPUT /usr/local/texlive/2026/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/santiagoserranoperico/Desktop/Universidad/tesis/tesis_corregida/main_tesis_corregido.tex
+INPUT main_tesis_corregido.tex
 OUTPUT main_tesis_corregido.log
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/book.cls
@@ -331,10 +331,6 @@ INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
-INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
-INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
@@ -389,6 +385,10 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/t1npxtt.fd
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-sc-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
@@ -396,6 +396,9 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmia.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT ./main_tesis_corregido.toc
@@ -405,9 +408,6 @@ OUTPUT main_tesis_corregido.toc
 INPUT ./main_tesis_corregido.lof
 INPUT ./main_tesis_corregido.lof
 INPUT main_tesis_corregido.lof
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmia.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -473,44 +473,83 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xbtt.tfm
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT ./img/sextansA_chip5_control_semi.png
+INPUT ./img/sextansA_chip5_control_semi.png
+INPUT ./img/sextansA_chip5_control_semi.png
+INPUT ./img/sextansA_chip5_control_semi.png
+INPUT ./img/sextansA_chip5_control_semi.png
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
+INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
+INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
+INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
+INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
+INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
+INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
+INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
+INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
+INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
+INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
+INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
+INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
+INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
+INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
+INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
+INPUT ./img/ajuste_logistico.png
+INPUT ./img/ajuste_logistico.png
+INPUT ./img/ajuste_logistico.png
+INPUT ./img/ajuste_logistico.png
+INPUT ./img/ajuste_logistico.png
+INPUT ./img/m92Encontradas.png
+INPUT ./img/m92Encontradas.png
+INPUT ./img/m92Encontradas.png
+INPUT ./img/m92Encontradas.png
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
@@ -624,6 +663,56 @@ INPUT ./img/sextansA_chip1_resumen_etapas.png
 INPUT ./img/sextansA_chip1_resumen_etapas.png
 INPUT ./img/sextansA_chip1_resumen_etapas.png
 INPUT ./img/sextansA_chip1_resumen_etapas.png
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-ot1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmi.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsy.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexx.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplmia.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsym.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplsyc.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zplexa.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT ./img/sextansA_chips2_8_conteos.png
+INPUT ./img/sextansA_chips2_8_conteos.png
+INPUT ./img/sextansA_chips2_8_conteos.png
+INPUT ./img/sextansA_chips2_8_conteos.png
+INPUT ./img/sextansA_chips2_8_conteos.png
+INPUT ./img/sextansA_chips2_8_fotometria.png
+INPUT ./img/sextansA_chips2_8_fotometria.png
+INPUT ./img/sextansA_chips2_8_fotometria.png
+INPUT ./img/sextansA_chips2_8_fotometria.png
+INPUT ./img/sextansA_chips2_8_fotometria.png
+INPUT ./img/sextansA_chips2_8_cielo.png
+INPUT ./img/sextansA_chips2_8_cielo.png
+INPUT ./img/sextansA_chips2_8_cielo.png
+INPUT ./img/sextansA_chips2_8_cielo.png
+INPUT ./img/sextansA_chips2_8_cielo.png
+INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
+INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
+INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
+INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
+INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
+INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
+INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
+INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
+INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
+INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
 INPUT ./main_tesis_corregido.bbl
 INPUT ./main_tesis_corregido.bbl
 INPUT main_tesis_corregido.bbl

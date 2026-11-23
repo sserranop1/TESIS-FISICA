@@ -1,4 +1,4 @@
-threshold,r,h,3.18,,,"Threshold in sigma for feature detection"
+threshold,r,h,4.21,,,"Threshold in sigma for feature detection"
 nsigma,r,h,1.5,,,"Width of convolution kernel in sigma"
 ratio,r,h,1.,0.,1.,"Ratio of minor to major axis of Gaussian kernel"
 theta,r,h,0.,0.,180.,"Position angle of major axis of Gaussian kernel"

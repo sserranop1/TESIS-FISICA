@@ -1,0 +1,2 @@
+x,y,msky_adapt,stdev_adapt,nsky,flux_adapt,mag_adapt,merr_adapt,r_in,r_out,tag,dist_match,msky_fixed,stdev_fixed,flux_fixed,mag_fixed,merr_fixed,delta_msky,delta_stdev,delta_mag,delta_merr,flux_ratio,snr_fixed,snr_adapt
+3870.087,1823.405,-1.438,2.65355,2974,654.738,17.96,0.08,28.15,43.15,r28_15_43_15,0.0,-1.386679,2.520394,640.9036,17.983,0.078,-0.05132099999999995,0.13315600000000005,-0.022999999999999687,0.0020000000000000018,1.0215857735859184,13.91923076923077,13.571250000000001

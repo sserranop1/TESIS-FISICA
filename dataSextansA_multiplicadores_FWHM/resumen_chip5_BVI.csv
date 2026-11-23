@@ -1,0 +1,4 @@
+filtro,N_detecciones,N_PHOT_completas,N_MERR_le_020,N_aisladas,N_fijo_limpio,N_fijo_contaminado,N_recuperadas,N_sin_solucion,N_sin_evaluacion_fijo,N_movidas_comparables,tasa_recuperacion_pct,FWHM_pix,sigma_cielo_ADU,threshold,mediana_delta_MAG,mediana_abs_delta_MAG,mediana_fout_inicial,mediana_fout_final,mediana_delta_fout,MERR_fijo_mediana,MERR_adaptativo_mediana,pct_MERR_disminuye
+B,6430,3623,2047,1241,1238,3,1,2,0,1,33.333333,4.630000,2.330000,3.580000,-0.023000,0.023000,0.156163,0.101846,-0.054317,0.078000,0.080000,0.000000
+V,6150,3685,2216,1479,1471,7,4,3,1,4,57.142857,4.480000,3.200000,3.720000,0.019000,0.022500,0.142197,0.107245,-0.034952,0.061500,0.058500,25.000000
+I,6335,4519,3317,2518,2503,13,13,0,2,15,100.000000,4.110000,18.400000,3.710000,0.002000,0.050000,0.117958,0.097240,-0.018929,0.074000,0.078000,46.666667

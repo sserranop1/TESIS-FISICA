@@ -1,0 +1,4 @@
+ERROR: Cannot open connected subprocess (./x_apphot.e)
+     called as: `cl ()'
+Error while reading login.cl file - may need to rebuild with mkiraf
+Fatal startup error.  CL dies.

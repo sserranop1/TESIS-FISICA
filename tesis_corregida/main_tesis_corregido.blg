@@ -4,44 +4,44 @@ The top-level auxiliary file: main_tesis_corregido.aux
 The style file: aa_url.bst
 Database file #1: global.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 7 entries,
+You've used 11 entries,
             3126 wiz_defined-function locations,
-            738 strings with 6248 characters,
-and the built_in function-call counts, 2971 in all, are:
-= -- 250
-> -- 173
-< -- 7
-+ -- 65
-- -- 52
-* -- 239
-:= -- 547
-add.period$ -- 7
-call.type$ -- 7
-change.case$ -- 49
-chr.to.int$ -- 10
-cite$ -- 7
-duplicate$ -- 130
-empty$ -- 202
-format.name$ -- 62
-if$ -- 589
-int.to.chr$ -- 1
+            760 strings with 6846 characters,
+and the built_in function-call counts, 4337 in all, are:
+= -- 370
+> -- 237
+< -- 10
++ -- 88
+- -- 70
+* -- 344
+:= -- 807
+add.period$ -- 11
+call.type$ -- 11
+change.case$ -- 73
+chr.to.int$ -- 13
+cite$ -- 11
+duplicate$ -- 200
+empty$ -- 306
+format.name$ -- 86
+if$ -- 855
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 4
-newline$ -- 25
-num.names$ -- 29
-pop$ -- 41
+missing$ -- 6
+newline$ -- 37
+num.names$ -- 45
+pop$ -- 62
 preamble$ -- 1
-purify$ -- 45
+purify$ -- 67
 quote$ -- 0
-skip$ -- 118
+skip$ -- 169
 stack$ -- 0
-substring$ -- 137
-swap$ -- 10
+substring$ -- 192
+swap$ -- 12
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 93
 warning$ -- 0
-while$ -- 27
+while$ -- 40
 width$ -- 0
-write$ -- 75
+write$ -- 117
