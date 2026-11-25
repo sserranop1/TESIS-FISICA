@@ -330,7 +330,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-
 INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
@@ -408,19 +407,16 @@ OUTPUT main_tesis_corregido.toc
 INPUT ./main_tesis_corregido.lof
 INPUT ./main_tesis_corregido.lof
 INPUT main_tesis_corregido.lof
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 OUTPUT main_tesis_corregido.lof
 INPUT ./main_tesis_corregido.lot
 INPUT ./main_tesis_corregido.lot
 INPUT main_tesis_corregido.lot
 OUTPUT main_tesis_corregido.lot
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Italic-tlf-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Bold-tlf-t1.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-BoldItalic-tlf-t1.tfm
@@ -477,6 +473,10 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmia.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/pxmiaX.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/zpl-Regular-tlf-t1.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT ./img/sextansA_chip5_control_semi.png
 INPUT ./img/sextansA_chip5_control_semi.png
 INPUT ./img/sextansA_chip5_control_semi.png
@@ -516,53 +516,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-04-23.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-06-10.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-44.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-13-55.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/Screenshot From 2026-07-06 14-14-03.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/ajuste_logistico.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
-INPUT ./img/m92Encontradas.png
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
-INPUT ./img/m41Encontradas.png
-INPUT ./img/m41Encontradas.png
-INPUT ./img/m41Encontradas.png
-INPUT ./img/m41Encontradas.png
-INPUT ./img/m41Encontradas.png
 INPUT ./img/m92010_final_mag_vs_merr.png
 INPUT ./img/m92010_final_mag_vs_merr.png
 INPUT ./img/m92010_final_mag_vs_merr.png
@@ -573,36 +526,6 @@ INPUT ./img/m91_final_mag_vs_merr.png
 INPUT ./img/m91_final_mag_vs_merr.png
 INPUT ./img/m91_final_mag_vs_merr.png
 INPUT ./img/m91_final_mag_vs_merr.png
-INPUT ./img/M92_CMD_clean.png
-INPUT ./img/M92_CMD_clean.png
-INPUT ./img/M92_CMD_clean.png
-INPUT ./img/M92_CMD_clean.png
-INPUT ./img/M92_CMD_clean.png
-INPUT ./img/rechazadasVecinosCercanos.png
-INPUT ./img/rechazadasVecinosCercanos.png
-INPUT ./img/rechazadasVecinosCercanos.png
-INPUT ./img/rechazadasVecinosCercanos.png
-INPUT ./img/rechazadasVecinosCercanos.png
-INPUT ./img/aceptadasVecinosCercanos.png
-INPUT ./img/aceptadasVecinosCercanos.png
-INPUT ./img/aceptadasVecinosCercanos.png
-INPUT ./img/aceptadasVecinosCercanos.png
-INPUT ./img/aceptadasVecinosCercanos.png
-INPUT ./img/m92011_outliers_anillos_cielo.png
-INPUT ./img/m92011_outliers_anillos_cielo.png
-INPUT ./img/m92011_outliers_anillos_cielo.png
-INPUT ./img/m92011_outliers_anillos_cielo.png
-INPUT ./img/m92011_outliers_anillos_cielo.png
-INPUT ./img/rechazadasAnilloCielo.png
-INPUT ./img/rechazadasAnilloCielo.png
-INPUT ./img/rechazadasAnilloCielo.png
-INPUT ./img/rechazadasAnilloCielo.png
-INPUT ./img/rechazadasAnilloCielo.png
-INPUT ./img/aceptadasAnilloCielo.png
-INPUT ./img/aceptadasAnilloCielo.png
-INPUT ./img/aceptadasAnilloCielo.png
-INPUT ./img/aceptadasAnilloCielo.png
-INPUT ./img/aceptadasAnilloCielo.png
 INPUT ./img/M92_CMD_coloreado_filtros.png
 INPUT ./img/M92_CMD_coloreado_filtros.png
 INPUT ./img/M92_CMD_coloreado_filtros.png
@@ -688,6 +611,10 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/vf/public/newpx/zplmi.vf
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI_gnu.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newpx/NewPXMI.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT ./img/sextansA_chips2_8_conteos.png
 INPUT ./img/sextansA_chips2_8_conteos.png
 INPUT ./img/sextansA_chips2_8_conteos.png
@@ -703,16 +630,36 @@ INPUT ./img/sextansA_chips2_8_cielo.png
 INPUT ./img/sextansA_chips2_8_cielo.png
 INPUT ./img/sextansA_chips2_8_cielo.png
 INPUT ./img/sextansA_chips2_8_cielo.png
-INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
-INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
-INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
-INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
-INPUT ./img/sextansA_chip5_localizacion_recuperadas_BVI.png
-INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
-INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
-INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
-INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
-INPUT ./img/sextansA_chip5_recuperada_anillos_BVI.png
+INPUT ./img/sextansA_chip5_clasificacion_B.png
+INPUT ./img/sextansA_chip5_clasificacion_B.png
+INPUT ./img/sextansA_chip5_clasificacion_B.png
+INPUT ./img/sextansA_chip5_clasificacion_B.png
+INPUT ./img/sextansA_chip5_clasificacion_B.png
+INPUT ./img/sextansA_chip5_clasificacion_V.png
+INPUT ./img/sextansA_chip5_clasificacion_V.png
+INPUT ./img/sextansA_chip5_clasificacion_V.png
+INPUT ./img/sextansA_chip5_clasificacion_V.png
+INPUT ./img/sextansA_chip5_clasificacion_V.png
+INPUT ./img/sextansA_chip5_clasificacion_I.png
+INPUT ./img/sextansA_chip5_clasificacion_I.png
+INPUT ./img/sextansA_chip5_clasificacion_I.png
+INPUT ./img/sextansA_chip5_clasificacion_I.png
+INPUT ./img/sextansA_chip5_clasificacion_I.png
+INPUT ./img/sextansA_chip5_anillos_B.png
+INPUT ./img/sextansA_chip5_anillos_B.png
+INPUT ./img/sextansA_chip5_anillos_B.png
+INPUT ./img/sextansA_chip5_anillos_B.png
+INPUT ./img/sextansA_chip5_anillos_B.png
+INPUT ./img/sextansA_chip5_anillos_V.png
+INPUT ./img/sextansA_chip5_anillos_V.png
+INPUT ./img/sextansA_chip5_anillos_V.png
+INPUT ./img/sextansA_chip5_anillos_V.png
+INPUT ./img/sextansA_chip5_anillos_V.png
+INPUT ./img/sextansA_chip5_anillos_I.png
+INPUT ./img/sextansA_chip5_anillos_I.png
+INPUT ./img/sextansA_chip5_anillos_I.png
+INPUT ./img/sextansA_chip5_anillos_I.png
+INPUT ./img/sextansA_chip5_anillos_I.png
 INPUT ./main_tesis_corregido.bbl
 INPUT ./main_tesis_corregido.bbl
 INPUT main_tesis_corregido.bbl

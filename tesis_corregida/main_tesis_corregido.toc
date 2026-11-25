@@ -30,63 +30,44 @@
 \contentsline {subsection}{\numberline {1.1.25}Índice de color}{18}{subsection.1.1.25}%
 \contentsline {subsection}{\numberline {1.1.26}Diagrama color--magnitud}{19}{subsection.1.1.26}%
 \contentsline {subsection}{\numberline {1.1.27}Cúmulos estelares}{19}{subsection.1.1.27}%
-\contentsline {subsubsection}{M92}{19}{section*.8}%
-\contentsline {subsubsection}{M41}{19}{section*.9}%
-\contentsline {subsection}{\numberline {1.1.28}Galaxia enana irregular Sextans A}{20}{subsection.1.1.28}%
-\contentsline {subsection}{\numberline {1.1.29}IRAF}{22}{subsection.1.1.29}%
-\contentsline {subsection}{\numberline {1.1.30}Detección automática mediante \texttt {daofind}}{23}{subsection.1.1.30}%
-\contentsline {section}{\numberline {1.2}Estructura del documento}{23}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Pregunta de investigación}{24}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Objetivos}{24}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{24}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Objetivos específicos}{24}{subsection.1.4.2}%
-\contentsline {chapter}{\numberline {2}Metodología}{26}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Datos utilizados}{26}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Entorno computacional}{26}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Reducción CCD de M92}{27}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Identificación manual de estrellas}{27}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Determinación del FWHM}{28}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Selección de apertura y umbral de detección}{28}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Procesamiento de M41}{28}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Detección automática de estrellas}{29}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Fotometría de apertura}{29}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Construcción del CMD de M92}{29}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Filtro de vecinos más cercanos}{30}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Análisis de contaminación del anillo de cielo}{30}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Procedimiento semiautomático para Sextans A}{30}{section.2.13}%
-\contentsline {subsection}{\numberline {2.13.1}Funcionamiento del script automático}{33}{subsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.13.2}Extensión del flujo a los filtros $B$ e $I$}{34}{subsection.2.13.2}%
-\contentsline {chapter}{\numberline {3}Resultados y discusión}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Reducción CCD de M92}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Separación de canales de M41}{36}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Selección del umbral de detección}{38}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Detección automática en M92}{39}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Detección automática en M41}{40}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Relación entre magnitud y error fotométrico}{41}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Diagrama color--magnitud inicial de M92}{42}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Filtrado mediante vecinos más cercanos}{43}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Contaminación del anillo de cielo}{45}{section.3.9}%
-\contentsline {section}{\numberline {3.10}CMD después del proceso de filtrado}{48}{section.3.10}%
-\contentsline {section}{\numberline {3.11}Procesamiento manual de V en el chip 1 de Sextans A}{49}{section.3.11}%
-\contentsline {subsection}{\numberline {3.11.1}Caracterización del perfil estelar y del cielo}{50}{subsection.3.11.1}%
-\contentsline {subsection}{\numberline {3.11.2}Selección del umbral y limpieza geométrica}{51}{subsection.3.11.2}%
-\contentsline {subsection}{\numberline {3.11.3}Fotometría fija, error y aislamiento de las fuentes}{53}{subsection.3.11.3}%
-\contentsline {subsection}{\numberline {3.11.4}Contaminación del anillo fijo y selección adaptativa}{55}{subsection.3.11.4}%
-\contentsline {subsection}{\numberline {3.11.5}Cambios fotométricos en las fuentes recuperadas}{57}{subsection.3.11.5}%
-\contentsline {section}{\numberline {3.12}Resumen por chip de Sextans A}{60}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}Comparación de radios y fotometría adaptativa}{62}{subsection.3.12.1}%
-\contentsline {subsection}{\numberline {3.12.2}Resultados multibanda en $B$ e $I$}{64}{subsection.3.12.2}%
-\contentsline {subsection}{\numberline {3.12.3}Análisis detallado del chip 5 en $B$, $V$ e $I$}{66}{subsection.3.12.3}%
-\contentsline {section}{\numberline {3.13}Discusión general}{68}{section.3.13}%
-\contentsline {chapter}{\numberline {4}Conclusiones}{73}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Trabajo futuro}{74}{section.4.1}%
-\contentsline {chapter}{Appendices}{}{section*.54}
-\contentsline {chapter}{\numberline {A}Comandos principales utilizados en IRAF}{78}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Reducción}{78}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Inspección de estrellas}{78}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Detección automática}{78}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Marcado de coordenadas}{79}{section.Alph1.4}%
-\contentsline {section}{\numberline {A.5}Fotometría}{79}{section.Alph1.5}%
-\contentsline {section}{\numberline {A.6}Extracción de resultados}{79}{section.Alph1.6}%
-\contentsline {chapter}{\numberline {B}Distribución de los anillos de cielo}{80}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Material complementario}{82}{appendix.Alph3}%
+\contentsline {subsection}{\numberline {1.1.28}Galaxia enana irregular Sextans A}{19}{subsection.1.1.28}%
+\contentsline {subsection}{\numberline {1.1.29}IRAF}{21}{subsection.1.1.29}%
+\contentsline {subsection}{\numberline {1.1.30}Detección automática mediante \texttt {daofind}}{22}{subsection.1.1.30}%
+\contentsline {section}{\numberline {1.2}Estructura del documento}{22}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Pregunta de investigación}{23}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objetivos}{23}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Objetivo general}{23}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Objetivos específicos}{23}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Metodología}{24}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Datos utilizados}{24}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Entorno computacional}{24}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Prácticas iniciales con M92 y M41}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Criterios fotométricos y de calidad}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Procedimiento semiautomático para Sextans A}{26}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Funcionamiento del script automático}{28}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Extensión del flujo a los filtros $B$ e $I$}{29}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Resultados y discusión}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Resultados iniciales en M92 y M41}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Procesamiento manual de V en el chip 1 de Sextans A}{32}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Caracterización del perfil estelar y del cielo}{33}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Selección del umbral y limpieza geométrica}{34}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Fotometría fija, error y aislamiento de las fuentes}{36}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Contaminación del anillo fijo y selección adaptativa}{38}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Cambios fotométricos en las fuentes recuperadas}{40}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Resumen por chip de Sextans A}{43}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Comparación de radios y fotometría adaptativa}{45}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Resultados multibanda en $B$ e $I$}{47}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Análisis detallado del chip 5 en $B$, $V$ e $I$}{49}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Discusión general}{54}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Conclusiones}{56}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Trabajo futuro}{57}{section.4.1}%
+\contentsline {chapter}{Appendices}{}{section*.40}
+\contentsline {chapter}{\numberline {A}Comandos principales utilizados en IRAF}{61}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Reducción}{61}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Inspección de estrellas}{61}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Detección automática}{61}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Marcado de coordenadas}{62}{section.Alph1.4}%
+\contentsline {section}{\numberline {A.5}Fotometría}{62}{section.Alph1.5}%
+\contentsline {section}{\numberline {A.6}Extracción de resultados}{62}{section.Alph1.6}%
+\contentsline {chapter}{\numberline {B}Distribución de los anillos de cielo}{63}{appendix.Alph2}%
+\contentsline {chapter}{\numberline {C}Material complementario}{65}{appendix.Alph3}%

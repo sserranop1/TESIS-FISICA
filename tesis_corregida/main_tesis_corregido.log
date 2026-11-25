@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  23 NOV 2026 17:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  25 NOV 2026 11:58
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1103,7 +1103,7 @@ Package hyperref Info: Link coloring ON on input line 38.
 \@outlinefile=\write4
 \openout4 = `main_tesis_corregido.out'.
 
-<img/logo-uniandes.pdf, id=180, 188.54184pt x 56.53151pt>
+<img/logo-uniandes.pdf, id=112, 188.54184pt x 56.53151pt>
 File: img/logo-uniandes.pdf Graphic file (type pdf)
 <use img/logo-uniandes.pdf>
 Package pdftex.def Info: img/logo-uniandes.pdf  used on input line 48.
@@ -1126,25 +1126,23 @@ al/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./img/logo-un
 iandes.pdf>]
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 (Font)              scaled to size 24.88pt on input line 98.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 100.
 LaTeX Font Info:    Trying to load font information for OT1+minzpl on input lin
-e 100.
+e 102.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newpx/ot1minzpl.fd
 File: ot1minzpl.fd 2021/05/25 v1.0 font definition file for OT1/minzpl/TLF
 )
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 12.0pt on input line 100.
+(Font)              scaled to size 12.0pt on input line 102.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `minzpl' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 8.8pt on input line 100.
+(Font)              scaled to size 8.8pt on input line 102.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.6pt on input line 100.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+(Font)              scaled to size 6.6pt on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 102
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1153,7 +1151,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+LaTeX Font Info:    Trying to load font information for U+msb on input line 102
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1163,19 +1161,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
-100.
+102.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
-100.
+102.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/npxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
-100.
+102.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
@@ -1218,7 +1216,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.65 ...tud y error fotométrico}{41}{section.3.6}
+l.69 ...rcado de coordenadas}{62}{section.Alph1.4}
                                                   % [1
 
 
@@ -1247,6 +1245,8 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 1.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 167.
 [7
 
 ]
@@ -1259,344 +1259,259 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/it' will be
 (Font)              scaled to size 14.4pt on input line 294.
  [10] [11] [12] [13] [14] [15] [16]
 Missing character: There is no � in font zpl-Regular-tlf-ot1!
-[17] [18] [19]
-<img/SextansA_300.jpg, id=558, 481.8pt x 537.9297pt>
+[17] [18]
+<img/SextansA_300.jpg, id=436, 481.8pt x 537.9297pt>
 File: img/SextansA_300.jpg Graphic file (type jpg)
 <use img/SextansA_300.jpg>
-Package pdftex.def Info: img/SextansA_300.jpg  used on input line 841.
+Package pdftex.def Info: img/SextansA_300.jpg  used on input line 826.
 (pdftex.def)             Requested size: 290.28163pt x 324.10645pt.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 845.
+(Font)              scaled to size 10.95pt on input line 830.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.95pt on input line 845.
+(Font)              scaled to size 10.95pt on input line 830.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 8.0pt on input line 845.
+(Font)              scaled to size 8.0pt on input line 830.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.1pt on input line 845.
- [20] [21 <./img/SextansA_300.jpg>] [22]
+(Font)              scaled to size 6.1pt on input line 830.
+ [19] [20 <./img/SextansA_300.jpg>] [21]
 LaTeX Font Info:    Font shape `T1/npxtt/b/n' in size <14.4> not available
-(Font)              Font shape `T1/npxtt/bx/n' tried instead on input line 887.
+(Font)              Font shape `T1/npxtt/bx/n' tried instead on input line 872.
 
 LaTeX Font Info:    Font shape `T1/npxtt/bx/n' will be
-(Font)              scaled to size 14.4pt on input line 887.
- [23] [24] [25]
+(Font)              scaled to size 14.4pt on input line 872.
+ [22] [23]
 Cap\'{\i }tulo 2.
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 970.
+(Font)              scaled to size 10.95pt on input line 947.
+[24
 
-Underfull \hbox (badness 10000) in paragraph at lines 984--984
-[]|\T1/npxtt/m/n/10.95 SexA_B_chipN.fits\T1/zpltlf/m/n/10.95 (+20) ,
- []
-
-
-Underfull \hbox (badness 7099) in paragraph at lines 984--984
-\T1/npxtt/m/n/10.95 SexA_I_chipN.fits\T1/zpltlf/m/n/10.95 (+20) , $\OML/npxmi/m
-/it/10.95 N \U/npxmia/m/it/10.95 = \OT1/minzpl/m/n/10.95 1$\T1/zpltlf/m/n/10.95
- (+20) --
- []
-
-[26
-
-] [27] [28] [29] [30]
+]
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 985.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 985.
+ [25] [26]
 Missing character: There is no � in font zpl-Regular-tlf-ot1!
-[31]
-<img/sextansA_chip5_control_semi.png, id=665, 867.24pt x 505.89pt>
+<img/sextansA_chip5_control_semi.png, id=521, 867.24pt x 505.89pt>
 File: img/sextansA_chip5_control_semi.png Graphic file (type png)
 <use img/sextansA_chip5_control_semi.png>
 Package pdftex.def Info: img/sextansA_chip5_control_semi.png  used on input lin
-e 1175.
+e 1014.
 (pdftex.def)             Requested size: 480.46799pt x 280.27823pt.
- [32 <./img/sextansA_chip5_control_semi.png>]
+[27] [28 <./img/sextansA_chip5_control_semi.png>]
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 14.4pt on input line 1193.
+(Font)              scaled to size 14.4pt on input line 1032.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.5pt on input line 1193.
+(Font)              scaled to size 10.5pt on input line 1032.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.9pt on input line 1193.
- [33] [34]
+(Font)              scaled to size 7.9pt on input line 1032.
+ [29] [30]
 Cap\'{\i }tulo 3.
-<img/Screenshot From 2026-07-06 14-04-23.png, id=686, 537.00626pt x 498.86375pt
->
-File: img/Screenshot From 2026-07-06 14-04-23.png Graphic file (type png)
-<use img/Screenshot From 2026-07-06 14-04-23.png>
-Package pdftex.def Info: img/Screenshot From 2026-07-06 14-04-23.png  used on i
-nput line 1226.
-(pdftex.def)             Requested size: 325.31154pt x 302.20552pt.
-<img/Screenshot From 2026-07-06 14-06-10.png, id=687, 537.00626pt x 498.86375pt
->
-File: img/Screenshot From 2026-07-06 14-06-10.png Graphic file (type png)
-<use img/Screenshot From 2026-07-06 14-06-10.png>
-Package pdftex.def Info: img/Screenshot From 2026-07-06 14-06-10.png  used on i
-nput line 1242.
-(pdftex.def)             Requested size: 325.31154pt x 302.20552pt.
-[35
-
- <./img/Screenshot From 2026-07-06 14-04-23.png>]
-<img/Screenshot From 2026-07-06 14-13-44.png, id=693, 537.00626pt x 498.86375pt
->
-File: img/Screenshot From 2026-07-06 14-13-44.png Graphic file (type png)
-<use img/Screenshot From 2026-07-06 14-13-44.png>
-Package pdftex.def Info: img/Screenshot From 2026-07-06 14-13-44.png  used on i
-nput line 1266.
-(pdftex.def)             Requested size: 275.26772pt x 255.7112pt.
- [36 <./img/Screenshot From 2026-07-06 14-06-10.png>]
-<img/Screenshot From 2026-07-06 14-13-55.png, id=700, 537.00626pt x 498.86375pt
->
-File: img/Screenshot From 2026-07-06 14-13-55.png Graphic file (type png)
-<use img/Screenshot From 2026-07-06 14-13-55.png>
-Package pdftex.def Info: img/Screenshot From 2026-07-06 14-13-55.png  used on i
-nput line 1280.
-(pdftex.def)             Requested size: 275.26772pt x 255.7112pt.
-<img/Screenshot From 2026-07-06 14-14-03.png, id=701, 537.00626pt x 498.86375pt
->
-File: img/Screenshot From 2026-07-06 14-14-03.png Graphic file (type png)
-<use img/Screenshot From 2026-07-06 14-14-03.png>
-Package pdftex.def Info: img/Screenshot From 2026-07-06 14-14-03.png  used on i
-nput line 1294.
-(pdftex.def)             Requested size: 275.26772pt x 255.7112pt.
- [37 <./img/Screenshot From 2026-07-06 14-13-44.png> <./img/Screenshot From 202
-6-07-06 14-13-55.png>]
-<img/ajuste_logistico.png, id=709, 633.8079pt x 379.4175pt>
-File: img/ajuste_logistico.png Graphic file (type png)
-<use img/ajuste_logistico.png>
-Package pdftex.def Info: img/ajuste_logistico.png  used on input line 1319.
-(pdftex.def)             Requested size: 425.41444pt x 254.67155pt.
- [38 <./img/Screenshot From 2026-07-06 14-14-03.png>]
-<img/m92Encontradas.png, id=716, 327.2225pt x 517.935pt>
-File: img/m92Encontradas.png Graphic file (type png)
-<use img/m92Encontradas.png>
-Package pdftex.def Info: img/m92Encontradas.png  used on input line 1345.
-(pdftex.def)             Requested size: 300.29344pt x 475.3126pt.
- [39 <./img/ajuste_logistico.png>] [40 <./img/m92Encontradas.png>]
-<img/m41Encontradas.png, id=727, 537.00626pt x 498.86375pt>
-File: img/m41Encontradas.png Graphic file (type png)
-<use img/m41Encontradas.png>
-Package pdftex.def Info: img/m41Encontradas.png  used on input line 1370.
-(pdftex.def)             Requested size: 300.29344pt x 278.96597pt.
-<img/m92010_final_mag_vs_merr.png, id=728, 578.16pt x 433.62pt>
+<img/m92010_final_mag_vs_merr.png, id=545, 578.16pt x 433.62pt>
 File: img/m92010_final_mag_vs_merr.png Graphic file (type png)
 <use img/m92010_final_mag_vs_merr.png>
 Package pdftex.def Info: img/m92010_final_mag_vs_merr.png  used on input line 1
-397.
-(pdftex.def)             Requested size: 325.31154pt x 243.98343pt.
- [41 <./img/m41Encontradas.png>]
-<img/m91_final_mag_vs_merr.png, id=734, 578.16pt x 433.62pt>
+060.
+(pdftex.def)             Requested size: 240.23016pt x 180.16728pt.
+<img/m91_final_mag_vs_merr.png, id=546, 578.16pt x 433.62pt>
 File: img/m91_final_mag_vs_merr.png Graphic file (type png)
 <use img/m91_final_mag_vs_merr.png>
-Package pdftex.def Info: img/m91_final_mag_vs_merr.png  used on input line 1413
+Package pdftex.def Info: img/m91_final_mag_vs_merr.png  used on input line 1061
 .
-(pdftex.def)             Requested size: 325.31154pt x 243.98343pt.
- [42 <./img/m92010_final_mag_vs_merr.png> <./img/m91_final_mag_vs_merr.png>]
-<img/M92_CMD_clean.png, id=741, 505.89pt x 578.16pt>
-File: img/M92_CMD_clean.png Graphic file (type png)
-<use img/M92_CMD_clean.png>
-Package pdftex.def Info: img/M92_CMD_clean.png  used on input line 1439.
-(pdftex.def)             Requested size: 325.31154pt x 371.79436pt.
-<img/rechazadasVecinosCercanos.png, id=742, 324.21124pt x 518.93875pt>
-File: img/rechazadasVecinosCercanos.png Graphic file (type png)
-<use img/rechazadasVecinosCercanos.png>
-Package pdftex.def Info: img/rechazadasVecinosCercanos.png  used on input line 
-1465.
-(pdftex.def)             Requested size: 325.31154pt x 520.73494pt.
- [43 <./img/M92_CMD_clean.png>]
-<img/aceptadasVecinosCercanos.png, id=748, 323.2075pt x 517.935pt>
-File: img/aceptadasVecinosCercanos.png Graphic file (type png)
-<use img/aceptadasVecinosCercanos.png>
-Package pdftex.def Info: img/aceptadasVecinosCercanos.png  used on input line 1
-481.
-(pdftex.def)             Requested size: 325.31154pt x 521.33202pt.
- [44 <./img/rechazadasVecinosCercanos.png>] [45 <./img/aceptadasVecinosCercanos
-.png>]
-<img/m92011_outliers_anillos_cielo.png, id=762, 867.24pt x 433.62pt>
-File: img/m92011_outliers_anillos_cielo.png Graphic file (type png)
-<use img/m92011_outliers_anillos_cielo.png>
-Package pdftex.def Info: img/m92011_outliers_anillos_cielo.png  used on input l
-ine 1514.
-(pdftex.def)             Requested size: 400.38872pt x 200.19543pt.
-<img/rechazadasAnilloCielo.png, id=763, 323.2075pt x 516.93124pt>
-File: img/rechazadasAnilloCielo.png Graphic file (type png)
-<use img/rechazadasAnilloCielo.png>
-Package pdftex.def Info: img/rechazadasAnilloCielo.png  used on input line 1532
-.
-(pdftex.def)             Requested size: 325.31154pt x 520.32169pt.
+(pdftex.def)             Requested size: 240.23016pt x 180.16728pt.
+[31
 
-[46 <./img/m92011_outliers_anillos_cielo.png>]
-<img/aceptadasAnilloCielo.png, id=769, 325.215pt x 516.93124pt>
-File: img/aceptadasAnilloCielo.png Graphic file (type png)
-<use img/aceptadasAnilloCielo.png>
-Package pdftex.def Info: img/aceptadasAnilloCielo.png  used on input line 1550.
-
-(pdftex.def)             Requested size: 325.31154pt x 517.11928pt.
- [47 <./img/rechazadasAnilloCielo.png>]
-<img/M92_CMD_coloreado_filtros.png, id=775, 505.89pt x 578.16pt>
+ <./img/m92010_final_mag_vs_merr.png> <./img/m91_final_mag_vs_merr.png>]
+<img/M92_CMD_coloreado_filtros.png, id=555, 505.89pt x 578.16pt>
 File: img/M92_CMD_coloreado_filtros.png Graphic file (type png)
 <use img/M92_CMD_coloreado_filtros.png>
 Package pdftex.def Info: img/M92_CMD_coloreado_filtros.png  used on input line 
-1577.
-(pdftex.def)             Requested size: 340.32544pt x 388.95314pt.
- [48 <./img/aceptadasAnilloCielo.png>] [49 <./img/M92_CMD_coloreado_filtros.png
->]
-<img/sextansA_chip1_cielo_sigma.png, id=793, 498.663pt x 317.988pt>
+1070.
+(pdftex.def)             Requested size: 390.37689pt x 446.155pt.
+
+[32 <./img/M92_CMD_coloreado_filtros.png>]
+<img/sextansA_chip1_cielo_sigma.png, id=569, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_cielo_sigma.png Graphic file (type png)
 <use img/sextansA_chip1_cielo_sigma.png>
 Package pdftex.def Info: img/sextansA_chip1_cielo_sigma.png  used on input line
- 1605.
+ 1093.
 (pdftex.def)             Requested size: 390.37689pt x 248.93697pt.
- [50]
-<img/sextansA_chip1_threshold_conteos.png, id=802, 498.663pt x 317.988pt>
+ [33]
+<img/sextansA_chip1_threshold_conteos.png, id=577, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_threshold_conteos.png Graphic file (type png)
 <use img/sextansA_chip1_threshold_conteos.png>
 Package pdftex.def Info: img/sextansA_chip1_threshold_conteos.png  used on inpu
-t line 1623.
+t line 1111.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
- [51 <./img/sextansA_chip1_cielo_sigma.png>]
-<img/sextansA_chip1_threshold_ajuste.png, id=810, 498.663pt x 317.988pt>
+ [34 <./img/sextansA_chip1_cielo_sigma.png>]
+<img/sextansA_chip1_threshold_ajuste.png, id=585, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_threshold_ajuste.png Graphic file (type png)
 <use img/sextansA_chip1_threshold_ajuste.png>
 Package pdftex.def Info: img/sextansA_chip1_threshold_ajuste.png  used on input
- line 1630.
+ line 1118.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
- [52 <./img/sextansA_chip1_threshold_conteos.png> <./img/sextansA_chip1_thresho
+ [35 <./img/sextansA_chip1_threshold_conteos.png> <./img/sextansA_chip1_thresho
 ld_ajuste.png>]
-<img/sextansA_chip1_merr_distribucion.png, id=819, 498.663pt x 317.988pt>
+<img/sextansA_chip1_merr_distribucion.png, id=594, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_merr_distribucion.png Graphic file (type png)
 <use img/sextansA_chip1_merr_distribucion.png>
 Package pdftex.def Info: img/sextansA_chip1_merr_distribucion.png  used on inpu
-t line 1647.
+t line 1135.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
-
-[53]
-<img/sextansA_chip1_merr_umbral_fuentes.png, id=826, 498.663pt x 317.988pt>
+ [36]
+<img/sextansA_chip1_merr_umbral_fuentes.png, id=600, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_merr_umbral_fuentes.png Graphic file (type png)
 <use img/sextansA_chip1_merr_umbral_fuentes.png>
 Package pdftex.def Info: img/sextansA_chip1_merr_umbral_fuentes.png  used on in
-put line 1654.
+put line 1142.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
- [54 <./img/sextansA_chip1_merr_distribucion.png> <./img/sextansA_chip1_merr_um
+ [37 <./img/sextansA_chip1_merr_distribucion.png> <./img/sextansA_chip1_merr_um
 bral_fuentes.png>]
-<img/sextansA_chip1_vecinos_distancia.png, id=834, 498.663pt x 317.988pt>
+<img/sextansA_chip1_vecinos_distancia.png, id=608, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_vecinos_distancia.png Graphic file (type png)
 <use img/sextansA_chip1_vecinos_distancia.png>
 Package pdftex.def Info: img/sextansA_chip1_vecinos_distancia.png  used on inpu
-t line 1663.
+t line 1151.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
-<img/sextansA_chip1_fout_distribucion.png, id=836, 447.3513pt x 339.669pt>
+<img/sextansA_chip1_fout_distribucion.png, id=610, 447.3513pt x 339.669pt>
 File: img/sextansA_chip1_fout_distribucion.png Graphic file (type png)
 <use img/sextansA_chip1_fout_distribucion.png>
 Package pdftex.def Info: img/sextansA_chip1_fout_distribucion.png  used on inpu
-t line 1674.
+t line 1162.
 (pdftex.def)             Requested size: 360.34908pt x 273.61179pt.
- [55 <./img/sextansA_chip1_vecinos_distancia.png>]
-<img/sextansA_chip1_anillos_adaptativos.png, id=844, 498.663pt x 317.988pt>
+ [38 <./img/sextansA_chip1_vecinos_distancia.png>]
+<img/sextansA_chip1_anillos_adaptativos.png, id=619, 498.663pt x 317.988pt>
 File: img/sextansA_chip1_anillos_adaptativos.png Graphic file (type png)
 <use img/sextansA_chip1_anillos_adaptativos.png>
 Package pdftex.def Info: img/sextansA_chip1_anillos_adaptativos.png  used on in
-put line 1683.
+put line 1171.
 (pdftex.def)             Requested size: 360.34908pt x 229.78574pt.
-
-[56 <./img/sextansA_chip1_fout_distribucion.png>] [57 <./img/sextansA_chip1_ani
-llos_adaptativos.png>]
-<img/sextansA_chip1_comparacion_fout.png, id=858, 426.393pt x 390.258pt>
+ [39 <./img/sextansA_chip1_fout_distribucion.png>]
+[40 <./img/sextansA_chip1_anillos_adaptativos.png>]
+<img/sextansA_chip1_comparacion_fout.png, id=632, 426.393pt x 390.258pt>
 File: img/sextansA_chip1_comparacion_fout.png Graphic file (type png)
 <use img/sextansA_chip1_comparacion_fout.png>
 Package pdftex.def Info: img/sextansA_chip1_comparacion_fout.png  used on input
- line 1698.
+ line 1186.
 (pdftex.def)             Requested size: 360.34908pt x 329.82126pt.
-<img/sextansA_chip1_delta_mag.png, id=860, 497.9403pt x 317.988pt>
+<img/sextansA_chip1_delta_mag.png, id=634, 497.9403pt x 317.988pt>
 File: img/sextansA_chip1_delta_mag.png Graphic file (type png)
 <use img/sextansA_chip1_delta_mag.png>
 Package pdftex.def Info: img/sextansA_chip1_delta_mag.png  used on input line 1
-707.
+195.
 (pdftex.def)             Requested size: 360.34908pt x 230.12053pt.
- [58 <./img/sextansA_chip1_comparacion_fout.png>]
-<img/sextansA_chip1_resumen_etapas.png, id=867, 570.933pt x 354.123pt>
+ [41 <./img/sextansA_chip1_comparacion_fout.png>]
+<img/sextansA_chip1_resumen_etapas.png, id=641, 570.933pt x 354.123pt>
 File: img/sextansA_chip1_resumen_etapas.png Graphic file (type png)
 <use img/sextansA_chip1_resumen_etapas.png>
 Package pdftex.def Info: img/sextansA_chip1_resumen_etapas.png  used on input l
-ine 1718.
+ine 1206.
 (pdftex.def)             Requested size: 410.40053pt x 254.5631pt.
-
-[59 <./img/sextansA_chip1_delta_mag.png>] [60 <./img/sextansA_chip1_resumen_eta
-pas.png>]
+ [42 <./img/sextansA_chip1_delta_mag.png>] [43 <./img/sextansA_chip1_resumen_et
+apas.png>]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1754.
+(Font)              scaled to size 8.0pt on input line 1242.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.2pt on input line 1755.
+(Font)              scaled to size 6.2pt on input line 1243.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 5.5pt on input line 1755.
- [61]
-<img/sextansA_chips2_8_conteos.png, id=886, 1220.51277pt x 880.41864pt>
+(Font)              scaled to size 5.5pt on input line 1243.
+ [44]
+<img/sextansA_chips2_8_conteos.png, id=661, 1220.51277pt x 880.41864pt>
 File: img/sextansA_chips2_8_conteos.png Graphic file (type png)
 <use img/sextansA_chips2_8_conteos.png>
 Package pdftex.def Info: img/sextansA_chips2_8_conteos.png  used on input line 
-1777.
+1265.
 (pdftex.def)             Requested size: 480.46799pt x 346.58606pt.
- [62 <./img/sextansA_chips2_8_conteos.png>]
-<img/sextansA_chips2_8_fotometria.png, id=898, 1004.12788pt x 593.88936pt>
+ [45 <./img/sextansA_chips2_8_conteos.png>]
+<img/sextansA_chips2_8_fotometria.png, id=672, 1004.12788pt x 593.88936pt>
 File: img/sextansA_chips2_8_fotometria.png Graphic file (type png)
 <use img/sextansA_chips2_8_fotometria.png>
 Package pdftex.def Info: img/sextansA_chips2_8_fotometria.png  used on input li
-ne 1792.
+ne 1280.
 (pdftex.def)             Requested size: 480.46799pt x 284.16652pt.
-<img/sextansA_chips2_8_cielo.png, id=899, 1077.67323pt x 339.24388pt>
+<img/sextansA_chips2_8_cielo.png, id=673, 1077.67323pt x 339.24388pt>
 File: img/sextansA_chips2_8_cielo.png Graphic file (type png)
 <use img/sextansA_chips2_8_cielo.png>
-Package pdftex.def Info: img/sextansA_chips2_8_cielo.png  used on input line 17
-99.
+Package pdftex.def Info: img/sextansA_chips2_8_cielo.png  used on input line 12
+87.
 (pdftex.def)             Requested size: 480.46799pt x 151.24516pt.
- [63 <./img/sextansA_chips2_8_fotometria.png>] [64 <./img/sextansA_chips2_8_cie
-lo.png>] [65]
-<img/sextansA_chip5_localizacion_recuperadas_BVI.png, id=919, 1156.32pt x 433.6
-2pt>
-File: img/sextansA_chip5_localizacion_recuperadas_BVI.png Graphic file (type pn
-g)
-<use img/sextansA_chip5_localizacion_recuperadas_BVI.png>
-Package pdftex.def Info: img/sextansA_chip5_localizacion_recuperadas_BVI.png  u
-sed on input line 1880.
-(pdftex.def)             Requested size: 490.47217pt x 183.92546pt.
- [66]
-<img/sextansA_chip5_recuperada_anillos_BVI.png, id=927, 1164.68811pt x 439.7059
-pt>
-File: img/sextansA_chip5_recuperada_anillos_BVI.png Graphic file (type png)
-<use img/sextansA_chip5_recuperada_anillos_BVI.png>
-Package pdftex.def Info: img/sextansA_chip5_recuperada_anillos_BVI.png  used on
- input line 1887.
-(pdftex.def)             Requested size: 490.47217pt x 185.1717pt.
+[46 <./img/sextansA_chips2_8_fotometria.png>] [47 <./img/sextansA_chips2_8_ciel
+o.png>] [48]
+<img/sextansA_chip5_clasificacion_B.png, id=694, 1156.32pt x 589.0005pt>
+File: img/sextansA_chip5_clasificacion_B.png Graphic file (type png)
+<use img/sextansA_chip5_clasificacion_B.png>
+Package pdftex.def Info: img/sextansA_chip5_clasificacion_B.png  used on input 
+line 1368.
+(pdftex.def)             Requested size: 490.47217pt x 249.83208pt.
+ [49]
+<img/sextansA_chip5_clasificacion_V.png, id=700, 1156.32pt x 589.0005pt>
+File: img/sextansA_chip5_clasificacion_V.png Graphic file (type png)
+<use img/sextansA_chip5_clasificacion_V.png>
+Package pdftex.def Info: img/sextansA_chip5_clasificacion_V.png  used on input 
+line 1375.
+(pdftex.def)             Requested size: 490.47217pt x 249.83208pt.
+<img/sextansA_chip5_clasificacion_I.png, id=701, 1156.32pt x 589.0005pt>
+File: img/sextansA_chip5_clasificacion_I.png Graphic file (type png)
+<use img/sextansA_chip5_clasificacion_I.png>
+Package pdftex.def Info: img/sextansA_chip5_clasificacion_I.png  used on input 
+line 1382.
+(pdftex.def)             Requested size: 490.47217pt x 249.83208pt.
+ [50 <./img/sextansA_chip5_clasificacion_B.png> <./img/sextansA_chip5_clasifica
+cion_V.png>]
+<img/sextansA_chip5_anillos_B.png, id=711, 650.43pt x 505.89pt>
+File: img/sextansA_chip5_anillos_B.png Graphic file (type png)
+<use img/sextansA_chip5_anillos_B.png>
+Package pdftex.def Info: img/sextansA_chip5_anillos_B.png  used on input line 1
+391.
+(pdftex.def)             Requested size: 360.34908pt x 280.27823pt.
+ [51 <./img/sextansA_chip5_clasificacion_I.png>]
+<img/sextansA_chip5_anillos_V.png, id=717, 650.43pt x 505.89pt>
+File: img/sextansA_chip5_anillos_V.png Graphic file (type png)
+<use img/sextansA_chip5_anillos_V.png>
+Package pdftex.def Info: img/sextansA_chip5_anillos_V.png  used on input line 1
+398.
+(pdftex.def)             Requested size: 360.34908pt x 280.27823pt.
+<img/sextansA_chip5_anillos_I.png, id=718, 650.43pt x 505.89pt>
+File: img/sextansA_chip5_anillos_I.png Graphic file (type png)
+<use img/sextansA_chip5_anillos_I.png>
+Package pdftex.def Info: img/sextansA_chip5_anillos_I.png  used on input line 1
+405.
+(pdftex.def)             Requested size: 360.34908pt x 280.27823pt.
 
-[67 <./img/sextansA_chip5_localizacion_recuperadas_BVI.png> <./img/sextansA_chi
-p5_recuperada_anillos_BVI.png>] [68] [69] [70] [71] [72]
+[52 <./img/sextansA_chip5_anillos_B.png> <./img/sextansA_chip5_anillos_V.png>]
+[53 <./img/sextansA_chip5_anillos_I.png>] [54] [55]
 Cap\'{\i }tulo 4.
-[73
+[56
 
-] [74] (./main_tesis_corregido.bbl [75]) [76
+] [57] (./main_tesis_corregido.bbl [58]) [59
 
-] [77
+] [60
 
 ]
 Apéndice A.
-[78
+[61
 
-] [79]
+] [62]
 Apéndice B.
-[80
+[63
 
 ]
-<img/m92011_boxplot_anillos_cielo.png, id=1002, 1156.32pt x 505.89pt>
+<img/m92011_boxplot_anillos_cielo.png, id=788, 1156.32pt x 505.89pt>
 File: img/m92011_boxplot_anillos_cielo.png Graphic file (type png)
 <use img/m92011_boxplot_anillos_cielo.png>
 Package pdftex.def Info: img/m92011_boxplot_anillos_cielo.png  used on input li
-ne 2115.
+ne 1563.
 (pdftex.def)             Requested size: 653.90428pt x 286.0831pt.
- [81 <./img/m92011_boxplot_anillos_cielo.png>]
+ [64 <./img/m92011_boxplot_anillos_cielo.png>]
 Apéndice C.
-[82
+[65
 
 
 
 
 
 ]
-runsystem(latexminted cleantemp  --timestamp 20261123170702 CA27E6D53B7C758E3F2
+runsystem(latexminted cleantemp  --timestamp 20261125115808 CA27E6D53B7C758E3F2
 8428A58AA90AA)...executed.
 
  (./main_tesis_corregido.aux
@@ -1608,16 +1523,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main_tesis_corregido.out' has not changed.
-(rerunfilecheck)             Checksum: 42121E25E62A60CE9B5E0209E8D70739;8609.
+(rerunfilecheck)             Checksum: 531914CA843324F319B7971573137EBC;4829.
  ) 
 Here is how much of TeX's memory you used:
- 27823 strings out of 467525
- 510870 string characters out of 5418982
- 1155034 words of memory out of 5000000
- 55818 multiletter control sequences out of 15000+600000
- 739695 words of font info for 296 fonts, out of 8000000 for 9000
+ 27678 strings out of 467525
+ 507087 string characters out of 5418982
+ 1153663 words of memory out of 5000000
+ 55723 multiletter control sequences out of 15000+600000
+ 744965 words of font info for 296 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,11n,131p,1038b,932s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,11n,131p,1062b,932s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></us
 r/local/texlive/2026/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/
 local/texlive/2026/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/local/t
@@ -1629,10 +1544,10 @@ s/type1/public/newpx/zplb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/p
 ublic/newpx/zplbi.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/ne
 wpx/zplr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newpx/zplri
 .pfb>
-Output written on main_tesis_corregido.pdf (87 pages, 11707640 bytes).
+Output written on main_tesis_corregido.pdf (70 pages, 19232432 bytes).
 PDF statistics:
- 1130 PDF objects out of 1200 (max. 8388607)
- 931 compressed objects within 10 object streams
- 248 named destinations out of 1000 (max. 500000)
- 38426 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 903 PDF objects out of 1000 (max. 8388607)
+ 744 compressed objects within 8 object streams
+ 200 named destinations out of 1000 (max. 500000)
+ 43360 words of extra memory for PDF output out of 51595 (max. 10000000)
 
