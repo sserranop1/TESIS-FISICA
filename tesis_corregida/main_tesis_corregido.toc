@@ -60,7 +60,6 @@
 \contentsline {subsection}{\numberline {3.3.3}Análisis detallado del chip 5 en $B$, $V$ e $I$}{49}{subsection.3.3.3}%
 \contentsline {section}{\numberline {3.4}Discusión general}{54}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Conclusiones}{56}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Trabajo futuro}{57}{section.4.1}%
 \contentsline {chapter}{Appendices}{}{section*.40}
 \contentsline {chapter}{\numberline {A}Comandos principales utilizados en IRAF}{61}{appendix.Alph1}%
 \contentsline {section}{\numberline {A.1}Reducción}{61}{section.Alph1.1}%
